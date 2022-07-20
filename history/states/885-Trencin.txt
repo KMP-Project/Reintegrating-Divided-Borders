@@ -1,0 +1,26 @@
+state = {
+	id = 885
+	name = "STATE_885"
+	provinces = {
+		3484
+		9539
+	}
+	history = {
+		owner = SLO
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+		add_core_of = CZE
+		add_core_of = SLO
+		1939.3.14 = {
+			owner = GER
+			controller = GER
+			add_core_of = SLO
+		}
+	}
+	manpower = 594328
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = town
+}

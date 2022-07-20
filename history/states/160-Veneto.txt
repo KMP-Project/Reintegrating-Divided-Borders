@@ -1,0 +1,35 @@
+state = {
+	id = 160
+	name = "STATE_160"
+	resources = {
+		steel = 20
+		aluminium = 11
+	}
+	history = {
+		owner = VNZ
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 4
+			air_base = 3
+		}
+		add_core_of = ITA
+		add_core_of = VNZ
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 5
+			}
+		}
+	}
+	provinces = {
+		603
+		3604
+		3657
+		6656
+		9582
+	}
+	manpower = 3360598
+	buildings_max_level_factor = 1
+	state_category = large_city
+	local_supplies = 5
+}

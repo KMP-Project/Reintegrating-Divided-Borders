@@ -1,0 +1,21 @@
+state = {
+	id = 846
+	name = "STATE_846"
+	provinces = {
+		6584
+		6761
+		11689
+	}
+	history = {
+		owner = BUC
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = ROM
+		add_core_of = BUC
+	}
+	manpower = 806400
+	state_category = pastoral
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

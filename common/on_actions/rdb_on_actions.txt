@@ -1,0 +1,319 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			INS = {
+				set_cosmetic_tag = INS
+			}
+			CAN = {
+				set_cosmetic_tag = CAN
+			}
+			RAJ = {
+				set_cosmetic_tag = RAJ
+			}
+			SAF = {
+				set_cosmetic_tag = SAF
+			}
+			NZL = {
+				set_cosmetic_tag = NZL
+			}
+			MAL = {
+				set_cosmetic_tag = MAL
+			}
+			AST = {
+				set_cosmetic_tag = AST
+			}
+			BEL = {
+				set_cosmetic_tag = wallonia
+			}
+			AUS = {
+				set_cosmetic_tag = AUS_KRON
+			}
+			SER = {
+				annex_country = {
+					target = YUG
+					transfer_troops = yes
+				}
+			}
+			ITA = {
+				white_peace = ETH
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = QUE
+						tag = SOW
+						tag = SOA
+						tag = TEX
+						tag = CAL
+						tag = IRO
+					}
+				}
+				add_ideas = Brave_men_against_single_domination
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = ALL
+						tag = BOU
+						tag = NAV
+						tag = GAS
+						tag = BRI
+						tag = DDN
+						tag = FLA
+						tag = BEL
+						tag = OCC
+						tag = COR
+					}
+				}
+				add_ideas = French_threat
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = EXT
+						tag = ADC
+						tag = CAT
+						tag = LEO
+						tag = GLC
+						tag = ATA
+					}
+				}
+				add_ideas = Spanish_country
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = HAN
+						tag = BAY
+						tag = ALL
+						tag = WUR
+						tag = PRE
+						tag = KSH
+						tag = AUS
+						tag = OBE
+						tag = TIR
+						tag = SAX
+						tag = SHL
+						tag = MEK
+						tag = LUX
+						tag = SIL
+						tag = SAL
+						tag = VOR
+						tag = SWI
+						tag = BOU
+						tag = BEL
+						tag = FLA
+						tag = CZE
+						tag = STE
+						tag = KNN
+						tag = SLV
+						tag = VNZ
+						tag = SAR
+					}
+				}
+				add_ideas = German_country
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = SIC
+						tag = SAR
+						tag = VNZ
+						tag = TIR
+					}
+				}
+				add_ideas = Italy_country
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = africa
+					}
+				}
+				add_ideas = African_warriors
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = UAE
+						tag = YEM
+						tag = OMA
+						tag = QAT
+						tag = KUW
+						tag = SAU
+						tag = IRQ
+						tag = SYR
+						tag = JOR
+						tag = LEB
+						tag = ISR
+						tag = SOO
+						tag = SOM
+						tag = EGY
+						tag = DJI
+						tag = SUD
+						tag = LBA
+						tag = TUN
+						tag = ALG
+						tag = MOR
+						tag = ADC
+						tag = WES
+						tag = MRT
+					}
+				}
+				add_ideas = Arabischer_geist
+			}
+			every_country = {
+				limit = {
+					num_divisions < 1
+				}
+				division_template = {
+					name = "Independent Brigade"
+					is_locked = no
+					priority = 0
+					division_names_group = ENG_INF_02
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+					}
+				}
+				set_temp_variable = {
+					division_spawn_sum_var_@THIS = num_core_states@THIS
+				}
+				add_to_temp_variable = {
+					division_spawn_sum_var_@THIS = THIS.num_of_factories@THIS
+				}
+				set_temp_variable = {
+					division_spawn_warsupport_var_@THIS = THIS.has_war_support@THIS
+				}
+				add_to_temp_variable = {
+					division_spawn_warsupport_var_@THIS = 0.5
+				}
+				multiply_temp_variable = {
+					division_spawn_sum_var_@THIS = division_spawn_warsupport_var_@THIS
+				}
+				round_temp_variable = division_spawn_sum_var_@THIS
+				if = {
+					limit = {
+						has_idea = Brave_men_against_single_domination
+					}
+					add_to_temp_variable = {
+						division_spawn_sum_var_@THIS = 2
+					}
+				}
+				capital_scope = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					if = {
+						limit = {
+							infrastructure < 3
+						}
+						set_building_level = {
+							type = infrastructure
+							level = 3
+						}
+					}
+					create_unit = {
+						division = "name = \"Independent Brigade\" division_template = \"Independent Brigade\" start_experience_factor = 0.2 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = PREV
+						count = division_spawn_sum_var_@PREV
+					}
+				}
+			}
+			#ENG = {
+			#	remove_ideas = stiff_upper_lip
+			#}
+			#USA = {
+			#	remove_ideas = home_of_the_free
+			#}
+			#GER = {
+			#	remove_ideas = sour_loser
+			#}
+			#SOV = {
+			#	remove_ideas = home_of_revolution
+			#}
+			#every_country = {
+			#	set_rule = {
+			#		can_create_factions = no
+			#	}
+			#}
+			#every_country = {
+			#	every_neighbor_country = {
+			#		limit = {
+			#			NOT = {
+			#				has_war_with = PREV
+			#				is_subject_of = PREV
+			#				PREV = {
+			#					is_subject_of = PREV
+			#				}
+			#			}
+			#		}
+			#		declare_war_on = {
+			#			target = PREV
+			#			type = annex_everything
+			#		}
+			#	}
+			#}
+		}
+	}
+	#on_peace = {
+	#	effect = {
+	#		every_country = {
+	#			every_neighbor_country = {
+	#				limit = {
+	#					NOT = {
+	#						has_war_with = PREV
+	#						is_subject_of = PREV
+	#						PREV = {
+	#							is_subject_of = PREV
+	#						}
+	#					}
+	#					date > 1936.02.02
+	#				}
+	#				declare_war_on = {
+	#					target = PREV
+	#					type = annex_everything
+	#				}
+	#			}
+	#			every_subject_country = {
+	#				PREV = {
+	#					annex_country = {
+	#						target = PREV
+	#						transfer_troops = yes
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+}

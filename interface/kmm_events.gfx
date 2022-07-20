@@ -1,0 +1,13 @@
+spriteTypes = {
+
+	SpriteType = { 
+		name = "GFX_news_event_austro_hungary_revival_ceremony"
+		texturefile = "gfx/event_pictures/news_event_austro_hungary_revival_ceremony.dds"
+	}
+
+	SpriteType = { 
+		name = "GFX_news_event_pius_XI_dead"
+		texturefile = "gfx/event_pictures/news_event_pius_XI_dead.dds"
+	}
+
+}

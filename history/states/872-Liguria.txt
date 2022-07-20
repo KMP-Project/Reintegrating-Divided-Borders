@@ -1,0 +1,34 @@
+state = {
+	id = 872
+	name = "STATE_872"
+	provinces = {
+		3772
+		6788
+		11891
+	}
+	history = {
+		owner = SAR
+		victory_points = {
+			6788
+			10
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 2
+			6788 = {
+				naval_base = 8
+			}
+		}
+		add_core_of = ITA
+		add_core_of = SAR
+		1939.1.1 = {
+			buildings = {
+				dockyard = 3
+			}
+		}
+	}
+	manpower = 1516788
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = city
+}

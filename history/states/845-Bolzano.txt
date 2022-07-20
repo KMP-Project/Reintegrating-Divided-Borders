@@ -1,0 +1,23 @@
+state = {
+	id = 845
+	name = "STATE_845"
+	provinces = {
+		6675
+		9630
+		11615
+	}
+	history = {
+		owner = TIR
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = ITA
+		add_core_of = AUS
+		add_core_of = TIR
+	}
+	manpower = 147579
+	state_category = rural
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

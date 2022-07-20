@@ -1,0 +1,23 @@
+state = {
+	id = 862
+	name = "STATE_862"
+	provinces = {
+		1177
+		4126
+		10085
+		10110
+		11948
+		12085
+	}
+	history = {
+		owner = KOR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = KOR
+	}
+	manpower = 2868266
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = rural
+}

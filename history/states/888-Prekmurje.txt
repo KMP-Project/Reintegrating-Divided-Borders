@@ -1,0 +1,19 @@
+state = {
+	id = 888
+	name = "STATE_888"
+	provinces = {
+		6672
+	}
+	history = {
+		owner = SLV
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = YUG
+		add_core_of = SLV
+	}
+	manpower = 47222
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = pastoral
+}

@@ -1,0 +1,28 @@
+state = {
+	id = 847
+	name = "STATE_847"
+	provinces = {
+		6680
+	}
+	history = {
+		owner = VOR
+		victory_points = {
+			6680
+			1
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = AUS
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+			add_core_of = GER
+		}
+		add_core_of = VOR
+	}
+	manpower = 28687
+	state_category = pastoral
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

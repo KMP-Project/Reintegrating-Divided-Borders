@@ -1,0 +1,19 @@
+capital = 843
+#oob = ""
+set_research_slots = 3
+set_stability = 0.8
+set_war_support = 0.3
+set_convoys = 10
+#set_technology = {}
+set_politics = {
+	ruling_party = democratic
+	last_election = 1936.1.1
+	election_frequency = 96
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 60
+	fascism = 0
+	communism = 30
+	neutrality = 10
+}

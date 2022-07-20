@@ -1,0 +1,32 @@
+state = {
+	id = 844
+	name = "STATE_844"
+	provinces = {
+		11584
+	}
+	history = {
+		owner = VNZ
+		victory_points = {
+			11584
+			10
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			11584 = {
+				naval_base = 6
+			}
+		}
+		add_core_of = ITA
+		add_core_of = VNZ
+		1939.1.1 = {
+			buildings = {
+				dockyard = 2
+			}
+		}
+	}
+	manpower = 602553
+	state_category = town
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

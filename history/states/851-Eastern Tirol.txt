@@ -1,0 +1,24 @@
+state = {
+	id = 851
+	name = "STATE_851"
+	provinces = {
+		671
+	}
+	history = {
+		owner = TIR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = AUS
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+			add_core_of = GER
+		}
+		add_core_of = TIR
+	}
+	manpower = 41355
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = pastoral
+}

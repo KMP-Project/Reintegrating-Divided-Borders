@@ -1,0 +1,22 @@
+state={
+	id=836
+	name="STATE_836"
+	provinces={
+		7658 8360 10509 12488 
+	}
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			7658 1 
+		}
+		buildings = {
+			infrastructure = 2
+		}
+
+	}
+	state_category=pastoral 
+	manpower=1343000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

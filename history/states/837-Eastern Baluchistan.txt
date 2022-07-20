@@ -1,0 +1,20 @@
+state = {
+	id = 837
+	name = "STATE_837"
+	provinces = {
+		8098
+		10813
+	}
+	history = {
+		owner = BAL
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = PAK
+		add_core_of = BAL
+	}
+	manpower = 5100
+	state_category = wasteland
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

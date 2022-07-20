@@ -1,0 +1,24 @@
+state={
+	id=856
+	name="STATE_856"
+	provinces={
+		12447 12460 
+	}
+	history={
+		add_core_of = CAM
+		add_core_of = SIA
+		owner = CAM
+		victory_points = {
+			12447 1 
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+	manpower=170852
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

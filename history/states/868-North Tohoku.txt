@@ -1,0 +1,23 @@
+state={
+	id=868
+	name="STATE_868"
+	provinces={
+		1063 1165 3848 6870 6873 6994 9807 9859 9865 11847 12056 
+	}
+	history={
+		owner = JAP
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 2
+
+		}
+		victory_points = {
+			6994 5 
+		}
+
+	}
+	manpower=2374403
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

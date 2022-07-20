@@ -1,0 +1,32 @@
+state = {
+	id = 849
+	name = "STATE_849"
+	provinces = {
+		668
+		3673
+		3674
+		6673
+		11612
+	}
+	history = {
+		owner = KNN
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			3673
+			3
+		}
+		add_core_of = AUS
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+			add_core_of = GER
+		}
+		add_core_of = KNN
+	}
+	state_category = town
+	manpower = 555473
+	buildings_max_level_factor = 1
+	local_supplies = 0
+}

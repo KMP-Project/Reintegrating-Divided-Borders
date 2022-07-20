@@ -1,0 +1,29 @@
+spriteTypes = {
+	# leaders we need to override in DLC go in this file
+	#focus
+	spriteType = {
+		name = GFX_goal_nordic_cold_weather_use
+		texturefile = "gfx/interface/goals/Nordic_cold_weather_use.dds"
+	}
+	spriteType = {
+		name = GFX_goal_nordic_increased_agricultural_productivity
+		texturefile = "gfx/interface/goals/Nordic_increased_agricultural_productivity.dds"
+	}
+	#idea
+	spriteType = {
+		name = GFX_idea_nordic_cold_weather_use_idea
+		texturefile = "gfx/interface/ideas/Nordic_cold_weather_use_idea.dds"
+	}
+	spriteType = {
+		name = GFX_idea_swe_en_svensk_tiger
+		texturefile = "gfx/interface/ideas/SWE_en_svensk_tiger.dds"
+	}
+	spriteType = {
+		name = GFX_idea_nordic_oil_storage_idea
+		texturefile = "gfx/interface/ideas/Nordic_oil_storage_idea.dds"
+	}
+	spriteType = {
+		name = GFX_idea_nordic_a_better_life_idea
+		texturefile = "gfx/interface/ideas/Nordic_a_better_life_idea.dds"
+	}
+}

@@ -1,0 +1,27 @@
+state = {
+	id = 838
+	name = "STATE_838"
+	provinces = {
+		1279
+		4297
+		7236
+		10156
+		12131
+	}
+	history = {
+		owner = PAT
+		buildings = {
+			infrastructure = 2
+		}
+		victory_points = {
+			7236
+			1
+		}
+		add_core_of = SIA
+		add_core_of = PAT
+	}
+	manpower = 142964
+	buildings_max_level_factor = 1
+	state_category = pastoral
+	local_supplies = 0
+}

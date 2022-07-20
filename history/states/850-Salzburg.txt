@@ -1,0 +1,29 @@
+state = {
+	id = 850
+	name = "STATE_850"
+	provinces = {
+		688
+		3675
+	}
+	history = {
+		owner = SAL
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			688
+			10
+		}
+		add_core_of = AUS
+		add_core_of = SAL
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+			add_core_of = GER
+		}
+	}
+	manpower = 531898
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = town
+}

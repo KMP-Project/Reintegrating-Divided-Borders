@@ -1,0 +1,26 @@
+state={
+	id=887
+	name="STATE_887"
+	provinces={
+		442 466 3410 3434 6499 6522 9494 11507 
+	}
+	history={
+		owner = POL
+		victory_points = {
+			442 3 
+		}
+		victory_points = {
+			9494 1 
+		}
+		buildings = {
+			infrastructure = 3
+
+		}
+		add_core_of = POL
+
+	}
+	manpower=497999
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

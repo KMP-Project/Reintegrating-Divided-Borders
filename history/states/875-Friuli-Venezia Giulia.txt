@@ -1,0 +1,20 @@
+state = {
+	id = 875
+	name = "STATE_875"
+	provinces = {
+		628
+		9613
+	}
+	history = {
+		owner = VNZ
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = ITA
+		add_core_of = VNZ
+	}
+	manpower = 1217780
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = town
+}

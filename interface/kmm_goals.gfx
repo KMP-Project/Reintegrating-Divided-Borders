@@ -1,0 +1,234 @@
+spriteTypes = {
+
+	###focus
+
+	SpriteType = { 
+		name = "GFX_focus_soviet_army"
+		texturefile = "gfx/interface/goals/focus_soviet_army.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_siberia_railway"
+		texturefile = "gfx/interface/goals/focus_siberia_railway.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_operation_bagration"
+		texturefile = "gfx/interface/goals/focus_operation_bagration.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_withdrawal_of_aggressionism"
+		texturefile = "gfx/interface/goals/focus_withdrawal_of_aggressionism.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_labor_and_agriculture_committee"
+		texturefile = "gfx/interface/goals/focus_labor_and_agriculture_committee.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ger_confirmation_of_western_border"
+		texturefile = "gfx/interface/goals/focus_ger_confirmation_of_western_border.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ger_return_to_prewar_eastern_border"
+		texturefile = "gfx/interface/goals/focus_ger_return_to_prewar_eastern_border.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ger_AHF_feud"
+		texturefile = "gfx/interface/goals/focus_ger_AHF_feud.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ger_AHF_friendship"
+		texturefile = "gfx/interface/goals/focus_ger_AHF_friendship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_break_fortress"
+		texturefile = "gfx/interface/goals/focus_break_fortress.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_resurrection_of_HRE"
+		texturefile = "gfx/interface/goals/focus_resurrection_of_HRE.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_reclaim_the_empire"
+		texturefile = "gfx/interface/goals/focus_reclaim_the_empire.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_invasion_of_albania"
+		texturefile = "gfx/interface/goals/focus_invasion_of_albania.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_invasion_of_albania"
+		texturefile = "gfx/interface/goals/focus_invasion_of_albania.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_DEP"
+		texturefile = "gfx/interface/goals/focus_DEP.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_generic_focus_on_mediterraneum"
+		texturefile = "gfx/interface/goals/focus_generic_focus_on_mediterraneum.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_invasion_of_yugo"
+		texturefile = "gfx/interface/goals/focus_invasion_of_yugo.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_prisoner_in_the_mediterranean"
+		texturefile = "gfx/interface/goals/focus_ita_prisoner_in_the_mediterranean.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_prison_break"
+		texturefile = "gfx/interface/goals/focus_ita_prison_break.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_stahlpakt"
+		texturefile = "gfx/interface/goals/focus_ita_stahlpakt.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_achievement_of_italian_imperialism"
+		texturefile = "gfx/interface/goals/focus_ita_achievement_of_italian_imperialism.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_roman_empire_ambition"
+		texturefile = "gfx/interface/goals/focus_ita_roman_empire_ambition.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_army_reform"
+		texturefile = "gfx/interface/goals/focus_ita_army_reform.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_navy_augmentation"
+		texturefile = "gfx/interface/goals/focus_ita_navy_augmentation.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_air_force_research"
+		texturefile = "gfx/interface/goals/focus_ita_air_force_research.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_M13_40"
+		texturefile = "gfx/interface/goals/focus_ita_M13_40.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_battle_in_the_desert"
+		texturefile = "gfx/interface/goals/focus_ita_battle_in_the_desert.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_promotion_of_armor"
+		texturefile = "gfx/interface/goals/focus_ita_promotion_of_armor.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_no_cavalry"
+		texturefile = "gfx/interface/goals/goal_generic_no_cavalry.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_anti_tank_firearms"
+		texturefile = "gfx/interface/goals/focus_ita_anti_tank_firearms.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_propulsion_gun"
+		texturefile = "gfx/interface/goals/focus_ita_propulsion_gun.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_battle_in_peacetime"
+		texturefile = "gfx/interface/goals/focus_ita_battle_in_peacetime.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_G55_centauro"
+		texturefile = "gfx/interface/goals/focus_ita_G55_centauro.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_Z1018_leone"
+		texturefile = "gfx/interface/goals/focus_ita_Z1018_leone.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_C202_folgore"
+		texturefile = "gfx/interface/goals/focus_ita_C202_folgore.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_agricultural_war"
+		texturefile = "gfx/interface/goals/focus_ita_agricultural_war.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_agricultural_land_war"
+		texturefile = "gfx/interface/goals/focus_ita_agricultural_land_war.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_villaggio_mussolini"
+		texturefile = "gfx/interface/goals/focus_ita_villaggio_mussolini.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_EUR_district"
+		texturefile = "gfx/interface/goals/focus_ita_EUR_district.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_money_for_your_homeland"
+		texturefile = "gfx/interface/goals/focus_ita_money_for_your_homeland.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_battle_of_lira"
+		texturefile = "gfx/interface/goals/focus_ita_battle_of_lira.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_on_northern_italy"
+		texturefile = "gfx/interface/goals/focus_ita_on_northern_italy.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_correcting_the_north_south_divide"
+		texturefile = "gfx/interface/goals/focus_ita_correcting_the_north_south_divide.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_wetland_reclamation"
+		texturefile = "gfx/interface/goals/focus_ita_wetland_reclamation.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ita_elimination_of_division"
+		texturefile = "gfx/interface/goals/focus_ita_elimination_of_division.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_ger_kaiserschlacht"
+		texturefile = "gfx/interface/goals/focus_ger_kaiserschlacht.dds"
+	}
+}

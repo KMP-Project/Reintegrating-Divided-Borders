@@ -1,0 +1,27 @@
+state={
+	id=876
+	name="STATE_876"
+	provinces={
+		925 967 
+	}
+	history={
+		owner = ITA
+		victory_points = {
+			925 1 
+		}
+		buildings = {
+			infrastructure = 3
+			925 = {
+				naval_base = 4
+
+			}
+
+		}
+		add_core_of = ITA
+
+	}
+	manpower=1565335
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

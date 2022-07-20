@@ -1,0 +1,20 @@
+state = {
+	id = 871
+	name = "STATE_871"
+	provinces = {
+		611
+		11570
+	}
+	history = {
+		owner = SAR
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = ITA
+		add_core_of = SAR
+	}
+	manpower = 126620
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = pastoral
+}

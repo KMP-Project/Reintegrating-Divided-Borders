@@ -1,0 +1,21 @@
+state = {
+	id = 873
+	name = "STATE_873"
+	provinces = {
+		599
+		11595
+	}
+	history = {
+		owner = SLV
+		add_core_of = ITA
+		add_core_of = YUG
+		add_core_of = SLV
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	manpower = 346950
+	buildings_max_level_factor = 1
+	local_supplies = 0
+	state_category = pastoral
+}

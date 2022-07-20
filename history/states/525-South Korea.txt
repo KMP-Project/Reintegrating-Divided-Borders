@@ -1,0 +1,25 @@
+state = {
+	id = 525
+	name = "STATE_525"
+	history = {
+		owner = KOR
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+		victory_points = {
+			7125
+			5
+		}
+		add_core_of = KOR
+	}
+	provinces = {
+		7125
+		7221
+		10036
+	}
+	manpower = 5736532
+	buildings_max_level_factor = 1
+	state_category = city
+	local_supplies = 0
+}

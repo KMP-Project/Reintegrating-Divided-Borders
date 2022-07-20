@@ -1,0 +1,24 @@
+state = {
+	id = 854
+	name = "STATE_854"
+	provinces = {
+		10330
+		10356
+	}
+	history = {
+		owner = LAO
+		add_core_of = LAO
+		add_core_of = SIA
+		victory_points = {
+			10356
+			1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	manpower = 382200
+	buildings_max_level_factor = 1
+	state_category = pastoral
+	local_supplies = 0
+}

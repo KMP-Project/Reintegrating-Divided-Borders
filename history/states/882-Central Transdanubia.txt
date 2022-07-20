@@ -1,0 +1,25 @@
+state={
+	id=882
+	name="STATE_882"
+	resources={
+		steel=3.000
+		aluminium=136.000
+	}
+	history = {
+		owner = HUN
+		add_core_of = HUN
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			6703 3
+		}
+	}
+	provinces={
+		701 3683 6703 9676 11663 
+	}
+	manpower=1060703
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

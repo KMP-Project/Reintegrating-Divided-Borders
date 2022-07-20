@@ -1,0 +1,48 @@
+spriteTypes = {
+
+	#SpriteType = { 
+	#	name = "GFX_political_command_power"
+	#	texturefile = "gfx/texticons/political_command_power.dds"
+	#}
+
+	SpriteType = {
+		name = "GFX_ITA_army"
+		texturefile = "gfx/interface/decisions/ITA_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITA_navy"
+		texturefile = "gfx/interface/decisions/ITA_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITA_airforce"
+		texturefile = "gfx/interface/decisions/ITA_airforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_cat_iberismo"
+		texturefile = "gfx/interface/decisions/decision_cat_iberismo.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_cat_greatbritain"
+		texturefile = "gfx/interface/decisions/decision_cat_greatbritain.dds"
+	} 
+	SpriteType = {
+		name = "GFX_decision_cat_risorgimento"
+		texturefile = "gfx/interface/decisions/decision_cat_risorgimento.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_cat_great_patriotic_war"
+		texturefile = "gfx/interface/decisions/decision_cat_great_patriotic_war.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ita_hand_arm"
+		texturefile = "gfx/interface/decisions/ita_factions/decision_ita_hand_arm.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ita_hand_nav"
+		texturefile = "gfx/interface/decisions/ita_factions/decision_ita_hand_nav.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ita_hand_air"
+		texturefile = "gfx/interface/decisions/ita_factions/decision_ita_hand_air.dds"
+	}
+}

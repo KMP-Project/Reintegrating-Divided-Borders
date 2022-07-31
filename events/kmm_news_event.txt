@@ -1,0 +1,585 @@
+﻿add_namespace = kmmnews
+news_event = {
+	id = kmmnews.1
+	title = "チェコスロバキアの帝冠領"
+	desc = kmmnews.1.d
+	picture = GFX_news_event_cze_divided_nation
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "偉大なる帝国の復活劇だ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "彼らの軍事行動を注視すべきだ"
+		trigger = {
+			OR = {
+				TAG = ITA
+				TAG = YUG
+				TAG = ROM
+				TAG = POL
+				TAG = SOV
+				TAG = FRA
+				TAG = GER
+			}
+		}
+	}
+	option = {
+		name = "二重帝国は日に日に力を増している…"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = ITA
+					TAG = YUG
+					TAG = ROM
+					TAG = POL
+					TAG = SOV
+					TAG = FRA
+					TAG = GER
+					TAG = HUN
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.2
+	title = "二重帝国によるユーゴスラビア領土の要求"
+	desc = kmmnews.2.d
+	picture = GFX_news_event_yugoslavian_split
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "さもなければ戦争だ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "未回収のイタリアはどうなるのだ！？"
+		trigger = {
+			TAG = ITA
+		}
+	}
+	option = {
+		name = "決断の時だ"
+		trigger = {
+			TAG = YUG
+		}
+	}
+	option = {
+		name = "もはやヴェルサイユ条約は我々を守ってはくれない"
+		trigger = {
+			any_owned_state = {
+				is_on_continent = europe
+			}
+			is_major = no
+			NOT = {
+				OR = {
+					TAG = HUN
+					TAG = ITA
+					TAG = YUG
+				}
+			}
+		}
+	}
+	option = {
+		name = "先の見えぬ時代だ"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = HUN
+					TAG = ITA
+					TAG = YUG
+					AND = {
+						any_owned_state = {
+							is_on_continent = europe
+						}
+						is_major = no
+						NOT = {
+							OR = {
+								TAG = HUN
+								TAG = ITA
+								TAG = YUG
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.3
+	title = "ユーゴスラビアの解体"
+	desc = "結果的にユーゴスラビア連邦は二重帝国政府の最後通牒を受諾した。結果的にユーゴスラビア連邦構成国は独立し、ユーゴスラビアは解体された。"
+	picture = GFX_news_event_yugoslav_coup
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "偉大なる帝国まで残り少しだ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "これはチャンスだな…"
+		trigger = {
+			OR = {
+				TAG = ROM
+				TAG = ITA
+				TAG = GRE
+				TAG = TUR
+				TAG = BUL
+				TAG = ALB
+			}
+		}
+	}
+	option = {
+		name = "ヴェルサイユ条約の崩壊だ"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = HUN
+					TAG = ROM
+					TAG = ITA
+					TAG = GRE
+					TAG = TUR
+					TAG = BUL
+					TAG = ALB
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.4
+	title = "ユーゴスラビアが拒否！"
+	desc = "結果的には、ユーゴスラビア連邦は二重帝国政府の要求を拒否した。"
+	picture = GFX_news_event_battle_for_the_bosporus
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "許され難き返答だ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "ユーゴスラビアの独立は維持できるのか？"
+		trigger = {
+			NOT = {
+				TAG = HUN
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.5
+	title = "二重帝国によるトランシルヴァニアの要求"
+	desc = "二重帝国政府は次なる拡張先としてトランシルヴァニアを定めたようだ。ルーマニアにはすでに最後通牒が送り付けられている。"
+	picture = GFX_news_event_yugoslavian_split
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "さもなければ戦争だ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "決断の時だ"
+		trigger = {
+			TAG = ROM
+		}
+	}
+	option = {
+		name = "先の見えぬ時代だ"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = HUN
+					TAG = ROM
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.6
+	title = "ルーマニアの屈服"
+	desc = "ルーマニア政府は最後通牒を受け入れ、多大な経済的援助と引き換えにルーマニアはトランシルヴァニアを失った。"
+	picture = GFX_news_event_generic_read_write
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "ウィーン勝利！"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "何という屈辱..."
+		trigger = {
+			TAG = ROM
+		}
+	}
+	option = {
+		name = "ブコヴィナは！？"
+		trigger = {
+			TAG = SOV
+		}
+	}
+	option = {
+		name = "そこに経済的価値はなさそうだ"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = ROM
+					TAG = HUN
+					TAG = SOV
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.7
+	title = "ルーマニアが拒否！"
+	desc = "結果的に、ルーマニア政府は二重帝国政府の最後通牒を拒否した。"
+	picture = GFX_news_event_ast_army
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "バルカンの可燃性は高いな"
+	}
+}
+
+news_event = {
+	id = kmmnews.8
+	title = "二重帝国の再興"
+	desc = "kmmnews.8.d"
+	picture = GFX_news_event_austro_hungary_revival_ceremony
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "喜ばしいことだ"
+		trigger = {
+			TAG = HUN
+		}
+	}
+	option = {
+		name = "国境はWW1まで戻るのか？"
+		trigger = {
+			NOT = {
+				TAG = HUN
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.9
+	title = "ハンガリーがドイツ陣営に加盟"
+	desc = "ハンガリーがドイツの陣営に加盟した。"
+	picture = GFX_news_event_generic_read_write
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "ドイツ万歳！ハンガリー万歳！"
+		trigger = {
+			OR = {
+				TAG = HUN
+				TAG = GER
+			}
+		}
+	}
+	option = {
+		name = "状況を注視する必要がある"
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = HUN
+					TAG = GER
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.10
+	title = "独仏が西方国境を再確認"
+	desc = "kmmnews.10.d"
+	picture = GFX_news_event_hitler_handshake
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "ラインラントは我が領土だ"
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = "平和を維持する為には仕方ないか..."
+		trigger = {
+			OR = {
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = "なぜフランスは譲歩したのだろうか？"
+		trigger = {
+			NOT = {
+				OR = {
+					tag = FRA
+					tag = GER
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.11
+	title = "ドイツが条約を破棄"
+	desc = "ドイツはフランスとその周辺国と西方国境の確認をし、相互の侵略を自主的に防いだはずだったが、ドイツ側からそれは破られた。 国際緊張が高まる中、ドイツも仕方がない選択だった可能性があるが、条約破棄は国民の信用を失墜させた。"
+	picture = GFX_news_event_003
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "条約は我々に有効なときのみ履行される"
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = "明らかな条約破棄だ"
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.12
+	title = "西欧諸国が条約を破棄"
+	desc = "フランスはドイツその周辺国と西方国境の確認をし、相互の侵略を自主的に防いだはずだったが、フランス側からそれは破られた。 国際緊張が高まる中、フランスも仕方がない選択だった可能性があるが、条約破棄は国民の信用を失墜させた。"
+	picture = GFX_news_event_003
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "条約は我々に有効なときのみ履行される"
+		trigger = {
+			tag = FRA
+		}
+	}
+	option = {
+		name = "明らかな条約破棄だ"
+		trigger = {
+			NOT = {
+				tag = FRA
+			}
+		}
+	}
+}
+
+#news_event = {
+#	id = kmmnews.13
+#	title = "新しい教皇が就任"
+#	desc = "1939年2月10日、ローマ教皇でありバチカン市国建国者とも言えるピウス11世が教皇を離任した。後日、新しい教皇であるピウス12世が教皇に就任した。"
+#	picture = GFX_news_event_pius_XI_dead
+#
+#	major = yes
+#
+#	trigger = {
+#		date > 1939.2.9
+#		NOT = { has_global_flag = pius_XI_dead }
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#
+#	immediate = {
+#		hidden_effect = {
+#			set_global_flag = pius_XI_dead
+#			VAT = {
+#				create_country_leader = {
+#					name = "Pius PP. XII"
+#					desc = "tester"
+#					picture = "Pius_PP._XII.dds"
+#					expire = "1958.10.10"
+#					ideology = centrism
+#					traits = {}
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = "了解した"
+#	}
+#
+#}
+news_event = {
+	id = kmmnews.14
+	title = "オーハンがイタリアの旧領を回復"
+	desc = kmmnews.14.d
+	picture = GFX_news_event_056
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "今に見ているがいい..."
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = "偉大なる帝国の躍進は続く"
+		trigger = {
+			tag = HUN
+		}
+	}
+	option = {
+		name = "イタリアの大戦での勝利は完全に意味を失った"
+		trigger = {
+			NOT = {
+				OR = {
+					tag = ITA
+					tag = HUN
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.15
+	title = "イタリアが最後通牒を拒否"
+	desc = kmmnews.15.d
+	picture = GFX_news_event_053
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "状況を注視する必要がある"
+	}
+}
+
+news_event = {
+	id = kmmnews.16
+	title = "オーハンがイタリアの旧領を回復"
+	desc = kmmnews.16.d
+	picture = GFX_news_event_056
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "今に見ているがいい..."
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = "偉大なる帝国の躍進は続く"
+		trigger = {
+			tag = HUN
+		}
+	}
+	option = {
+		name = "イタリアの大戦での勝利は完全に意味を失った"
+		trigger = {
+			NOT = {
+				OR = {
+					tag = ITA
+					tag = HUN
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = kmmnews.17
+	title = "オーハンがイタリアの旧領を回復"
+	desc = kmmnews.17.d
+	picture = GFX_news_event_056
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "今に見ているがいい..."
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = "偉大なる帝国の躍進は続く"
+		trigger = {
+			tag = HUN
+		}
+	}
+	option = {
+		name = "イタリアの大戦での勝利は完全に意味を失った"
+		trigger = {
+			NOT = {
+				OR = {
+					tag = ITA
+					tag = HUN
+				}
+			}
+		}
+	}
+}
+
+#news_event = {
+#	id = kmmnews.18
+#	title = "教皇がローマを再び支配"
+#	desc = kmmnews.18.d
+#	picture = GFX_news_event_banovina_croatia
+#
+#	major = yes
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "承知した"
+#	}
+#}
+#news_event = {
+#	id = kmmnews.19
+#	title = "ロシア・ソビエトが再征服を宣言！"
+#	desc = kmmnews.19.d
+#	picture = GFX_news_event_064
+#
+#	major = yes
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "誰かあの熊を止めろ!"
+#		trigger = {
+#			NOT = {
+#				tag = SOV
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = "これは「明白なる天命」だ。"
+#		trigger = {
+#			tag = SOV
+#		}
+#	}
+#}

@@ -1,0 +1,2400 @@
+﻿add_namespace = kmm
+#country_event = {
+#	id = kmm.
+#	title = ""
+#	desc = 
+#	picture = GFX_
+#	is_triggered_only = yes or no
+#
+#	option = {
+#		name = ""
+#	}
+#}
+country_event = {
+	id = kmm.2
+	title = "旧帝国領の要求！"
+	desc = "今朝、ハンガリー代表がユーゴ大使館に迫り「貴国の旧帝国領土である以下の地域を期日までに帝国へ返上するように」と押し掛けてきた！我々はどう対応するべきだろうか！？"
+	picture = GFX_report_event_bose_meeting
+	is_triggered_only = yes
+	option = {
+		name = "しょうがないね！"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				HUN = {
+					is_ai = no
+				}
+				factor = 1.1				#we're good thanks
+			}
+		}
+		HUN = {
+			annex_country = {
+				target = YUG
+				transfer_troops = yes
+			}
+		}
+		HUN = {
+			release = MNT
+			release = KOS
+			release = MAC
+			release = SER
+		}
+		HUN = {
+			set_state_owner = 45
+			set_state_owner = 764
+			set_state_owner = 822
+			set_state_owner = 897
+			set_state_controller = 45
+			set_state_controller = 764
+			set_state_controller = 822
+			set_state_controller = 897
+			add_state_core = 822
+			add_state_core = 897
+		}
+		HUN = {
+			country_event = {
+				id = kmm.3
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = {
+		name = "ふざけているのか…？"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				HUN = {
+					is_ai = yes
+				}
+				factor = 0.1
+			}
+		}
+		HUN = {
+			country_event = {
+				id = kmm.4
+				hours = 6
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.4
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.5a.tt
+	}
+}
+
+country_event = {
+	id = kmm.3
+	title = "ユーゴスラビア代表が受諾！"
+	desc = "ユーゴスラビア代表は受諾し、ユーゴスラビアは解体され、旧帝国領以外のユーゴスラビア領土は独立した。"
+	picture = GFX_report_event_hungary_southern_slovakia
+	is_triggered_only = yes
+	option = {
+		name = "オーハン勝利！"
+		effect_tooltip = {
+			HUN = {
+				annex_country = {
+					target = YUG
+					transfer_troops = yes
+				}
+			}
+			HUN = {
+				release = MNT
+				release = KOS
+				release = MAC
+				release = SER
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.4
+	title = "ユーゴスラビア代表が拒否！"
+	desc = "ユーゴスラビア代表は「到底、許されるべき行為ではない」として我が国の要求を取っ払った！我々はどうすべきだろうか！？"
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = "見逃しては置けない。宣戦布告だ！"
+		random_list = {
+			50 = {
+				add_political_power = -75
+			}
+			50 = {
+				add_political_power = -50
+			}
+		}
+		add_named_threat = {
+			threat = 2
+			name = kmm.nt.hun.yug
+		}
+		declare_war_on = {
+			target = YUG
+			type = annex_everything
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.4
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "何もしないでおくのが我々の為だ…"
+		random_list = {
+			50 = {
+				modifier = {
+					threat > 0.2
+					factor = 3
+				}
+				add_political_power = 50
+				HUN = {
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			50 = {
+				add_political_power = 50
+				modifier = {
+					factor = 3
+					threat < 0.05
+				}
+				HUN = {
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 3
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 3
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 3
+							instant_build = yes
+						}
+					}
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+		HUN = {
+			set_truce = {
+				target = YUG
+				days = 365
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.4
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.5
+	title = "ハンガリーがトランシルヴァニアを要求！"
+	desc = "本日未明、ハンガリー代表団がルーマニアの正当な領土であるトランシルヴァニアの全土割譲要求を迫った！我々はどうするべきだろうか？"
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+	option = {
+		name = "トランシルヴァニアはくれてやれ！"
+		ai_chance = {
+			factor = 100
+		}
+		HUN = {
+			transfer_state = 80
+			transfer_state = 82
+			transfer_state = 83
+			transfer_state = 84
+			transfer_state = 76
+			transfer_state = 909
+			country_event = {
+				id = kmm.6
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.5b.tt
+		hidden_effect = {
+			ROM = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			news_event = {
+				id = kmmnews.6
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "トランシルヴァニアはルーマニアのまま残るだろう！"
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = 0.05
+		add_stability = 0.05
+		add_political_power = 150
+		custom_effect_tooltip = kmm.5a.tt
+		HUN = {
+			country_event = {
+				id = kmm.7
+				hours = 6
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.7
+				hours = 30
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.6
+	title = "トランシルヴァニアを譲渡！"
+	desc = "ルーマニアは屈服し、こちらからの少量の経済的援助を受ける見返りにトランシルヴァニアをハンガリーへ割譲することに合意した。"
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = "また一つ帝国の領土が戻ってきた"
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.6
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.7
+	title = "トランシルヴァニア譲渡を拒否！"
+	desc = "ルーマニア当局はこちらからの寛大な保護要求を断った！彼らは軍を動員しており、我々の宣戦布告の準備はすでに整っている。"
+	picture = GFX_report_event_hitler_parade
+	is_triggered_only = yes
+	option = {
+		name = "ペンで駄目なら剣を！"
+		create_wargoal = {
+			type = take_state_focus
+			target = ROM
+			generator = {
+				76
+			}
+		}
+		add_war_support = -0.02
+		add_threat = 2
+		custom_effect_tooltip = kmm.7b.tt
+	}
+	option = {
+		name = "いったん落ち着いてみるべきだ…"
+		add_threat = -2
+		custom_effect_tooltip = kmm.7a.tt
+		hidden_effect = {
+			HUN = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.8
+	title = "ドイツが旧帝国領土を要求！"
+	desc = "なんだあいつ！？あのバカ来やがった！！！"
+	picture = GFX_report_event_german_inspect_troops
+	is_triggered_only = yes
+	option = {
+		name = "グダニスクはポーランドのまま残るのだ！"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				is_in_faction = yes
+				factor = 20
+			}
+		}
+		custom_effect_tooltip = kmm.8a.tt
+		add_war_support = -0.05
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = kmm.10
+					hours = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = "もはや引き下がるしかない…"
+		ai_chance = {
+			factor = 100
+		}
+		POL = {
+			GER = {
+				transfer_state = 85
+				transfer_state = 86
+				transfer_state = 762
+				transfer_state = 829
+			}
+		}
+		add_war_support = -0.05
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = kmm.9
+					hours = 6
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.9
+	title = "ポーランドが了承！"
+	desc = "ポーランドは我々の要求に屈した。今やポンメルンとシュレージェン全土は我々の元に戻ったのだ。"
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {
+		name = "ドイツ勝利！"
+	}
+}
+
+country_event = {
+	id = kmm.10
+	title = "ポーランドが拒絶！"
+	desc = "ポーランドは我々の要求に屈しなかった。今やポンメルンとシュレージェン全土を強制的に我々の元に戻すのだ。"
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+	option = {
+		name = "戦争だ！"
+		GER = {
+			create_wargoal = {
+				type = take_state_focus
+				target = POL
+				generator = {
+					85
+				}
+			}
+		}
+	}
+	option = {
+		name = "主権国家がそういうならしょうがないだろう..."
+	}
+}
+
+country_event = {
+	id = kmm.11
+	title = "ドイツが特別勘定を要求"
+	desc = "ドイツが我が国の資源を今後５割引きで買えることを条件に、十数個の民需工場を提供するという話を持ち掛けてきた。"
+	picture = GFX_report_event_pierre_laval
+	is_triggered_only = yes
+	option = {
+		name = "承諾だ"
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = GER_separate_account_for_germany
+		custom_effect_tooltip = kmm.11a.tt
+		hidden_effect = {
+			HUN = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "拒絶だ"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				is_in_faction = yes
+				factor = 5
+			}
+		}
+		add_political_power = -150
+	}
+}
+
+country_event = {
+	id = kmm.12
+	title = "ハンガリーが承諾"
+	desc = "ハンガリーは我々の寛大な提案を受けいれ、特別勘定が適用された。"
+	picture = GFX_report_event_hungary_southern_slovakia
+	is_triggered_only = yes
+	option = {
+		name = "ハプスブルクも腐ったもんじゃないな"
+	}
+}
+
+country_event = {
+	id = kmm.13
+	title = "ハンガリーが拒絶"
+	desc = "ハンガリーは我々の寛大な提案を受けいれることはなかった。対ハンガリーように用意していた財を国内に割り当てることができる。"
+	picture = GFX_report_event_hungary_southern_slovakia
+	is_triggered_only = yes
+	option = {
+		name = "ハプスブルク家は腐りきっている"
+		custom_effect_tooltip = kmm.13a.tt
+		hidden_effect = {
+			GER = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.14
+	title = "ドイツが陣営に招待"
+	desc = "ドイツが陣営に招待してきた。どう返答するべきか？"
+	picture = GFX_report_event_hitler_croatia_handshake
+	is_triggered_only = yes
+	option = {
+		name = "陣営に入ってあげようじゃないか"
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			HUN = {
+				is_in_faction = no
+			}
+		}
+		GER = {
+			add_to_faction = HUN
+		}
+		news_event = {
+			id = kmmnews.9
+		}
+	}
+	option = {
+		name = "拒否だな"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = kmm.15
+	title = "ドイツが西方国境の再確認を要求"
+	desc = "ドイツはラインラント進駐をした後、フランス、ドイツなどを含む７か国に「現在の国境での」ヴェルサイユ条約の再確認を迫ってきた。ドイツは今後西部国境を犯すことはないと宣言し、６か国にもそれを同意させる形だ。これは明らかにドイツ側に有利な内容ではあるが、アンシュルツやフランス、ベルギー、デンマークでの旧領の回復の正当性を削ることができる。どうするべきだろうか？"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "ヴェルサイユ体制の調整と思えばいい"
+		custom_effect_tooltip = kmm.15a.tt
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = kmm.16
+					hours = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = "ラインラント進駐を認めるだと！？"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = kmm.17
+					hours = 6
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.16
+	title = "フランスが承諾"
+	desc = "フランスは前大戦の記憶を恐れて此方の無理な要求を承諾したようだ。その後無事に６か国も同意した。"
+	picture = GFX_report_event_german_reichstag_gathering
+	is_triggered_only = yes
+	option = {
+		name = "ベルリン勝利！"
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.10
+				hours = 6
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					original_tag = FRA
+					original_tag = BEL
+					original_tag = HOL
+					original_tag = LUX
+					original_tag = DEN
+					original_tag = AUS
+				}
+			}
+			add_ideas = GER_western_border_inviolable_O_1
+			add_war_support = -0.02
+			add_political_power = -25
+		}
+		GER = {
+			add_ideas = GER_western_border_inviolable_1
+		}
+		diplomatic_relation = {
+			country = FRA
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+country_event = {
+	id = kmm.17
+	title = "フランスが拒否"
+	desc = "フランスは前大戦の勝利に未だ心酔しているようだ。我々の要求は「荒唐無稽」と突っぱねられた。"
+	picture = GFX_report_event_german_parade_paris
+	is_triggered_only = yes
+	option = {
+		name = "パリを燃やしてやりたいところだ..."
+	}
+}
+
+country_event = {
+	id = kmm.18
+	title = "ドイツが西方の秩序維持を提案"
+	desc = "ドイツは「西方の国家の独立を維持するため」と称して、独仏双方が各国の独立保障をするという提案をしてきた。ヴェルサイユ条約の後押しとなるのは間違いないが、万が一西方の安全を確保したドイツが東方へ進出し勢力を拡大させたら我々は止められないだろう。"
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	option = {
+		name = "修正ヴェルサイユ秩序の誕生だ"
+		ai_chance = {
+			factor = 10
+		}
+		GER = {
+			country_event = {
+				id = kmm.19
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "各国の独立など国防に関係しない"
+		ai_chance = {
+			factor = 0
+		}
+		GER = {
+			country_event = {
+				id = kmm.20
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.19
+	title = "フランスが承諾"
+	desc = "フランスは西方各国の独立を保障することを約束した"
+	picture = GFX_report_event_pierre_laval
+	is_triggered_only = yes
+	option = {
+		name = "西方は安泰だな"
+		FRA = {
+			if = {
+				limit = {
+					HOL = {
+						is_puppet = no
+						has_war = no
+						is_ai = yes
+					}
+				}
+				diplomatic_relation = {
+					country = HOL
+					relation = guarantee
+					active = yes
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			if = {
+				limit = {
+					BEL = {
+						is_puppet = no
+						has_war = no
+						is_ai = yes
+					}
+				}
+				diplomatic_relation = {
+					country = BEL
+					relation = guarantee
+					active = yes
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			if = {
+				limit = {
+					LUX = {
+						is_puppet = no
+						has_war = no
+						is_ai = yes
+					}
+				}
+				diplomatic_relation = {
+					country = LUX
+					relation = guarantee
+					active = yes
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			if = {
+				limit = {
+					AUS = {
+						is_puppet = no
+						has_war = no
+						is_ai = yes
+					}
+					HUN = {
+						is_ai = yes
+					}
+				}
+				diplomatic_relation = {
+					country = AUS
+					relation = guarantee
+					active = yes
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			if = {
+				limit = {
+					DEN = {
+						is_puppet = no
+						has_war = no
+						is_ai = yes
+					}
+					SWE = {
+						is_ai = yes
+					}
+					FIN = {
+						is_ai = yes
+					}
+				}
+				diplomatic_relation = {
+					country = DEN
+					relation = guarantee
+					active = yes
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+		if = {
+			limit = {
+				HOL = {
+					is_puppet = no
+					has_war = no
+					is_ai = yes
+				}
+			}
+			diplomatic_relation = {
+				country = HOL
+				relation = guarantee
+				active = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+		}
+		if = {
+			limit = {
+				BEL = {
+					is_puppet = no
+					has_war = no
+					is_ai = yes
+				}
+			}
+			diplomatic_relation = {
+				country = BEL
+				relation = guarantee
+				active = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+		}
+		if = {
+			limit = {
+				LUX = {
+					is_puppet = no
+					has_war = no
+					is_ai = yes
+				}
+			}
+			diplomatic_relation = {
+				country = LUX
+				relation = guarantee
+				active = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+		}
+		if = {
+			limit = {
+				AUS = {
+					is_puppet = no
+					has_war = no
+					is_ai = yes
+				}
+			}
+			diplomatic_relation = {
+				country = AUS
+				relation = guarantee
+				active = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+		}
+		if = {
+			limit = {
+				DEN = {
+					is_puppet = no
+					has_war = no
+					is_ai = yes
+				}
+			}
+			diplomatic_relation = {
+				country = DEN
+				relation = guarantee
+				active = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+		}
+	}
+}
+
+country_event = {
+	id = kmm.20
+	title = "フランスが拒絶"
+	desc = "彼らは西方諸国の独立を保障することが国益にならないと判断したようだ。"
+	picture = GFX_report_event_pierre_laval
+	is_triggered_only = yes
+	option = {
+		name = "西方はいまだ不安定だな"
+	}
+}
+
+country_event = {
+	id = kmm.21
+	title = "ポーランドの支配者"
+	desc = "ブレストリトフスクの領土を取り戻すために、西ポーランドの支配者をどうするか考える日が来たようだ。"
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = "すべて一掃すべきだ"
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					has_country_flag = GER_western_polish_ruler
+				}
+				country_event = {
+					id = kmm.22
+					hours = 6
+				}
+			}
+		}
+		custom_effect_tooltip = kmm.21a.tt
+		custom_effect_tooltip = kmm.21b.tt
+	}
+	option = {
+		name = "流石に強引すぎるだろう..."
+		hidden_effect = {
+			every_country = {
+				clr_country_flag = GER_western_polish_ruler
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.22
+	title = "ドイツがブレストリトフスク条約を要求！"
+	desc = "ドイツは東方での支配権を確保するために西ポーランドの譲渡を要求してきた。我々は領土を明け渡すことができる。"
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = "明け渡そう"
+		hidden_effect = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 10
+					}
+				}
+				GER = {
+					set_state_owner = 10
+				}
+			}
+			else = {
+			}
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 87
+					}
+				}
+				GER = {
+					set_state_owner = 87
+				}
+			}
+			else = {
+			}
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 90
+					}
+				}
+				GER = {
+					set_state_owner = 90
+				}
+			}
+			else = {
+			}
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 92
+					}
+				}
+				GER = {
+					set_state_owner = 92
+				}
+			}
+			else = {
+			}
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 98
+					}
+				}
+				GER = {
+					set_state_owner = 98
+				}
+			}
+			else = {
+			}
+			GER = {
+				country_event = {
+					id = kmm.23
+					hours = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = "不当な要求だ"
+		GER = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.23
+	title = "西部ポーランドの支配"
+	desc = "西部ポーランドの支配者は我々へ領土を明け渡した。"
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = "ドイツ勝利！"
+	}
+}
+
+country_event = {
+	id = kmm.24
+	title = "西部ポーランドの支配の拒否"
+	desc = "西部ポーランドの支配者は我々へ領土を明け渡すことをしなかった。"
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = "古い地図が見つかったようだ..."
+	}
+}
+
+country_event = {
+	id = kmm.25
+	title = "ドイツがアンシュルツの確約を要求"
+	desc = "彼らは我々が二重帝国の再興を考えていることを見ぬいたようだ。彼の国はドイツ民族統合を推し進めるため、我々の野望を完全に打ち砕きたいらしい。どうするべきだろうか。"
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = "ヴェルサイユ条約違反だ！"
+		GER = {
+			country_event = {
+				id = kmm.26
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "我々はドイツに勝てる力はない…"
+		GER = {
+			country_event = {
+				id = kmm.27
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.26
+	title = "ハンガリーが拒否"
+	desc = "ハンガリーは我々のアンシュルツを阻害するようだ。"
+	picture = GFX_report_event_hungary_refused
+	is_triggered_only = yes
+	option = {
+		name = "クソ！"
+	}
+}
+
+country_event = {
+	id = kmm.27
+	title = "ハンガリーが承諾"
+	desc = "ハンガリーは我々に屈した。"
+	picture = GFX_report_event_hungary_southern_slovakia
+	is_triggered_only = yes
+	option = {
+		name = "ドイツ民族統合への前進だ"
+		add_ideas = GER_commitment_of_anschluss
+	}
+}
+
+country_event = {
+	id = kmm.28
+	title = "民族問題への対象の開始"
+	desc = "二重帝国は一回滅びた。その理由の一つ、というか主要な原因として、民族問題によるゼロサムゲームがあげられる。蘇った帝国がまたこのような自体に直面しないため、我々は会議を開くことにしたのだ。"
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	option = {
+		name = "ついに民族問題に終止を"
+		custom_effect_tooltip = kmm.28a.tt
+	}
+}
+
+country_event = {
+	id = kmm.29
+	title = "会議の集結"
+	desc = "会議は終了した。今まで取得した方針が反映される。"
+	picture = GFX_report_event_second_vienna_award_pact
+	is_triggered_only = yes
+	option = {
+		name = "帝国の改革は終了した"
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_Sihai
+			}
+			add_ideas = HUN_DEP_Sihai_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SHosyo
+			}
+			add_ideas = HUN_DEP_SHosyo_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SDoitu
+			}
+			add_ideas = HUN_DEP_SDoitu_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SAugusu
+			}
+			add_ideas = HUN_DEP_SAugusu_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SZituryoku
+			}
+			add_ideas = HUN_DEP_SZituryoku_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SRituryo
+			}
+			add_ideas = HUN_DEP_SRituryo_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SYokuatu
+			}
+			add_ideas = HUN_DEP_SYokuatu_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SHoken
+			}
+			add_ideas = HUN_DEP_SHoken_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SZiyu
+			}
+			add_ideas = free_trade
+			add_ideas = HUN_DEP_SZiyu_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SSiso
+			}
+			add_ideas = HUN_DEP_SSiso_idea
+		}
+		else = {
+		}
+		if = {
+			limit = {
+				has_country_flag = HUN_DEP_SDonau
+			}
+			add_ideas = HUN_DEP_SDonau_idea
+			set_cosmetic_tag = HUN_neutrality_SDonau
+		}
+		else = {
+		}
+	}
+}
+
+country_event = {
+	id = kmm.30
+	title = "国境紛争に勝利"
+	desc = "我々は国境紛争に勝利した。これは外交上多大な影響を与えるだろう！"
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			tag = HUN
+		}
+		name = "帝国への一歩だ"
+		HUN = {
+			add_to_variable = {
+				HUN_value = 5
+			}
+			add_political_power = 50
+		}
+	}
+	option = {
+		trigger = {
+			NOT = {
+				tag = HUN
+			}
+		}
+		name = "民族主義の勝利だ"
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = kmm.31
+	title = "国境紛争に敗北"
+	desc = "我々は国境紛争に敗北した。これは外交上多大な影響を与えるだろう..."
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			tag = HUN
+		}
+		name = "帝国は一日にしてならずだ"
+	}
+	option = {
+		trigger = {
+			NOT = {
+				tag = HUN
+			}
+		}
+		name = "ハプスブルク家を止めろ！"
+	}
+}
+
+country_event = {
+	id = kmm.32
+	title = "国境紛争に和平"
+	desc = "国境紛争は有耶無耶なまま集結した。"
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+	option = {
+		name = "こんなときもある"
+	}
+}
+
+country_event = {
+	id = kmm.33
+	title = "最後通牒の送付"
+	desc = "我々は彼らに対して一定数の優勢を保った。今こそ彼らにハプスブルクの帰還を黙認させる時が来たのだ。"
+	picture = GFX_report_event_cze_little_entente
+	is_triggered_only = yes
+	option = {
+		name = "奴らに最後通牒を送れ!"
+	}
+}
+
+country_event = {
+	id = kmm.34
+	title = "最後通牒に屈服"
+	desc = "我々の最後通牒に彼らは屈服した。いまやハプスブルクの帰還を阻もうとする意思はもうすでにその国にはない。"
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = "ハプスブルク帰還は間近だ"
+	}
+}
+
+country_event = {
+	id = kmm.35
+	title = "最後通牒を拒否"
+	desc = "我々の最後通牒を彼らは「荒唐無稽」として一掃した。"
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = "ふざけやがって…"
+	}
+}
+
+country_event = {
+	id = kmm.36
+	title = "ベルギーが帰還を黙認"
+	desc = "彼の国はハプスブルク家が我々のもとに戻ることに関して「黙認」という措置をとった。"
+	picture = GFX_report_event_nra_march
+	is_triggered_only = yes
+	option = {
+		name = "ついに王冠が戻るとき…"
+		set_global_flag = HUN_defeat_neighboring_countries
+	}
+}
+
+country_event = {
+	id = kmm.37
+	title = "軍隊の改革"
+	desc = kmm.37.desc
+	picture = GFX_report_event_polish_army
+	is_triggered_only = yes
+	option = {
+		name = "改革の始まりだ"
+		country_event = {
+			id = kmm.38
+			hours = 12
+		}
+	}
+}
+
+country_event = {
+	id = kmm.38
+	title = "帝国軍の言語"
+	desc = "帝国軍の言語は長らく統一されておらず、度重なる戦敗の原因の一つはこれであることは間違いないだろう。これを改革することは軍全体の改革と同義である。"
+	picture = GFX_report_event_saf_soldiers
+	is_triggered_only = yes
+	option = {
+		name = "ドイツ語を使用する"
+		add_ideas = HUN_gun_1_1
+		country_event = {
+			id = kmm.39
+			hours = 12
+		}
+	}
+	option = {
+		name = "各民族の言語を使用する"
+		add_ideas = HUN_gun_1_2
+		country_event = {
+			id = kmm.39
+			hours = 12
+		}
+	}
+	option = {
+		name = "ドイツ語とハンガリー語を使用する"
+		add_ideas = HUN_gun_1_3
+		country_event = {
+			id = kmm.39
+			hours = 12
+		}
+	}
+}
+
+country_event = {
+	id = kmm.39
+	title = "帝国軍の将校"
+	desc = "帝国軍の将校はお世辞にも優秀とは言えなかったし、参謀司令部のような高度な命令機関も存在しなかった。よって官僚機構を更新することが必要である。"
+	picture = GFX_report_event_saf_coup
+	is_triggered_only = yes
+	option = {
+		name = "元帝国将校の登用"
+		add_ideas = HUN_gun_2_1
+		create_field_marshal = {
+			name = "Eugen von Habsburg-Lothringen"
+			desc = "HUN_ARCHDUKE_EUGEN_ARMY_DESC"
+			portrait_path = "gfx/leaders/HUN/Portrait_HUN_Eugen_Habsburg_Lothringen.dds"
+			traits = {
+				old_guard
+				war_hero
+				offensive_doctrine
+				skilled_staffer
+				expert_delegator
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		country_event = {
+			id = kmm.40
+			hours = 12
+		}
+	}
+	option = {
+		name = "各民族から平等に登用"
+		add_ideas = HUN_gun_2_2
+		create_field_marshal = {
+			name = "Petre Dumitrescu"
+			gfx = GFX_Portrait_romania_petre_dumitrescu
+			traits = {
+				offensive_doctrine
+				logistics_wizard
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		country_event = {
+			id = kmm.40
+			hours = 12
+		}
+	}
+	option = {
+		name = "実力主義による登用"
+		add_ideas = HUN_gun_2_3
+		create_corps_commander = {
+			name = "Constantin Sanatescu"
+			gfx = GFX_Portrait_romania_constantin_sanatescu
+			traits = {
+				infantry_expert
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "Ioan Mihail Racovita"
+			gfx = GFX_Portrait_romania_ioan_mihail_racovita
+			traits = {
+				hill_fighter
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		country_event = {
+			id = kmm.40
+			hours = 12
+		}
+	}
+}
+
+country_event = {
+	id = kmm.40
+	title = "基本的な陸軍方針"
+	desc = "陸軍の近代化に合わせて、帝国の主力戦力の兵科を決める必要がある。"
+	picture = GFX_report_event_ast_planning
+	is_triggered_only = yes
+	option = {
+		name = "歩兵重視"
+		country_event = {
+			id = kmm.41
+			hours = 12
+		}
+	}
+	option = {
+		name = "機械化重視"
+		country_event = {
+			id = kmm.42
+			hours = 12
+		}
+	}
+	option = {
+		name = "陸空統合支援"
+		country_event = {
+			id = kmm.43
+			hours = 12
+		}
+	}
+}
+
+country_event = {
+	id = kmm.41
+	title = "歩兵装備方針"
+	desc = "歩兵と一口に言っても、火力支援や対戦車装備、支援中隊に加え自転車大隊というものも存在する。注力するならどれだろうか？"
+	is_triggered_only = yes
+	picture = GFX_report_event_ast_army
+	option = {
+		name = "火力支援の優勢"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = artillery
+		}
+		add_ideas = HUN_gun_i_1
+	}
+	option = {
+		name = "対戦車戦術"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cat_anti_tank
+		}
+		add_ideas = HUN_gun_i_2
+	}
+	option = {
+		name = "支援中隊の拡張"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 4
+			category = support_tech
+		}
+		add_ideas = HUN_gun_i_3
+	}
+	option = {
+		name = "自転車大隊の師団化"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = infantry_weapons
+		}
+		add_ideas = HUN_gun_i_4
+	}
+}
+
+country_event = {
+	id = kmm.42
+	title = "機械化方針"
+	desc = "近代化といえば装甲化だ。我が国では他国に比べ機械化部隊の投入が遅れた。巻き返しの時が来たのだ。"
+	is_triggered_only = yes
+	picture = GFX_report_event_bul_ff_troops_yugoslavia
+	option = {
+		name = "装甲師団への注力"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = armor
+		}
+		add_ideas = HUN_gun_m_1
+	}
+	option = {
+		name = "機械化歩兵への移行"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cat_mechanized_equipment
+		}
+		add_ideas = HUN_gun_m_2
+	}
+	option = {
+		name = "装甲化された支援砲兵"
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = armor
+		}
+		add_ideas = HUN_gun_m_3
+	}
+	option = {
+		name = "ロケット砲兵の導入"
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = rocketry
+		}
+		add_ideas = HUN_gun_m_4
+	}
+}
+
+country_event = {
+	id = kmm.43
+	title = "統合方針"
+	desc = "陸軍の改革に伴い、空軍の価値が見いだせた。これらを共同運用することができれば、軍隊の能力は飛躍的に向上するだろう。"
+	is_triggered_only = yes
+	picture = GFX_report_event_fighters
+	option = {
+		name = "航空優勢の重視"
+		add_ideas = HUN_gun_a_1
+	}
+	option = {
+		name = "地上支援の重視"
+		add_ideas = HUN_gun_a_2
+	}
+	option = {
+		name = "戦略爆撃の重視"
+		add_ideas = HUN_gun_a_3
+	}
+}
+
+country_event = {
+	id = kmm.44
+	title = "イタリアへの最後通牒"
+	desc = "彼らは我々の領土を不当に奪った。我々の帝国が再興しつつある今、彼らにも最後通牒を送り付けることができる。しかしそれがどのような結果をもたらすかは未知数だ..."
+	is_triggered_only = yes
+	picture = GFX_report_event_german_inspect_troops
+	option = {
+		name = "奴らに全土の返還を求めろ!"
+		add_political_power = 50
+		add_stability = 0.02
+		ITA = {
+			country_event = {
+				id = kmm.45
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "南チロルとザラを要求してみよう"
+		ITA = {
+			country_event = {
+				id = kmm.46
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "ザラのみを要求してみよう"
+		ITA = {
+			country_event = {
+				id = kmm.47
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "何も要求しないのが身のためだ..."
+		add_political_power = -50
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = kmm.45
+	title = "二重帝国が旧領を要求!"
+	desc = "オーストリア・ハンガリー帝国政府は我が国に「1918年で獲得した全領土の返還」を求める最後通牒を通達した。我々に交渉の余地はないようだ。"
+	is_triggered_only = yes
+	picture = GFX_report_event_japan_army_mountainside
+	option = {
+		name = "仕方ない、譲歩しよう"
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_timed_idea = {
+			idea = ITA_Anti_Austrian_Sentiment
+			days = 365
+		}
+		news_event = {
+			id = kmmnews.14
+			hours = 6
+		}
+		HUN = {
+			transfer_state = 39
+			transfer_state = 736
+			transfer_state = 823
+			transfer_state = 824
+			transfer_state = 163
+		}
+	}
+	option = {
+		name = "断じて譲歩することはできない"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			HUN = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ITA
+					generator = {
+						39
+						736
+						823
+						824
+						163
+					}
+				}
+			}
+			news_event = {
+				id = kmmnews.15
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.45a.tt
+	}
+}
+
+country_event = {
+	id = kmm.46
+	title = "二重帝国が旧領を要求!"
+	desc = "オーストリア・ハンガリー帝国政府は我が国に「1918年で獲得したキュステンラントを除く全領土の返還」を求める最後通牒を通達した。我々に交渉の余地はないようだ。"
+	is_triggered_only = yes
+	picture = GFX_report_event_japan_army_mountainside
+	option = {
+		name = "仕方ない、譲歩しよう"
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_timed_idea = {
+			idea = ITA_Anti_Austrian_Sentiment
+			days = 365
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.16
+				hours = 6
+			}
+		}
+		HUN = {
+			transfer_state = 39
+			transfer_state = 163
+		}
+	}
+	option = {
+		name = "断じて譲歩することはできない"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			HUN = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ITA
+					generator = {
+						39
+						736
+						823
+						824
+						163
+					}
+				}
+			}
+			news_event = {
+				id = kmmnews.15
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.45a.tt
+	}
+}
+
+country_event = {
+	id = kmm.47
+	title = "二重帝国が旧領を要求!"
+	desc = "オーストリア・ハンガリー帝国政府は我が国に「ザラの返還」を求める最後通牒を通達した。我々に交渉の余地はないようだ。"
+	is_triggered_only = yes
+	picture = GFX_report_event_japan_army_mountainside
+	option = {
+		name = "仕方ない、譲歩しよう"
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_timed_idea = {
+			idea = ITA_Anti_Austrian_Sentiment
+			days = 365
+		}
+		hidden_effect = {
+			news_event = {
+				id = kmmnews.17
+				hours = 6
+			}
+		}
+		HUN = {
+			transfer_state = 163
+		}
+	}
+	option = {
+		name = "断じて譲歩することはできない"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			HUN = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ITA
+					generator = {
+						39
+						736
+						823
+						824
+						163
+					}
+				}
+			}
+			news_event = {
+				id = kmmnews.15
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.45a.tt
+	}
+}
+
+country_event = {
+	id = kmm.48
+	title = "ディシジョンを確認してください"
+	desc = "ディシジョンの「緊急議会」にガリツィア併合を開始するディシジョンが追加される。可及的速やかに実行しよう。でなければガリツィア併合はできなくなるだろう..."
+	is_triggered_only = yes
+	picture = GFX_report_event_ast_parliament_house
+	option = {
+		name = "しっかりと確認しておこう..."
+	}
+}
+
+country_event = {
+	id = kmm.49
+	title = "我が国内でのイタリアの影響力が上昇"
+	desc = "イタリアは我々の国家への影響力を増加させる方針をとったようだ。これは我々の知らないところで起こったことであり、実際はどのような糸があってこのようなことが行われているかは謎である。しかし、彼らの国が少なくとも我々と友好的な関係を望んでいることは間違いないだろう"
+	picture = GFX_report_event_gre_political_march
+	is_triggered_only = yes
+	option = {
+		name = "イタリアは今や一大勢力だ"
+		add_timed_idea = {
+			idea = ITA_influence_idea
+			days = 720
+		}
+	}
+}
+
+country_event = {
+	id = kmm.50
+	title = "イタリアがバレアレス諸島を要求！"
+	desc = "彼らは「我らが海の安全を確保するため」という名実で我々にバレアレス諸島の割譲を要求してきた！もちろんバレアレス諸島はスペインの固有の領土でありこれを認めることはできないが、現実には内戦の影響により、イタリアの軍事的介入が発生することも視野に入れないといけない…"
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = "到底受け入れることはできない！"
+		ITA = {
+			country_event = {
+				id = kmm.52
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.50a.tt
+		ai_chance = {
+			modifier = {
+				has_civil_war = yes
+				enemies_strength_ratio < 0.9
+				factor = 6
+			}
+			modifier = {
+				SPR = {
+					has_war_with = ITA
+				}
+				factor = 10
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+					faction_leader = {
+						has_war_with = ITA
+					}
+				}
+				factor = 2
+			}
+		}
+	}
+	option = {
+		name = "我々の安全のためだ…"
+		ITA = {
+			country_event = {
+				id = kmm.51
+				hours = 6
+			}
+		}
+		custom_effect_tooltip = kmm.50b.tt
+		ai_chance = {
+			modifier = {
+				strength_ratio = {
+					tag = ITA
+					ratio < 1.5
+				}
+				factor = 5
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+					faction_leader = {
+						has_war_with = ITA
+						strength_ratio = {
+							tag = ITA
+							ratio < 1
+						}
+					}
+				}
+				factor = 10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.51
+	title = "スペインが要求を承諾"
+	desc = "結果的に彼らは我々の要求に屈したようだ。バレアレス諸島は我々のものとなったのだ。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "結構！"
+		transfer_state = 177
+	}
+}
+
+country_event = {
+	id = kmm.52
+	title = "スペインが要求を拒絶"
+	desc = "結果的に彼らは固有の領土を守ることを選択したようだ。我々には攻撃する義務が残っている。"
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = "到底受け入れられない、宣戦布告だ！"
+		create_wargoal = {
+			type = take_state_focus
+			target = SPR
+			generator = {
+				177
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.53
+	title = "イタリアが陣営加盟を要請"
+	desc = "イタリア帝国政府は我々に陣営加盟を要請した。"
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = "加盟してやろう"
+		ITA = {
+			faction_leader = {
+				add_to_faction = SPR
+			}
+		}
+		ai_chance = {
+			modifier = {
+				strength_ratio = {
+					tag = ITA
+					ratio < 1.5
+				}
+				factor = 5
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+					faction_leader = {
+						has_war_with = ITA
+						strength_ratio = {
+							tag = ITA
+							ratio < 1
+						}
+					}
+				}
+				factor = 10
+			}
+		}
+	}
+	option = {
+		name = "ヘタリアなんかと手を組むわけ無いだろう"
+		ai_chance = {
+			modifier = {
+				SPR = {
+					has_war_with = ITA
+				}
+				factor = 10
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				SPR = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = ITA
+					}
+					faction_leader = {
+						has_war_with = ITA
+					}
+				}
+				factor = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.54
+	title = "スペイン内戦の勃発"
+	desc = "ファシストらによるスペイン内戦が勃発した。我々はこの内戦についての国としての方針を決めなければならない…"
+	picture = GFX_report_event_dutch_soldiers_indonesia
+	is_triggered_only = yes
+	immediate = {
+		add_ideas = ITA_abcd
+	}
+	option = {
+		name = "国家方針の早急な決定を"
+		add_ideas = ITA_abcd
+	}
+}
+
+country_event = {
+	id = kmm.55
+	title = "枢軸国の提案"
+	desc = "イタリアは、高まる我々との友好を同盟にすべきと提案してきた。我々は一致団結し、「枢軸国」陣営を立ち上げることができるだろう。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "枢軸万歳！"
+		create_faction = "枢軸国"
+		ITA = {
+			country_event = {
+				id = kmm.56
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "信用ならんな"
+		ITA = {
+			country_event = {
+				id = kmm.57
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = kmm.56
+	title = "ドイツが了承"
+	desc = "ドイツは、我々の枢軸国結成の提案を了承した。我々は枢軸国に加盟する。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "枢軸万歳！"
+		GER = {
+			add_to_faction = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = kmm.57
+	title = "ドイツが拒否"
+	desc = "ドイツは、我々のことをよく思ってないらしい。彼らは我々の提案を拒絶した。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "なんてことだ…"
+	}
+}
+
+country_event = {
+	id = kmm.58
+	title = "イタリアが不可侵を要求"
+	desc = "イタリアが不可侵を要求してきた。どうしようか？"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "もちろん受諾だ"
+		ITA = {
+			country_event = {
+				id = kmm.59
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "不安だな。拒否。"
+		ITA = {
+			country_event = {
+				id = kmm.60
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = kmm.59
+	title = "ドイツが受諾"
+	desc = "ドイツは我々の提案を承諾した。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "万歳！"
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = yes
+		}
+		GER = {
+			diplomatic_relation = {
+				country = ITA
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.60
+	title = "ドイツが拒否"
+	desc = "ドイツは、我々のことをよく思ってないらしい。彼らは我々の提案を拒絶した。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "なんてことだ…"
+	}
+}
+
+country_event = {
+	id = kmm.61
+	title = "イタリアが相互独立保障を要求"
+	desc = "イタリアは、実質的な防衛協定を要求してきた。どう対応すべきだろうか"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "もちろん受諾だ"
+		ITA = {
+			country_event = {
+				id = kmm.62
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "不安だな。拒否。"
+		ITA = {
+			country_event = {
+				id = kmm.63
+				hours = 6
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = kmm.62
+	title = "ドイツが受諾"
+	desc = "ドイツは、我々のことをよく思ってないらしい。彼らは我々の提案を拒絶した。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "万歳！"
+		give_guarantee = GER
+		GER = {
+			give_guarantee = ITA
+		}
+	}
+}
+
+country_event = {
+	id = kmm.63
+	title = "ドイツが拒否"
+	desc = "ドイツは、我々のことをよく思ってないらしい。彼らは我々の提案を拒絶した。"
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	option = {
+		name = "なんてことだ…"
+	}
+}
+
+country_event = {
+	id = kmm.64
+	title = "ドイツ・アフリカ軍団が徴兵"
+	desc = "イタリアによる支援要請の結果、北アフリカで新たなドイツ軍の師団が発生した。"
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = {
+		name = "了解した"
+	}
+}
+
+country_event = {
+	id = kmm.65
+	title = "11日戦争"
+	desc = "ついにドイツ因縁の敵であるロシアを粉砕するときが来た！我々の軍勢の士気は十分である！"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "行くぞ！"
+		add_timed_idea = {
+			idea = GER_operation_brest_litovsk
+			days = 90
+		}
+	}
+}
+
+country_event = {
+	id = kmm.66
+	title = "アメリカ社会の分断"
+	desc = "現在、アメリカ社会は決定的な分断寸前までに迫っている。我々は同にしかしてこれを抑え込まなければならない…"
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	option = {
+		name = "深刻だな…"
+	}
+}
+
+country_event = {
+	id = kmm.67
+	title = "シャム王国が独立保障の提案"
+	desc = "シャム王国は、迫りくる日本の脅威から守るため、我々の保護を求めている。彼らは、我々にとってもこれは「アジアの平和を乱すものに対する橋頭保」になりえるとしており、独立保障する価値は十分にあると考えている。我々はどう応答するべきだろうか？"
+	picture = GFX_report_event_vienna_award_negotiations
+	is_triggered_only = yes
+	option = {
+		name = "承諾しよう"
+		diplomatic_relation = {
+			country = SIA
+			relation = guarantee
+		}
+	}
+	option = {
+		name = "ありえん"
+		add_political_power = -50
+	}
+}
+
+country_event = {
+	id = kmm.666
+	title = "error!"
+	desc = "Your Hoi4 has caused an error! Report the situation, errors, etc. to the mod creator immediately!"
+	picture = GFX_report_event_ast_parliament_house
+	is_triggered_only = yes
+	option = {
+		name = "Roger that. I'll do so"
+	}
+}

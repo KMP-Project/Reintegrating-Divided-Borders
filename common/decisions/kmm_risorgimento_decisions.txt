@@ -78,10 +78,10 @@ KMM_risorgimento_decisions = {
 			original_tag = SOV
 		}
 		visible = {
-			has_game_rule = {
-				rule = sov_fragmentation_status
-				option = SOV_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = sov_fragmentation_status
+			#	option = SOV_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -185,10 +185,10 @@ KMM_risorgimento_decisions = {
 			original_tag = SOV
 		}
 		visible = {
-			has_game_rule = {
-				rule = sov_fragmentation_status
-				option = SOV_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = sov_fragmentation_status
+			#	option = SOV_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -244,10 +244,10 @@ KMM_risorgimento_decisions = {
 			original_tag = SOV
 		}
 		visible = {
-			has_game_rule = {
-				rule = sov_fragmentation_status
-				option = SOV_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = sov_fragmentation_status
+			#	option = SOV_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -293,10 +293,10 @@ KMM_risorgimento_decisions = {
 			original_tag = SOV
 		}
 		visible = {
-			has_game_rule = {
-				rule = sov_fragmentation_status
-				option = SOV_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = sov_fragmentation_status
+			#	option = SOV_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -351,10 +351,10 @@ KMM_risorgimento_decisions = {
 			original_tag = ENG
 		}
 		visible = {
-			has_game_rule = {
-				rule = eng_fragmentation_status
-				option = ENG_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = eng_fragmentation_status
+			#	option = ENG_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -376,10 +376,10 @@ KMM_risorgimento_decisions = {
 			original_tag = ENG
 		}
 		visible = {
-			has_game_rule = {
-				rule = eng_fragmentation_status
-				option = ENG_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = eng_fragmentation_status
+			#	option = ENG_FRAGMENTED
+			#}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -401,10 +401,10 @@ KMM_risorgimento_decisions = {
 			original_tag = ENG
 		}
 		visible = {
-			has_game_rule = {
-				rule = eng_fragmentation_status
-				option = ENG_FRAGMENTED
-			}
+			#has_game_rule = {
+			#	rule = eng_fragmentation_status
+			#	option = ENG_FRAGMENTED
+			#}
 		}
 		fire_only_once = yes
 		target_trigger = {

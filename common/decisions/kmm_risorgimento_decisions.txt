@@ -1,0 +1,2513 @@
+KMM_risorgimento_decisions = {
+	#speed_freak = {
+	#
+	#	icon = eng_propaganda_campaigns
+	#
+	#	allowed = {
+	#		original_tag = SOV
+	#	}
+	#
+	#	visible = {
+	#		#has_game_rule = {
+	#		#	rule = sov_fragmentation_status
+	#		#	option = SOV_FRAGMENTED
+	#		#}
+	#	}
+	#
+	#	fire_only_once = yes
+	#
+	#	cost = 10
+	#
+	#	days_remove = 365
+	#
+	#	complete_effect = {
+	#		sound_effect = enemy_declare_war
+	#		add_named_threat = { 
+	#		    threat = -100
+	#		    name = "オチェヴィジャヤ・スディバ"
+	#		}
+	#		202 = { add_claim_by = ROOT }
+	#		206 = { add_claim_by = ROOT }
+	#		229 = { add_claim_by = ROOT }
+	#		230 = { add_claim_by = ROOT }
+	#		231 = { add_claim_by = ROOT }
+	#		732 = { add_claim_by = ROOT }
+	#		742 = { add_claim_by = ROOT }
+	#		405 = { add_claim_by = ROOT }
+	#		584 = { add_claim_by = ROOT }
+	#		586 = { add_claim_by = ROOT }
+	#		hidden_effect = {
+	#			news_event = { id = kmmnews.19 hours = 6 }
+	#		}
+	#	}
+	#
+	#	modifier = {
+	#		justify_war_goal_time = -0.8
+	#	}
+	#}
+	legitimacy = {
+		icon = generic_political_rally
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			ROOT = {
+				is_ai = no
+			}
+			has_game_rule = {
+				rule = eng_fragmentation_status
+				option = ENG_FRAGMENTED
+			}
+		}
+		fire_only_once = yes
+		is_good = no
+		days_mission_timeout = 0
+		timeout_effect = {
+			add_named_threat = {
+				threat = -15
+				name = "マニフェスト・ディスティニー"
+			}
+		}
+	}
+	ukraine_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			has_game_rule = {
+				rule = sov_fragmentation_status
+				option = SOV_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_ukraine_required_tt
+				controls_state = 192
+				controls_state = 193
+				controls_state = 196
+				controls_state = 197
+				controls_state = 198
+				controls_state = 199
+				controls_state = 200
+				controls_state = 201
+				controls_state = 202
+				controls_state = 203
+				controls_state = 221
+				controls_state = 225
+				controls_state = 226
+				controls_state = 227
+				controls_state = 228
+				controls_state = 259
+				controls_state = 834
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = occupation_ukraine_coring_tt
+			hidden_effect = {
+				192 = {
+					add_core_of = ROOT
+				}
+				193 = {
+					add_core_of = ROOT
+				}
+				196 = {
+					add_core_of = ROOT
+				}
+				197 = {
+					add_core_of = ROOT
+				}
+				198 = {
+					add_core_of = ROOT
+				}
+				199 = {
+					add_core_of = ROOT
+				}
+				200 = {
+					add_core_of = ROOT
+				}
+				201 = {
+					add_core_of = ROOT
+				}
+				202 = {
+					add_core_of = ROOT
+				}
+				203 = {
+					add_core_of = ROOT
+				}
+				221 = {
+					add_core_of = ROOT
+				}
+				225 = {
+					add_core_of = ROOT
+				}
+				226 = {
+					add_core_of = ROOT
+				}
+				227 = {
+					add_core_of = ROOT
+				}
+				228 = {
+					add_core_of = ROOT
+				}
+				259 = {
+					add_core_of = ROOT
+				}
+				834 = {
+					add_core_of = ROOT
+				}
+			}
+			custom_effect_tooltip = occupation_ukraine_claim_tt
+			hidden_effect = {
+				766 = {
+					add_claim_by = ROOT
+				}
+				93 = {
+					add_claim_by = ROOT
+				}
+				91 = {
+					add_claim_by = ROOT
+				}
+				89 = {
+					add_claim_by = ROOT
+				}
+			}
+			add_ideas = Victory_in_ukraine_idea
+		}
+	}
+	belarus_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			has_game_rule = {
+				rule = sov_fragmentation_status
+				option = SOV_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_belarus_required_tt
+				controls_state = 194
+				controls_state = 204
+				controls_state = 206
+				controls_state = 207
+				controls_state = 241
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = occupation_belarus_coring_tt
+			hidden_effect = {
+				194 = {
+					add_core_of = ROOT
+				}
+				204 = {
+					add_core_of = ROOT
+				}
+				206 = {
+					add_core_of = ROOT
+				}
+				207 = {
+					add_core_of = ROOT
+				}
+				241 = {
+					add_core_of = ROOT
+				}
+			}
+			custom_effect_tooltip = occupation_belarus_claim_tt
+			hidden_effect = {
+				94 = {
+					add_claim_by = ROOT
+				}
+				95 = {
+					add_claim_by = ROOT
+				}
+				96 = {
+					add_claim_by = ROOT
+				}
+				784 = {
+					add_claim_by = ROOT
+				}
+			}
+			add_ideas = Victory_in_belarus_idea
+		}
+	}
+	kavkaz_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			has_game_rule = {
+				rule = sov_fragmentation_status
+				option = SOV_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_kavkaz_required_tt
+				controls_state = 229
+				controls_state = 230
+				controls_state = 231
+				controls_state = 826
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = occupation_kavkaz_coring_tt
+			hidden_effect = {
+				229 = {
+					add_core_of = ROOT
+				}
+				230 = {
+					add_core_of = ROOT
+				}
+				231 = {
+					add_core_of = ROOT
+				}
+				826 = {
+					add_core_of = ROOT
+				}
+			}
+			custom_effect_tooltip = occupation_kavkaz_claim_tt
+			hidden_effect = {
+				419 = {
+					add_claim_by = ROOT
+				}
+				420 = {
+					add_claim_by = ROOT
+				}
+			}
+			add_ideas = Victory_in_kavkaz_idea
+		}
+	}
+	middle_asia_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			has_game_rule = {
+				rule = sov_fragmentation_status
+				option = SOV_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_middle_asia_required_tt
+				NOT = {
+					KAZ = {
+						exists = yes
+					}
+					UZB = {
+						exists = yes
+					}
+					TMS = {
+						exists = yes
+					}
+					TAJ = {
+						exists = yes
+					}
+					KYR = {
+						exists = yes
+					}
+				}
+				controls_state = 584
+				controls_state = 732
+				controls_state = 742
+				controls_state = 405
+				controls_state = 586
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = occupation_middle_asia_coring_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						region = 136
+					}
+					add_core_of = ROOT
+				}
+				406 = {
+					add_core_of = ROOT
+				}
+				407 = {
+					add_core_of = ROOT
+				}
+			}
+			add_ideas = Victory_in_middle_asia_idea
+		}
+	}
+	scotland_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_game_rule = {
+				rule = eng_fragmentation_status
+				option = ENG_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_scotland_required_tt
+				controls_state = 120
+				controls_state = 121
+				controls_state = 133
+				controls_state = 136
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = Victory_in_scotland_idea
+		}
+	}
+	ireland_occupation = {
+		icon = infiltrate_state
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_game_rule = {
+				rule = eng_fragmentation_status
+				option = ENG_FRAGMENTED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = occupation_ireland_required_tt
+				controls_state = 113
+				controls_state = 119
+				controls_state = 134
+				controls_state = 135
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = Victory_in_ireland_idea
+		}
+	}
+	britain_expand = {
+		icon = eng_trade_unions_demand
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_game_rule = {
+				rule = eng_fragmentation_status
+				option = ENG_FRAGMENTED
+			}
+		}
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = SCO
+					original_tag = WLS
+					original_tag = IRE
+					original_tag = NIR
+				}
+			}
+		}
+		cost = 75
+		days_remove = 35
+		remove_effect = {
+			ROOT = {
+				create_wargoal = {
+					type = annex_everything
+					target = FROM
+				}
+			}
+		}
+	}
+	france_metropolitaine = {
+		icon = generic_speech
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			has_game_rule = {
+				rule = fra_fragmentation_status
+				option = FRA_FRAGMENTED
+			}
+		}
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = france_metropolitaine_tt
+				NOT = {
+					any_state = {
+						is_core_of = FRA
+						NOT = {
+							is_controlled_by = FRA
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			add_ideas = FRA_unity_in_france
+		}
+	}
+	france_expand = {
+		icon = eng_trade_unions_demand
+		allowed = {
+			original_tag = FRA
+		}
+		visible = {
+			#has_game_rule = {
+			#	rule = fra_fragmentation_status
+			#	option = FRA_FRAGMENTED
+			#}
+		}
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = OCC
+					original_tag = BRI
+					controls_state = 1
+					controls_state = 806
+				}
+			}
+		}
+		cost = 75
+		days_remove = 35
+		remove_effect = {
+			ROOT = {
+				create_wargoal = {
+					type = annex_everything
+					target = FROM
+				}
+			}
+		}
+	}
+}
+
+### debug ###
+realistic_german_soviet_war = {
+	debug_checker = {
+		visible = {
+			is_debug = yes
+		}
+		available = {
+			has_country_flag = SOV_heroic_unity_of_comrades
+			has_country_flag = SOV_surrender
+			stockpile_ratio = {
+				archetype = anti_tank_equipment
+				ratio < 0.5
+			}
+		}
+	}
+	debug_clean = {
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			clr_country_flag = SOV_surrender
+			clr_country_flag = SOV_heroic_unity_of_comrades
+		}
+	}
+	heroic_unity_of_comrades = {
+		icon = generic_civil_support
+		available = {
+		}
+		days_mission_timeout = 0
+		fire_only_once = yes
+		activation = {
+			has_war_with = GER
+			OR = {
+				AND = {
+					any_other_country = {
+						is_ai = no
+					}
+					has_game_rule = {
+						rule = sov_fragmentation_status
+						option = SOV_FRAGMENTED
+					}
+				}
+				is_debug = yes
+			}
+			has_template = "労農赤軍歩兵師団"
+		}
+		timeout_effect = {
+			hidden_effect = {
+				add_ideas = SOV_heroic_unity_of_comrades_idea
+				set_country_flag = SOV_heroic_unity_of_comrades
+				GER = {
+					country_event = {
+						id = kmm.65
+						hours = 6
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_ideas = SOV_heroic_unity_of_comrades_idea
+				set_country_flag = SOV_heroic_unity_of_comrades
+				if = {
+					limit = {
+						GER = {
+							has_government = neutrality
+						}
+					}
+					GER = {
+						country_event = {
+							id = kmm.65
+							hours = 6
+						}
+					}
+				}
+			}
+		}
+	}
+	heroic_unity_of_comrades_2 = {
+		icon = generic_civil_support
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = heroic_unity_of_comrades_2_tt
+				OR = {
+					has_country_flag = SOV_surrender
+					surrender_progress > 0.98
+				}
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 1916
+		is_good = yes
+		activation = {
+			has_war_with = GER
+			has_country_flag = SOV_heroic_unity_of_comrades
+		}
+		complete_effect = {
+			remove_ideas = SOV_heroic_unity_of_comrades_idea
+		}
+		timeout_effect = {
+			set_country_flag = SOV_final_war
+		}
+	}
+	heroic_unity_of_comrades_3 = {
+		icon = generic_military
+		available = {
+			always = yes
+		}
+		fire_only_once = yes
+		days_mission_timeout = 1
+		is_good = no
+		days_remove = 1916
+		activation = {
+			has_war_with = GER
+			has_country_flag = SOV_heroic_unity_of_comrades
+		}
+		modifier = {
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.1
+			acclimatization_cold_climate_gain_factor = 1
+			dig_in_speed_factor = 10
+			winter_attrition_factor = -1
+			max_dig_in_factor = 0.2
+			training_time_factor = -0.5
+		}
+	}
+	early_great_patriotic_war = {
+		icon = generic_prepare_civil_war
+		fire_only_once = yes
+		available = {
+			always = yes
+		}
+		days_mission_timeout = 1
+		is_good = no
+		activation = {
+			has_war_with = GER
+			date < 1941.06.21
+		}
+		complete_effect = {
+			every_controlled_state = {
+				limit = {
+					OR = {
+						region = 37
+						region = 220
+						region = 131
+						region = 215
+						region = 216
+						region = 130
+					}
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 5
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = basic_medium_tank
+					}
+				}
+				set_technology = {
+					basic_medium_tank = 1
+					basic_medium_td = 1
+					basic_medium_spaa = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = basic_medium_td
+					}
+					has_tech = basic_medium_tank
+				}
+				set_technology = {
+					basic_medium_td = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = basic_medium_spaa
+					}
+					has_tech = basic_medium_tank
+				}
+				set_technology = {
+					basic_medium_spaa = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = interwar_antitank
+					}
+				}
+				set_technology = {
+					interwar_antitank = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = tech_field_hospital
+					}
+				}
+				set_technology = {
+					tech_field_hospital = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = tech_logistics_company
+					}
+				}
+				set_technology = {
+					tech_logistics_company = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = tech_signal_company
+					}
+				}
+				set_technology = {
+					tech_signal_company = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_template = "労農赤軍機甲師団"
+					}
+				}
+				division_template = {
+					name = "労農赤軍機甲師団"
+					is_locked = no
+					division_names_group = SOV_ARM_01
+					priority = 2
+					regiments = {
+						medium_armor = {
+							x = 0
+							y = 0
+						}
+						medium_armor = {
+							x = 0
+							y = 1
+						}
+						medium_armor = {
+							x = 0
+							y = 2
+						}
+						medium_armor = {
+							x = 0
+							y = 3
+						}
+						medium_armor = {
+							x = 1
+							y = 0
+						}
+						medium_armor = {
+							x = 1
+							y = 1
+						}
+						medium_armor = {
+							x = 1
+							y = 2
+						}
+						medium_armor = {
+							x = 1
+							y = 3
+						}
+						medium_armor = {
+							x = 2
+							y = 0
+						}
+						medium_armor = {
+							x = 2
+							y = 1
+						}
+						medium_armor = {
+							x = 2
+							y = 2
+						}
+						medium_armor = {
+							x = 2
+							y = 3
+						}
+						medium_armor = {
+							x = 3
+							y = 0
+						}
+						medium_sp_anti_air_brigade = {
+							x = 3
+							y = 1
+						}
+						medium_sp_anti_air_brigade = {
+							x = 3
+							y = 2
+						}
+						medium_tank_destroyer_brigade = {
+							x = 3
+							y = 3
+						}
+						motorized = {
+							x = 4
+							y = 0
+						}
+						motorized = {
+							x = 4
+							y = 1
+						}
+						motorized = {
+							x = 4
+							y = 2
+						}
+						motorized = {
+							x = 4
+							y = 3
+						}
+						motorized = {
+							x = 4
+							y = 4
+						}
+					}
+					support = {
+						engineer = {
+							x = 0
+							y = 0
+						}
+						light_tank_recon = {
+							x = 0
+							y = 1
+						}
+						logistics_company = {
+							x = 0
+							y = 2
+						}
+						signal_company = {
+							x = 0
+							y = 3
+						}
+						field_hospital = {
+							x = 0
+							y = 4
+						}
+					}
+				}
+			}
+			219 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍機甲師団\" start_experience_factor = 1.0"
+					owner = SOV
+					count = 6
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = infantry_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 300000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = support_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 10000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = motorized_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 10000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = anti_tank_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 50000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = light_tank_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_equipment
+					amount = 5000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_equipment
+					amount = 10000
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_destroyer_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_equipment
+					amount = 800
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_aa_equipment
+						ratio < 0.95
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_aa_equipment
+					amount = 800
+					producer = SOV
+				}
+			}
+			set_country_flag = SOV_early_great_patriotic_war
+		}
+	}
+	infrastructure_near_moscow = {
+		icon = generic_construction
+		fire_only_once = yes
+		available = {
+			controls_state = 219
+		}
+		cost = 100
+		complete_effect = {
+			every_controlled_state = {
+				limit = {
+					region = 218
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	defense_at_narva_river = {
+		icon = generic_operation
+		fire_only_once = yes
+		available = {
+			controls_state = 208
+			controls_state = 209
+			controls_state = 210
+			NOT = {
+				controls_state = 12
+			}
+		}
+		cost = 50
+		complete_effect = {
+			208 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 104
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 126
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 104
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 126
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+			209 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 9120
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 9408
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 11202
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 6324
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 11392
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9120
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9408
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11202
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6324
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11392
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+			210 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 6242
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 9353
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 2
+					prioritize_location = 9386
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6242
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9353
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9386
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 207
+				}
+				207 = {
+					create_unit = {
+						division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+						owner = SOV
+						count = 2
+						prioritize_location = 323
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 323
+					}
+				}
+			}
+		}
+	}
+	smolensk_emergency_defense = {
+		icon = generic_ignite_civil_war
+		fire_only_once = yes
+		available = {
+			always = yes
+		}
+		activation = {
+			has_country_flag = SOV_defense_at_dnieper_river
+			OR = {
+				NOT = {
+					controls_province = 11241
+				}
+				NOT = {
+					controls_province = 11220
+				}
+			}
+		}
+		days_mission_timeout = 1
+		is_good = no
+		complete_effect = {
+			if = {
+				limit = {
+					controls_province = 323
+				}
+				207 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 323
+					}
+					create_unit = {
+						division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+						owner = SOV
+						count = 4
+						prioritize_location = 323
+					}
+				}
+			}
+			210 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6293
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 4
+					prioritize_location = 6293
+				}
+			}
+			242 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 11353
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 11290
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 4
+					prioritize_location = 11353
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 4
+					prioritize_location = 11290
+				}
+			}
+		}
+	}
+	defense_at_dnieper_river = {
+		icon = generic_operation
+		fire_only_once = yes
+		available = {
+			controls_state = 207
+			controls_state = 241
+			controls_state = 193
+			controls_state = 259
+			controls_state = 200
+			controls_state = 196
+		}
+		cost = 125
+		complete_effect = {
+			set_country_flag = SOV_defense_at_dnieper_river
+			if = {
+				limit = {
+					controls_state = 12
+				}
+				12 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 9340
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 10323
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 7482
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 6459
+					}
+				}
+			}
+			207 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3219
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6326
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6249
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9323
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11241
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11220
+				}
+			}
+			241 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6354
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11271
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6233
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6344
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9288
+				}
+			}
+			193 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 546
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3568
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 202
+				}
+				202 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 489
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 11557
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 9543
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 203
+				}
+				203 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 11530
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 9491
+					}
+				}
+			}
+			259 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6495
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6507
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 226
+				}
+				226 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 9463
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 453
+					}
+				}
+			}
+			200 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11405
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 588
+				}
+			}
+			196 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3573
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 737
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 721
+				}
+			}
+		}
+	}
+	smolensk_defense = {
+		icon = generic_military
+		fire_only_once = yes
+		available = {
+			controls_state = 242
+			NOT = {
+				controls_state = 207
+			}
+		}
+		cost = 50
+		complete_effect = {
+			242 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 27
+				}
+			}
+		}
+	}
+	leningrad_defense = {
+		icon = generic_military
+		fire_only_once = yes
+		available = {
+			controls_state = 195
+			OR = {
+				NOT = {
+					controls_state = 208
+				}
+				NOT = {
+					controls_state = 244
+				}
+			}
+		}
+		cost = 50
+		complete_effect = {
+			195 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 20
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+			}
+		}
+	}
+	stalingrad_defense = {
+		icon = generic_military
+		fire_only_once = yes
+		available = {
+			controls_state = 217
+			OR = {
+				NOT = {
+					controls_state = 245
+				}
+				NOT = {
+					controls_state = 265
+				}
+				NOT = {
+					controls_state = 238
+				}
+				NOT = {
+					controls_state = 237
+				}
+				NOT = {
+					controls_state = 236
+				}
+				NOT = {
+					controls_state = 401
+				}
+				NOT = {
+					controls_state = 407
+				}
+			}
+		}
+		cost = 50
+		complete_effect = {
+			217 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 22
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 3529
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+	moscow_defense = {
+		icon = generic_military
+		fire_only_once = yes
+		available = {
+			controls_state = 219
+			OR = {
+				NOT = {
+					controls_state = 246
+				}
+				NOT = {
+					controls_state = 242
+				}
+				NOT = {
+					controls_state = 205
+				}
+				NOT = {
+					controls_state = 233
+				}
+				NOT = {
+					controls_state = 254
+				}
+			}
+		}
+		cost = 50
+		complete_effect = {
+			219 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 27
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6380
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+	polesie_wetlands_vertical_deep_formation = {
+		icon = hol_draw_up_staff_plans
+		fire_only_once = yes
+		available = {
+			controls_state = 194
+		}
+		cost = 50
+		complete_effect = {
+			194 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 20
+				}
+			}
+		}
+	}
+	delay_tactics_in_the_ukrainian_plain = {
+		icon = hol_draw_up_staff_plans
+		fire_only_once = yes
+		available = {
+			NOT = {
+				controls_state = 202
+			}
+		}
+		cost = 100
+		complete_effect = {
+			193 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+			259 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+			221 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+			227 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+			200 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+			196 = {
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+		}
+	}
+	delay_in_the_mittelrussische_highlands = {
+		icon = hol_draw_up_staff_plans
+		fire_only_once = yes
+		available = {
+			OR = {
+				NOT = {
+					controls_state = 224
+				}
+				NOT = {
+					controls_state = 225
+				}
+				NOT = {
+					controls_state = 259
+				}
+				NOT = {
+					controls_state = 227
+				}
+				NOT = {
+					controls_state = 228
+				}
+			}
+		}
+		cost = 125
+		complete_effect = {
+			every_controlled_state = {
+				limit = {
+					region = 133
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 10
+				}
+			}
+		}
+	}
+	fortification_of_the_zakahkas = {
+		icon = generic_construction
+		fire_only_once = yes
+		available = {
+			controls_state = 229
+			controls_state = 230
+			controls_state = 231
+			controls_state = 232
+			controls_state = 233
+		}
+		cost = 200
+		complete_effect = {
+			233 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3698
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6721
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9674
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6692
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9649
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 685
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11614
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11609
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3667
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 1455
+				}
+			}
+			232 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 7554
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3711
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 1450
+				}
+			}
+			229 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4545
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 4458
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 7495
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 7661
+				}
+			}
+			231 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3653
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3656
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6669
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9702
+				}
+			}
+			230 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 12380
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 12320
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6997
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4660
+				}
+			}
+			229 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9715
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 11704
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 4614
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 1536
+				}
+			}
+			229 = {
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 12
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+			230 = {
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 12
+				}
+			}
+			231 = {
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 12
+				}
+			}
+			232 = {
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 12
+				}
+			}
+			233 = {
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 12
+				}
+			}
+		}
+	}
+	fortification_of_crimea = {
+		icon = generic_construction
+		fire_only_once = yes
+		available = {
+			controls_state = 137
+		}
+		cost = 75
+		complete_effect = {
+			137 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = caucasia_supplies
+				}
+				create_unit = {
+					division = "division_template = \"労農赤軍歩兵師団\" start_experience_factor = 0.3"
+					owner = SOV
+					count = 32
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3686
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+	relocation_of_the_capital_from_sevastopol = {
+		icon = generic_nationalism
+		fire_only_once = yes
+		cost = 25
+		available = {
+			capital_scope = {
+				state = 137
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					controls_state = 249
+				}
+				set_capital = 249
+			}
+			else_if = {
+				limit = {
+					controls_state = 214
+				}
+				set_capital = 214
+			}
+			else_if = {
+				limit = {
+					controls_state = 572
+				}
+				set_capital = 572
+			}
+			else_if = {
+				limit = {
+					controls_state = 570
+				}
+				set_capital = 570
+			}
+			else = {
+				set_capital = 408
+			}
+		}
+	}
+	raising_the_armored_division = {
+		icon = generic_tank
+		fire_only_once = yes
+		available = {
+			OR = {
+				NOT = {
+					controls_state = 195
+				}
+				NOT = {
+					controls_state = 219
+				}
+				NOT = {
+					controls_state = 217
+				}
+			}
+		}
+		cost = 100
+		complete_effect = {
+			if = {
+				limit = {
+					controls_state = 219
+				}
+				219 = {
+					create_unit = {
+						division = "division_template = \"労農赤軍機甲師団\" start_experience_factor = 1.0"
+						owner = SOV
+						count = 12
+						prioritize_location = 6380
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					controls_state = 195
+				}
+				195 = {
+					create_unit = {
+						division = "division_template = \"労農赤軍機甲師団\" start_experience_factor = 1.0"
+						owner = SOV
+						count = 12
+						prioritize_location = 3151
+					}
+				}
+			}
+			else = {
+				217 = {
+					create_unit = {
+						division = "division_template = \"労農赤軍機甲師団\" start_experience_factor = 1.0"
+						owner = SOV
+						count = 12
+						prioritize_location = 3529
+					}
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = medium_tank_equipment
+				amount = 10000
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = medium_tank_destroyer_equipment
+				amount = 800
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = medium_tank_aa_equipment
+				amount = 800
+				producer = SOV
+			}
+		}
+	}
+	strengthen_aircraft_production = {
+		icon = generic_air
+		fire_only_once = yes
+		cost = 50
+		available = {
+			has_deployed_air_force_size = {
+				size < 5000
+				type = fighter
+			}
+		}
+		complete_effect = {
+			add_ideas = continuous_air_production
+		}
+	}
+	deployment_of_stockpile_fighters = {
+		icon = generic_air
+		days_re_enable = 182
+		cost = 50
+		available = {
+			has_deployed_air_force_size = {
+				size < 3000
+				type = fighter
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 3000
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 1600
+				producer = SOV
+			}
+		}
+	}
+	replenishment_of_equipment_for_underperforming_infantry_divisions = {
+		icon = generic_industry
+		days_re_enable = 182
+		cost = 150
+		available = {
+			OR = {
+				stockpile_ratio = {
+					archetype = infantry_equipment
+					ratio < 1
+				}
+				stockpile_ratio = {
+					archetype = support_equipment
+					ratio < 1
+				}
+				stockpile_ratio = {
+					archetype = motorized_equipment
+					ratio < 1
+				}
+				stockpile_ratio = {
+					archetype = anti_tank_equipment
+					ratio < 1
+				}
+				stockpile_ratio = {
+					archetype = artillery_equipment
+					ratio < 1
+				}
+			}
+		}
+		complete_effect = {
+			set_temp_variable = {
+				SOV.eq_battalions = SOV.num_battalions
+			}
+			multiply_temp_variable = {
+				SOV.eq_battalions = 100
+			}
+			set_temp_variable = {
+				SOV.supeq_battalions = SOV.num_battalions
+			}
+			multiply_temp_variable = {
+				SOV.supeq_battalions = 5
+			}
+			set_temp_variable = {
+				SOV.ateq_battalions = SOV.num_battalions
+			}
+			multiply_temp_variable = {
+				SOV.ateq_battalions = 2.4
+			}
+			set_temp_variable = {
+				SOV.arteq_battalions = SOV.num_battalions
+			}
+			multiply_temp_variable = {
+				SOV.arteq_battalions = 1.2
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = infantry_equipment
+						ratio < 1
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = SOV.eq_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = support_equipment
+						ratio < 1
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = SOV.supeq_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = motorized_equipment
+						ratio < 1
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = SOV.num_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = anti_tank_equipment
+						ratio < 1
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = SOV.ateq_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = artillery_equipment
+						ratio < 1
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = SOV.arteq_battalions
+					producer = SOV
+				}
+			}
+		}
+	}
+	upwardly_revised_tank_production = {
+		icon = generic_industry
+		days_re_enable = 182
+		cost = 150
+		available = {
+			OR = {
+				stockpile_ratio = {
+					archetype = medium_tank_equipment
+					ratio < 0.99
+				}
+				stockpile_ratio = {
+					archetype = medium_tank_artillery_equipment
+					ratio < 0.99
+				}
+				stockpile_ratio = {
+					archetype = medium_tank_destroyer_equipment
+					ratio < 0.99
+				}
+				stockpile_ratio = {
+					archetype = medium_tank_aa_equipment
+					ratio < 0.99
+				}
+				stockpile_ratio = {
+					archetype = motorized_equipment
+					ratio < 0.99
+				}
+				stockpile_ratio = {
+					archetype = mechanized_equipment
+					ratio < 0.99
+				}
+			}
+		}
+		complete_effect = {
+			set_temp_variable = {
+				SOV.mt_battalions = SOV.num_battalions_with_type@medium_armor
+			}
+			multiply_temp_variable = {
+				SOV.mt_battalions = 60
+			}
+			set_temp_variable = {
+				SOV.mtar_battalions = SOV.num_battalions_with_type@medium_sp_artillery_brigade
+			}
+			multiply_temp_variable = {
+				SOV.mtar_battalions = 40
+			}
+			set_temp_variable = {
+				SOV.mtde_battalions = SOV.num_battalions_with_type@medium_tank_destroyer_brigade
+			}
+			multiply_temp_variable = {
+				SOV.mtde_battalions = 30
+			}
+			set_temp_variable = {
+				SOV.mtaa_battalions = SOV.num_battalions_with_type@medium_sp_anti_air_brigade
+			}
+			multiply_temp_variable = {
+				SOV.mtaa_battalions = 20
+			}
+			set_temp_variable = {
+				SOV.mo_battalions = SOV.num_battalions_with_type@motorized
+			}
+			multiply_temp_variable = {
+				SOV.mo_battalions = 60
+			}
+			set_temp_variable = {
+				SOV.me_battalions = SOV.num_battalions_with_type@mechanized
+			}
+			multiply_temp_variable = {
+				SOV.me_battalions = 60
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_equipment
+					amount = SOV.mt_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_artillery_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_artillery_equipment
+					amount = SOV.mtar_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_destroyer_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_equipment
+					amount = SOV.mtde_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = medium_tank_aa_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_aa_equipment
+					amount = SOV.mtaa_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = motorized_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = SOV.mo_battalions
+					producer = SOV
+				}
+			}
+			if = {
+				limit = {
+					stockpile_ratio = {
+						archetype = mechanized_equipment
+						ratio < 0.99
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = mechanized_equipment
+					amount = SOV.me_battalions
+					producer = SOV
+				}
+			}
+		}
+	}
+	decision_to_surrender = {
+		icon = eng_trade_unions_support
+		fire_only_once = yes
+		available = {
+			has_war_with = GER
+			has_active_mission = heroic_unity_of_comrades_2
+		}
+		complete_effect = {
+			set_country_flag = SOV_surrender
+		}
+	}
+}

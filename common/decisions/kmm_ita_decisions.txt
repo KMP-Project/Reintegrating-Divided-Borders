@@ -1,0 +1,1379 @@
+KMM_ITA_colonies = {
+	
+	ITA_colony_east_africa = {
+		icon = generic_operation
+		visible = {
+			original_tag = ITA
+		}
+		available = {
+			controls_state = 271
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			release_puppet = ETH
+			set_autonomy = {
+			    target = ETH
+			    autonomy_state = autonomy_reichskommissariat
+			}
+
+			268 = { add_core_of = ETH }
+			559 = { add_core_of = ETH }
+			269 = { add_core_of = ETH }
+			550 = { add_core_of = ETH }
+
+			if = {
+				limit = {
+					controls_state = 559
+				}
+				
+				ETH = { transfer_state = 559 }
+			}
+
+			if = {
+				limit = {
+					controls_state = 550
+				}
+				
+				ETH = { transfer_state = 550 }
+			}
+
+			if = {
+				limit = {
+					controls_state = 269
+				}
+				
+				ETH = { transfer_state = 269 }
+			}
+
+			if = {
+				limit = {
+					controls_state = 268
+				}
+				
+				ETH = { transfer_state = 268 }
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						has_completed_focus = ITA_colonial_resources
+					}
+				}
+				ETH = {
+					add_ideas = { ITA_colonial_resources_idea ITA_resource_economy }
+				}
+			}
+		}
+	}
+
+	ITA_colony_north_africa = {
+		icon = generic_operation
+		visible = {
+			original_tag = ITA
+		}
+		available = {
+			controls_state = 448
+			controls_state = 449
+			controls_state = 450
+			controls_state = 451
+			controls_state = 661
+			controls_state = 662
+			controls_state = 663
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			release_puppet = LBA
+			set_autonomy = {
+			    target = LBA
+			    autonomy_state = autonomy_reichskommissariat
+			}
+
+			273 = { add_core_of = LBA }
+			448 = { add_core_of = LBA }
+			449 = { add_core_of = LBA }
+			450 = { add_core_of = LBA }
+			451 = { add_core_of = LBA }
+			458 = { add_core_of = LBA }
+			661 = { add_core_of = LBA }
+			662 = { add_core_of = LBA }
+			663 = { add_core_of = LBA }
+			665 = { add_core_of = LBA }
+			
+			LBA = {
+				transfer_state = 273
+				transfer_state = 448
+				transfer_state = 449
+				transfer_state = 450
+				transfer_state = 451
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 663
+				if = {
+					limit = {
+						ROOT = {
+							controls_state = 458
+						}
+					}
+					transfer_state = 458
+				}
+				if = {
+					limit = {
+						ROOT = {
+							controls_state = 665
+						}
+					}
+					transfer_state = 665
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						has_completed_focus = ITA_colonial_resources
+					}
+				}
+				LBA = {
+					add_ideas = { ITA_colonial_resources_idea ITA_resource_economy }
+				}
+			}
+		}
+	}
+
+	ITA_colony_egypt = {
+		icon = generic_operation
+		visible = {
+			original_tag = ITA
+		}
+		available = {
+			controls_state = 446
+			controls_state = 447
+			controls_state = 452
+			controls_state = 453
+			controls_state = 456
+			controls_state = 457
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = EGY
+					NOT = { EGY = { has_government = fascism } }
+				}
+				hidden_effect = {
+					EGY = {
+						set_state_controller = 446
+						set_state_controller = 447
+						set_state_controller = 452
+						set_state_controller = 453
+						set_state_controller = 456
+						set_state_controller = 457
+						set_state_controller = 552
+						if = {
+							limit = {
+								ROOT = {
+									controls_state = 551
+								}
+							}
+							set_state_controller = 551
+						}
+
+						if = {
+							limit = {
+								ROOT = {
+									controls_state = 767
+								}
+							}
+							set_state_controller = 767
+						}
+					}
+				}
+				EGY = {
+					
+					start_civil_war = {
+						ideology = fascism
+						size = 1
+
+						446 = { add_core_of = PREV }
+						447 = { add_core_of = PREV }
+						452 = { add_core_of = PREV }
+						453 = { add_core_of = PREV }
+						456 = { add_core_of = PREV }
+						457 = { add_core_of = PREV }
+						551 = { add_core_of = PREV }
+						552 = { add_core_of = PREV }
+						767 = { add_core_of = PREV }
+
+						
+						transfer_state = 446
+						transfer_state = 447
+						transfer_state = 452
+						transfer_state = 453
+						transfer_state = 456
+						transfer_state = 457
+						transfer_state = 552
+						
+							
+						if = {
+							limit = {
+								ROOT = {
+									controls_state = 551
+								}
+							}
+							transfer_state = 551
+						}
+
+						if = {
+							limit = {
+								ROOT = {
+									controls_state = 767
+								}
+							}
+							transfer_state = 767
+						}
+
+						ITA = {
+							puppet = PREV
+							set_autonomy = {
+							    target = PREV
+							    autonomy_state = autonomy_integrated_puppet
+							}
+						}
+
+						if = {
+							limit = {
+								ROOT = {
+									has_completed_focus = ITA_colonial_resources
+								}
+							}
+							PREV = {
+								add_ideas = { ITA_colonial_resources_idea ITA_resource_economy }
+							}
+						}
+					}
+				}
+			}
+			else = {
+				
+
+				446 = { add_core_of = EGY }
+				447 = { add_core_of = EGY }
+				452 = { add_core_of = EGY }
+				453 = { add_core_of = EGY }
+				456 = { add_core_of = EGY }
+				457 = { add_core_of = EGY }
+				551 = { add_core_of = EGY }
+				552 = { add_core_of = EGY }
+				767 = { add_core_of = EGY }
+
+
+				
+				EGY = {
+					transfer_state = 446
+					transfer_state = 447
+					transfer_state = 452
+					transfer_state = 453
+					transfer_state = 456
+					transfer_state = 457
+					transfer_state = 552
+					if = {
+						limit = {
+							ROOT = {
+								controls_state = 551
+							}
+						}
+						transfer_state = 551
+					}
+					if = {
+						limit = {
+							ROOT = {
+								controls_state = 767
+							}
+						}
+						transfer_state = 767
+					}
+				}
+
+				set_autonomy = {
+				    target = EGY
+				    autonomy_state = autonomy_integrated_puppet
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							has_completed_focus = ITA_colonial_resources
+						}
+					}
+					EGY = {
+						add_ideas = { ITA_colonial_resources_idea ITA_resource_economy }
+					}
+				}
+				
+			}
+		}
+	}
+
+	ITA_colony_northwest_africa = {
+		icon = generic_operation
+		visible = {
+			original_tag = ITA
+		}
+		available = {
+			controls_state = 460
+			controls_state = 461
+			controls_state = 462
+			controls_state = 513
+			controls_state = 514
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			release_puppet = ALG
+			set_autonomy = {
+			    target = ALG
+			    autonomy_state = autonomy_reichskommissariat
+			}
+
+			460 = { add_core_of = ALG }
+			513 = { add_core_of = ALG }
+			461 = { add_core_of = ALG }
+			462 = { add_core_of = ALG }
+			514 = { add_core_of = ALG }
+
+			290 = { add_core_of = ALG }
+			783 = { add_core_of = ALG }
+			832 = { add_core_of = ALG }
+			
+			ALG = {
+				transfer_state = 460
+				transfer_state = 461
+				transfer_state = 462
+				transfer_state = 513
+				transfer_state = 514
+				if = {
+					limit = {
+						ROOT = {
+							controls_state = 290
+						}
+					}
+					transfer_state = 290
+				}
+				if = {
+					limit = {
+						ROOT = {
+							controls_state = 783
+						}
+					}
+					transfer_state = 783
+				}
+				if = {
+					limit = {
+						ROOT = {
+							controls_state = 832
+						}
+					}
+					transfer_state = 832
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						has_completed_focus = ITA_colonial_resources
+					}
+				}
+				ALG = {
+					add_ideas = { ITA_colonial_resources_idea ITA_resource_economy }
+				}
+			}
+		}
+	}
+}
+
+KMM_ITA_SPR_civilwar = {
+	ITA_transport_of_outdated_equipment = {
+		icon = generic_industry
+		visible = {
+			original_tag = ITA
+			has_completed_focus = ITA_equipment_for_spain
+			any_country = {
+				original_tag = SPR
+				has_civil_war = yes
+				OR = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+					has_completed_focus = SPA_the_phalanx_ascendant
+				}
+			}
+		}
+		cost = 25
+		complete_effect = {
+			set_global_flag = ITA_transport_to_SPA
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_transport_of_outdated_equipment_tt
+				NOT = { has_global_flag = ITA_transport_to_SPA }
+			}			
+		}
+		days_remove = 30
+		remove_effect = {
+			clr_global_flag = ITA_transport_to_SPA
+			every_country = {
+				limit = {
+					original_tag = SPR
+					has_civil_war = yes
+					OR = {
+						has_completed_focus = SPA_unify_the_nationalist_front
+						has_completed_focus = SPA_the_phalanx_ascendant
+					}
+				}
+				ITA = {
+					send_equipment = {
+					    equipment = infantry_equipment
+					    amount = 2500
+					    target = PREV
+					}
+				}
+			}			
+		}
+		days_re_enable = 60
+	}
+	ITA_transport_of_outdated_equipment_2 = {
+		icon = generic_industry
+		visible = {
+			original_tag = ITA
+			has_completed_focus = ITA_equipment_for_spain
+			any_country = {
+				original_tag = SPR
+				has_civil_war = yes
+				OR = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+					has_completed_focus = SPA_the_phalanx_ascendant
+				}
+			}
+		}
+		cost = 50
+		complete_effect = {
+			set_global_flag = ITA_transport_to_SPA
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_transport_of_outdated_equipment_tt
+				NOT = { has_global_flag = ITA_transport_to_SPA }
+			}			
+		}
+		days_remove = 30
+		remove_effect = {
+			clr_global_flag = ITA_transport_to_SPA
+			every_country = {
+				limit = {
+					original_tag = SPR
+					has_civil_war = yes
+					OR = {
+						has_completed_focus = SPA_unify_the_nationalist_front
+						has_completed_focus = SPA_the_phalanx_ascendant
+					}
+				}
+				ITA = {
+					send_equipment = {
+					    equipment = infantry_equipment
+					    amount = 5000
+					    target = PREV
+					}
+				}
+			}			
+		}
+		days_re_enable = 60
+	}
+}
+
+KMM_ITA_escape_from_the_great_depression = {
+	ITA_devaluation_of_lira = {
+		icon = hol_attract_foreign_investors
+		cost = 50
+		fixed_random_seed = no
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_temp_variable = { ITA_DoL_TEMP = 100 }
+			set_temp_variable = { ITA_DoL_Stability_TEMP = stability }
+			multiply_temp_variable = { ITA_DoL_Stability_TEMP = 100 }
+			subtract_from_temp_variable = { ITA_DoL_TEMP = ITA_DoL_Stability_TEMP }
+			random_list = {
+				var:ITA_DoL_Stability_TEMP = {
+					if = {
+						limit = { has_idea = ITA_great_depression_1_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_1_idea
+							add_idea = ITA_great_depression_2_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_2_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_2_idea
+							add_idea = ITA_great_depression_3_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_3_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_3_idea
+							add_idea = ITA_great_depression_4_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_4_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_4_idea
+							add_idea = ITA_great_depression_5_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_5_idea }
+						remove_ideas = ITA_great_depression_5_idea
+					}
+					else = {
+						country_event = { id = kmm.666 }
+					}
+				}
+				var:ITA_DoL_TEMP = {
+					add_political_power = -75
+					add_stability = -0.05
+				}
+			}	
+		}
+	}
+	ITA_return_by_protectionist_trade = {
+		icon = generic_arrest
+		cost = 50
+		available = {
+			has_completed_focus = ITA_protectionist_trade
+			NOT = { has_global_flag = ITA_long_term_policy }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		days_remove = 7
+		modifier = {
+			political_power_gain = -0.5
+			min_export = -0.3
+		}
+		fixed_random_seed = no
+
+
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			set_temp_variable = { ITA_protection_trade_1_TEMP = 40 }
+			if = {
+				limit = {
+					ETH = {
+						is_subject_of = ITA
+						exists = yes
+					}
+				}
+				add_to_temp_variable = { ITA_protection_trade_1_TEMP = 10 }
+			}
+			if = {
+				limit = {
+					LBA = {
+						is_subject_of = ITA
+						exists = yes
+					}
+				}
+				add_to_temp_variable = { ITA_protection_trade_1_TEMP = 10 }
+			}
+			if = {
+				limit = {
+					EGY = {
+						is_subject_of = ITA
+						exists = yes
+					}
+				}
+				add_to_temp_variable = { ITA_protection_trade_1_TEMP = 10 }
+			}
+			if = {
+				limit = {
+					ALG = {
+						is_subject_of = ITA
+						exists = yes
+					}
+				}
+				add_to_temp_variable = { ITA_protection_trade_1_TEMP = 10 }
+			}
+			set_temp_variable = { ITA_protection_trade_2_TEMP = 100 }
+			subtract_from_temp_variable = { ITA_protection_trade_2_TEMP = ITA_protection_trade_1_TEMP }
+			random_list = {
+				var:ITA_protection_trade_1_TEMP = {
+					if = {
+						limit = { has_idea = ITA_great_depression_1_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_1_idea
+							add_idea = ITA_great_depression_2_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_2_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_2_idea
+							add_idea = ITA_great_depression_3_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_3_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_3_idea
+							add_idea = ITA_great_depression_4_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_4_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_4_idea
+							add_idea = ITA_great_depression_5_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_5_idea }
+						remove_ideas = ITA_great_depression_5_idea
+					}
+					else = {
+						country_event = { id = kmm.666 }
+					}
+				}
+				var:ITA_protection_trade_2_TEMP = {
+					add_political_power = -75
+				}
+			}
+		}
+		days_re_enable = 122
+	}
+	ITA_promotion_of_free_trade = {
+		icon = generic_independence
+		cost = 50
+		available = {
+			has_completed_focus = ITA_free_trade
+			NOT = { has_global_flag = ITA_long_term_policy }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		days_remove = 7
+		modifier = {
+			political_power_gain = -0.5
+			min_export = 0.2
+			production_speed_buildings_factor = 0.2
+		}
+		fixed_random_seed = no
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			#USA
+			if = {
+				limit = {
+					USA = {
+						has_idea = free_trade
+					}
+				}
+				set_temp_variable = { ITA_usa_trade_TEMP = 20 }
+			}
+			else_if = {
+				limit = {
+					USA = {
+						has_idea = export_focus
+					}
+				}
+				set_temp_variable = { ITA_usa_trade_TEMP = 15 }
+			}
+			else_if = {
+				limit = {
+					USA = {
+						has_idea = limited_exports
+					}
+				}
+				set_temp_variable = { ITA_usa_trade_TEMP = 5 }
+			}
+			else = {
+				set_temp_variable = { ITA_usa_trade_TEMP = 0 }
+			}
+			#ENG
+			if = {
+				limit = {
+					ENG = {
+						has_idea = free_trade
+					}
+				}
+				set_temp_variable = { ITA_ENG_trade_TEMP = 20 }
+			}
+			else_if = {
+				limit = {
+					ENG = {
+						has_idea = export_focus
+					}
+				}
+				set_temp_variable = { ITA_ENG_trade_TEMP = 15 }
+			}
+			else_if = {
+				limit = {
+					ENG = {
+						has_idea = limited_exports
+					}
+				}
+				set_temp_variable = { ITA_ENG_trade_TEMP = 5 }
+			}
+			else = {
+				set_temp_variable = { ITA_ENG_trade_TEMP = 0 }
+			}
+			#FRA
+			if = {
+				limit = {
+					FRA = {
+						has_idea = free_trade
+					}
+				}
+				set_temp_variable = { ITA_FRA_trade_TEMP = 20 }
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_idea = export_focus
+					}
+				}
+				set_temp_variable = { ITA_FRA_trade_TEMP = 15 }
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_idea = limited_exports
+					}
+				}
+				set_temp_variable = { ITA_FRA_trade_TEMP = 5 }
+			}
+			else = {
+				set_temp_variable = { ITA_FRA_trade_TEMP = 0 }
+			}
+			#JAP
+			if = {
+				limit = {
+					JAP = {
+						has_idea = free_trade
+					}
+				}
+				set_temp_variable = { ITA_JAP_trade_TEMP = 20 }
+			}
+			else_if = {
+				limit = {
+					JAP = {
+						has_idea = export_focus
+					}
+				}
+				set_temp_variable = { ITA_JAP_trade_TEMP = 15 }
+			}
+			else_if = {
+				limit = {
+					JAP = {
+						has_idea = limited_exports
+					}
+				}
+				set_temp_variable = { ITA_JAP_trade_TEMP = 5 }
+			}
+			else = {
+				set_temp_variable = { ITA_JAP_trade_TEMP = 0 }
+			}
+			#GER
+			if = {
+				limit = {
+					GER = {
+						has_idea = free_trade
+					}
+				}
+				set_temp_variable = { ITA_GER_trade_TEMP = 20 }
+			}
+			else_if = {
+				limit = {
+					GER = {
+						has_idea = export_focus
+					}
+				}
+				set_temp_variable = { ITA_GER_trade_TEMP = 15 }
+			}
+			else_if = {
+				limit = {
+					GER = {
+						has_idea = limited_exports
+					}
+				}
+				set_temp_variable = { ITA_GER_trade_TEMP = 5 }
+			}
+			else = {
+				set_temp_variable = { ITA_GER_trade_TEMP = 0 }
+			}
+			#End
+			set_temp_variable = { ITA_trade_TEMP_1 = 0 }
+			add_to_temp_variable = { ITA_trade_TEMP_1 = ITA_USA_trade_TEMP }
+			add_to_temp_variable = { ITA_trade_TEMP_1 = ITA_ENG_trade_TEMP }
+			add_to_temp_variable = { ITA_trade_TEMP_1 = ITA_FRA_trade_TEMP }
+			add_to_temp_variable = { ITA_trade_TEMP_1 = ITA_JAP_trade_TEMP }
+			add_to_temp_variable = { ITA_trade_TEMP_1 = ITA_GER_trade_TEMP }
+			set_temp_variable = { ITA_trade_TEMP_2 = 100 }
+			subtract_from_temp_variable = { ITA_trade_TEMP_2 = ITA_trade_TEMP_1 }
+			random_list = {
+				var:ITA_trade_TEMP_1 = {
+					if = {
+						limit = { has_idea = ITA_great_depression_1_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_1_idea
+							add_idea = ITA_great_depression_2_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_2_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_2_idea
+							add_idea = ITA_great_depression_3_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_3_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_3_idea
+							add_idea = ITA_great_depression_4_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_4_idea }
+						swap_ideas = {
+							remove_idea = ITA_great_depression_4_idea
+							add_idea = ITA_great_depression_5_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ITA_great_depression_5_idea }
+						remove_ideas = ITA_great_depression_5_idea
+					}
+					else = {
+						country_event = { id = kmm.666 }
+					}
+				}
+				var:ITA_trade_TEMP_2 = {
+					add_political_power = -75
+				}
+			}
+		}
+	}
+	ITA_public_civil_engineering_work = {
+		icon = generic_construction
+		cost = 75
+		available = {
+			NOT = { has_global_flag = ITA_long_term_policy }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		modifier = {
+			political_power_gain = -0.5
+			consumer_goods_factor = 0.1
+			industry_free_repair_factor = 0.5
+			industry_repair_factor = 0.5
+			production_speed_buildings_factor = 0.1
+		}
+		days_remove = 122
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			if = {
+				limit = { has_idea = ITA_great_depression_1_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_1_idea
+					add_idea = ITA_great_depression_2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_2_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_2_idea
+					add_idea = ITA_great_depression_3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_3_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_3_idea
+					add_idea = ITA_great_depression_4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_4_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_4_idea
+					add_idea = ITA_great_depression_5_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_5_idea }
+				remove_ideas = ITA_great_depression_5_idea
+			}
+			else = {
+				country_event = { id = kmm.666 }
+			}
+		}
+		days_re_enable = 122
+	}
+	ITA_promotion_of_state_owned_enterprise = {
+		icon = eng_trade_unions_demand
+		cost = 75
+		available = {
+			NOT = { has_global_flag = ITA_long_term_policy }
+			has_completed_focus = ITA_state_owned_enterprise
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		modifier = {
+			political_power_gain = -0.5
+			production_speed_buildings_factor = -0.1
+		}
+		days_remove = 122
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			random_owned_state = {
+				limit = {
+					is_core_of = ITA
+					is_controlled_by = ITA
+					is_in_home_area = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ITA
+					is_controlled_by = ITA
+					is_in_home_area = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_idea = ITA_great_depression_1_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_1_idea
+					add_idea = ITA_great_depression_2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_2_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_2_idea
+					add_idea = ITA_great_depression_3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_3_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_3_idea
+					add_idea = ITA_great_depression_4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_4_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_4_idea
+					add_idea = ITA_great_depression_5_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_5_idea }
+				remove_ideas = ITA_great_depression_5_idea
+			}
+			else = {
+				country_event = { id = kmm.666 }
+			}
+		}
+		days_re_enable = 122		
+	}
+	ITA_industrial_control = {
+		icon = eng_trade_unions_demand
+		cost = 75
+		available = {
+			NOT = { has_global_flag = ITA_long_term_policy }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		modifier = {
+			political_power_gain = -0.5
+			min_export = -0.2
+			production_speed_buildings_factor = -0.1
+		}
+		days_remove = 122
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			if = {
+				limit = { has_idea = ITA_great_depression_1_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_1_idea
+					add_idea = ITA_great_depression_2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_2_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_2_idea
+					add_idea = ITA_great_depression_3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_3_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_3_idea
+					add_idea = ITA_great_depression_4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_4_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_4_idea
+					add_idea = ITA_great_depression_5_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_5_idea }
+				remove_ideas = ITA_great_depression_5_idea
+			}
+			else = {
+				country_event = { id = kmm.666 }
+			}
+		}
+		days_re_enable = 122
+	}
+	ITA_austerity_measures = {
+		icon = hol_attract_foreign_investors
+		cost = 75
+		available = {
+			NOT = { has_global_flag = ITA_long_term_policy }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_global_flag = ITA_long_term_policy
+		}
+		modifier = {
+			political_power_gain = -0.5
+			consumer_goods_factor = -0.1
+			stability_factor = -0.05
+			production_factory_efficiency_gain_factor = -0.5
+		}
+		days_remove = 122
+		remove_effect = {
+			clr_global_flag = ITA_long_term_policy
+			if = {
+				limit = { has_idea = ITA_great_depression_1_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_1_idea
+					add_idea = ITA_great_depression_2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_2_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_2_idea
+					add_idea = ITA_great_depression_3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_3_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_3_idea
+					add_idea = ITA_great_depression_4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_4_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_4_idea
+					add_idea = ITA_great_depression_5_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_5_idea }
+				remove_ideas = ITA_great_depression_5_idea
+			}
+			else = {
+				country_event = { id = kmm.666 }
+			}
+		}
+		days_re_enable = 122
+	}
+	ITA_consolidation_of_smes = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		fire_only_once = yes
+		available = {
+			has_completed_focus = ITA_absorption_of_private_demand_by_IRI
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			if = {
+				limit = { has_idea = ITA_great_depression_1_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_1_idea
+					add_idea = ITA_great_depression_2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_2_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_2_idea
+					add_idea = ITA_great_depression_3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_3_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_3_idea
+					add_idea = ITA_great_depression_4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_4_idea }
+				swap_ideas = {
+					remove_idea = ITA_great_depression_4_idea
+					add_idea = ITA_great_depression_5_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = ITA_great_depression_5_idea }
+				remove_ideas = ITA_great_depression_5_idea
+			}
+			else = {
+				country_event = { id = kmm.666 }
+			}
+		}
+	}
+}
+
+KMM_ITA_military_budget = {
+	#debug
+	
+
+	ITA_securing_a_estimate = {
+		icon = hol_attract_foreign_investors
+		cost = var:improve_estimate
+		
+		days_remove = 180
+		visible = {
+			check_variable = { improve_estimate < 251}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.025
+		}
+		remove_effect = {
+			custom_effect_tooltip = ITA_securing_a_estimate_tt
+			add_to_variable = {
+				var = army_estimate
+				value = 10
+			}
+			add_to_variable = {
+				var = navy_estimate
+				value = 10
+			}
+			add_to_variable = {
+				var = airforce_estimate
+				value = 10
+			}
+			add_to_variable = { improve_estimate = 50 }
+		}
+	}
+	ITA_focus_budget_on_the_army = {
+		icon = ita_hand_arm
+		cost = 50
+		days_remove = 60
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_navy_tt
+				check_variable = { navy_estimate > 69}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_airforce_tt
+				check_variable = { airforce_estimate > 69 }
+			}
+			NOT = { has_global_flag = ITA_budget_manipulation }			
+		}
+		complete_effect = {
+			set_global_flag = ITA_budget_manipulation
+		}
+		remove_effect = {
+			clr_global_flag = ITA_budget_manipulation
+			add_to_variable = {
+				var = army_budget
+				value = 20
+			}
+			subtract_from_variable = {
+				var = navy_budget
+				value = 10
+			}
+			subtract_from_variable = {
+				var = airforce_budget
+				value = 10
+			}
+			add_to_variable = {
+				var = army_estimate
+				value = 20
+			}
+			subtract_from_variable = {
+				var = navy_estimate
+				value = 10
+			}
+			subtract_from_variable = {
+				var = airforce_estimate
+				value = 10
+			}
+			custom_effect_tooltip = ITA_focus_budget_on_the_army_army_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_army_navy_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_army_airforce_tt
+		}
+	}
+	ITA_focus_budget_on_the_navy = {
+		icon = ita_hand_nav
+		cost = 50
+		days_remove = 60
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_army_tt
+				check_variable = { army_estimate > 69}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_airforce_tt
+				check_variable = { airforce_estimate > 69 }
+			}
+			NOT = { has_global_flag = ITA_budget_manipulation }
+		}
+		complete_effect = {
+			set_global_flag = ITA_budget_manipulation
+		}
+		remove_effect = {
+			clr_global_flag = ITA_budget_manipulation
+			add_to_variable = {
+				var = navy_budget
+				value = 20
+			}
+			subtract_from_variable = {
+				var = army_budget
+				value = 10
+			}
+			subtract_from_variable = {
+				var = airforce_budget
+				value = 10
+			}
+			add_to_variable = {
+				var = navy_estimate
+				value = 20
+			}
+			subtract_from_variable = {
+				var = army_estimate
+				value = 10
+			}
+			subtract_from_variable = {
+				var = airforce_estimate
+				value = 10
+			}
+			custom_effect_tooltip = ITA_focus_budget_on_the_navy_army_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_navy_navy_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_navy_airforce_tt
+		}
+	}
+	ITA_focus_budget_on_the_airforce = {
+		icon = ita_hand_air
+		cost = 50
+		days_remove = 60
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_army_tt
+				check_variable = { army_estimate > 69}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ITA_focus_budget_on_the_navy_tt
+				check_variable = { navy_estimate > 69 }
+			}
+			NOT = { has_global_flag = ITA_budget_manipulation }
+		}
+		complete_effect = {
+			set_global_flag = ITA_budget_manipulation
+		}
+		remove_effect = {
+			clr_global_flag = ITA_budget_manipulation
+			add_to_variable = {
+				var = airforce_budget
+				value = 20
+			}
+			subtract_from_variable = {
+				var = army_budget
+				value = 10
+			}
+			subtract_from_variable = {
+				var = navy_budget
+				value = 10
+			}
+			add_to_variable = {
+				var = airforce_estimate
+				value = 20
+			}
+			subtract_from_variable = {
+				var = army_estimate
+				value = 10
+			}
+			subtract_from_variable = {
+				var = navy_estimate
+				value = 10
+			}
+			custom_effect_tooltip = ITA_focus_budget_on_the_airforce_army_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_airforce_navy_tt
+			custom_effect_tooltip = ITA_focus_budget_on_the_airforce_airforce_tt
+		}
+	}
+}

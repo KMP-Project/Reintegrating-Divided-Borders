@@ -1,0 +1,236 @@
+Radical_decisions = {
+	icon = generic_economy
+	priority = 100
+}
+
+KMM_risorgimento_decisions = {
+	icon = saf_anti_colonialist_crusade
+	allowed = {
+		OR = {
+			original_tag = ENG
+			original_tag = SCO
+			original_tag = WLS
+
+			original_tag = SOV
+			original_tag = UKR
+			original_tag = BLR
+			original_tag = GEO
+			original_tag = AZR
+			original_tag = ARM
+			original_tag = KAZ
+			original_tag = UZB
+			original_tag = TMS
+			original_tag = TAJ
+			original_tag = KYR
+
+			original_tag = RAJ
+			original_tag = PAK
+			original_tag = BAN
+			original_tag = BRM
+
+			original_tag = YUG
+			original_tag = SER
+			original_tag = SLV
+			original_tag = CRO
+			original_tag = BOS
+			original_tag = MAC
+			original_tag = MNT
+			original_tag = HRZ
+
+			original_tag = FRA
+			original_tag = OCC
+			original_tag = BRI
+		}
+	}
+	picture = GFX_decision_cat_risorgimento
+}
+
+KMM_HUN_decisions = {
+	icon = generic_independence
+	allowed = {
+		is_debug = yes
+	}
+}
+
+KMM_HUN_debug_category = {
+	icon = eng_appeal_to_imperial_loyalists
+	on_map_area = {
+		targets = { 160 823 824 90 92 159 157 117 115 156 827 828 66 67 17 114 6 8 34 762 810 811 177 7 35 36 813 169 170 171 832 118 816 173 174 788 789 790 791 792 793 794 165 166 167 168 172 175 176 41 899 902 }
+		name = KMM_HUN_debug_category_map_name
+		zoom = 150
+	}
+	allowed = {
+		original_tag = HUN
+	}
+	visible = {
+		original_tag = HUN
+		has_completed_focus = HUN_reclaim_the_empire
+	}
+	visible_when_empty = yes
+}
+
+KMM_TUR_coring_category = {
+	icon = generic_formable_nations
+	on_map_area = {
+		targets = { 43 44 45 46 47 48 73 76 77 78 79 80 81 82 83 84 89 91 102 103 104 105 106 107 108 109 137 154 155 163 164 182 183 184 185 186 187 192 196 197 198 199 200 211 212 218 227 228 229 230 231 233 234 245 268 269 291 292 293 413 417 419 420 421 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 513 550 551 552 553 554 656 661 662 663 664 665 675 676 677 679 680 731 764 766 767 799 801 802 803 804 805 815 822 833 834 896 897 905 908 909 }
+		name = KMM_TUR_coring_category_map_name
+		zoom = 150
+	}
+	allowed = {
+		original_tag = TUR
+	}
+	visible = {
+		original_tag = TUR
+		has_completed_focus = TUR_reclaiming_our_lost_empire
+	}
+	visible_when_empty = yes
+}
+
+KMM_HRE_coring_category = {
+	picture = GFX_decision_cat_generic_hre
+	icon = generic_monarchism
+	on_map_area = {
+		targets = { 1 2 3 5 7 17 21 28 29 32 35 36 85 151 158 159 161 162 188 735 763 807 813 816 817 823 825 826 829 835 839 898 899 900 901 902 }
+		name = KMM_HRE_coring_category_map_name
+		zoom = 150
+	}
+	allowed = {
+		original_tag = HUN
+	}
+	visible = {
+		original_tag = HUN
+		has_completed_focus = HUN_resurrection_of_HRE
+	}
+	visible_when_empty = yes
+}
+
+KMM_HUN_dealing_with_ethnic_problems = {
+	icon = power_struggle
+	allowed = {
+		original_tag = HUN
+	}
+	visible = {
+		has_country_flag = HUN_dealing_with_ethnic_problems_started
+	}
+	visible_when_empty = yes
+}
+
+KMM_Debug_Object = {
+	icon = gre_paying_ifc_debt
+	allowed = {
+		is_debug = no
+	}
+}
+
+KMM_HUN_reconstruction_of_the_habsburg_empire = {
+	icon = saf_anti_colonialist_crusade
+	picture = GFX_decision_cat_picture_concessions_to_the_trade_unions
+	allowed = {
+		original_tag = HUN
+	}
+	visible = {
+		original_tag = HUN
+		has_completed_focus = HUN_reconstruction_of_the_habsburg_empire
+		NOT = { has_global_flag = HUN_defeat_neighboring_countries }
+	}
+	visible_when_empty = yes
+}
+
+KMM_ITA_colonies = {
+	icon = generic_independence
+	allowed = {
+		original_tag = ITA
+	}
+	visible = {
+		original_tag = ITA
+		has_completed_focus = ITA_colonial_management
+	}
+}
+
+KMM_ITA_SPR_civilwar = {
+	icon = spr_the_inevitable_civil_war
+	picture = GFX_decision_cat_picture_spr_civil_war_offensives
+	allowed = {
+		original_tag = ITA
+	}
+	visible = {
+		original_tag = ITA
+		has_completed_focus = ITA_participation_in_the_spanish_civil_war
+	}
+	priority = 10
+}
+
+KMM_ITA_escape_from_the_great_depression = {
+	icon = gre_paying_ifc_debt
+	picture = GFX_decision_cat_picture_faction_management_bulgaria
+	allowed = {
+		original_tag = ITA
+	}
+	visible = {
+		original_tag = ITA
+		has_completed_focus = ITA_recovery_of_unemployment_rate
+		OR = {
+			has_idea = ITA_great_depression_1_idea
+			has_idea = ITA_great_depression_2_idea
+			has_idea = ITA_great_depression_3_idea
+			has_idea = ITA_great_depression_4_idea
+			has_idea = ITA_great_depression_5_idea
+		}
+	}
+	priority = 10
+}
+
+KMM_ITA_military_budget = {
+	icon = generic_arms_trade
+	allowed = {
+		original_tag = ITA
+	}
+	visible = {
+		is_debug = yes
+	}
+	scripted_gui = ita_militaly_budget_decision_ui
+	priority = 20
+	visible_when_empty = yes
+}
+
+KMM_USA_political_fragmentation = {
+	icon = border_conflicts
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		has_game_rule = {
+			rule = usa_political_fragmentation_status
+			option = USA_POLITICAL_FRAGMENTED
+		}
+		original_tag = USA
+		is_ai = no
+		is_debug = yes
+	}
+	priority = 100
+	visible_when_empty = yes
+}
+
+### debug ###
+
+realistic_german_soviet_war = {
+	icon = sov_great_patriotic_war
+	allowed = {
+		original_tag = SOV
+		#OR = {
+		#	has_game_rule = {
+		#		rule = sov_fragmentation_status
+		#		option = SOV_FRAGMENTED
+		#	}
+		#	is_debug = yes
+		#}
+	}
+	visible = {
+		original_tag = SOV
+		has_war_with = GER
+		has_template = "労農赤軍歩兵師団"
+		has_template = "RXWUVYQEtW"
+	}
+	priority = 1000
+	picture = GFX_decision_cat_great_patriotic_war
+}

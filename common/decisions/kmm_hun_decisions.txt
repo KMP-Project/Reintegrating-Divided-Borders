@@ -1,0 +1,1709 @@
+KMM_HUN_decisions = {
+	HUN_go_to_wien = {
+		icon = eng_install_government
+		visible = {
+			controls_state = 4
+			has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
+		}
+		complete_effect = {
+			set_capital = 4
+		}
+	}
+}
+
+KMM_Debug_Object = {
+	HUN_DEBUG_DUMMY = {
+		icon = generic_operation
+		complete_effect = {
+			#ROOT = {
+			#	load_oob = "GAR_HUN"
+			#}
+			#HUN = {
+			#	annex_country = {
+			#		target = GAR
+			#		transfer_troops = yes
+			#	}
+			#}
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			clr_global_flag = form_iberismo_flag
+		}
+	}
+}
+
+KMM_HRE_coring_category = {
+	HRE_LB = {
+		icon = generic_form_nation
+		available = {
+			controls_state = 53
+		}
+		complete_effect = {
+			set_capital = 53
+		}
+	}
+	HRE_coring = {
+		icon = eng_trade_unions_support
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 1
+					state = 2
+					state = 3
+					state = 5
+					state = 7
+					state = 17
+					state = 21
+					state = 28
+					state = 29
+					state = 32
+					state = 35
+					state = 36
+					state = 85
+					state = 151
+					state = 158
+					state = 159
+					state = 161
+					state = 162
+					state = 188
+					state = 735
+					state = 763
+					state = 807
+					state = 813
+					state = 816
+					state = 817
+					state = 823
+					state = 825
+					state = 826
+					state = 829
+					state = 835
+					state = 839
+					state = 898
+					state = 899
+					state = 900
+					state = 901
+					state = 902
+				}
+			}
+		}
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			hidden_trigger = {
+				command_power > 29
+				has_political_power > 29
+			}
+		}
+		visible = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		on_map_mode = map_only
+		highlight_states = {
+			OR = {
+				state = 1
+				state = 2
+				state = 3
+				state = 5
+				state = 7
+				state = 17
+				state = 21
+				state = 28
+				state = 29
+				state = 32
+				state = 35
+				state = 36
+				state = 85
+				state = 151
+				state = 158
+				state = 159
+				state = 161
+				state = 162
+				state = 188
+				state = 735
+				state = 763
+				state = 807
+				state = 813
+				state = 816
+				state = 817
+				state = 823
+				state = 825
+				state = 826
+				state = 829
+				state = 835
+				state = 839
+				state = 898
+				state = 899
+				state = 900
+				state = 901
+				state = 902
+			}
+		}
+		cost = 30
+		days_remove = 60
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		custom_cost_text = HRE_decision_cost_coring
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -30
+				add_political_power = -30
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+KMM_HUN_debug_category = {
+	HUN_debug_coring_2 = {
+		icon = hol_draw_up_staff_plans
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 160
+					state = 823
+					state = 824
+					state = 90
+					state = 92
+					state = 159
+					state = 157
+					state = 117
+					state = 115
+					state = 156
+					state = 827
+					state = 828
+					state = 66
+					state = 67
+					state = 17
+					state = 114
+					state = 6
+					state = 8
+					state = 34
+					state = 762
+					state = 810
+					state = 811
+					state = 177
+					state = 7
+					state = 35
+					state = 36
+					state = 813
+					state = 169
+					state = 170
+					state = 171
+					state = 832
+					state = 118
+					state = 816
+					state = 173
+					state = 174
+					state = 788
+					state = 789
+					state = 790
+					state = 791
+					state = 792
+					state = 793
+					state = 794
+					state = 165
+					state = 166
+					state = 167
+					state = 168
+					state = 172
+					state = 175
+					state = 176
+					state = 41
+					state = 899
+					state = 902
+				}
+			}
+		}
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			hidden_trigger = {
+				command_power > 19
+				has_political_power > 19
+			}
+		}
+		visible = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		on_map_mode = map_only
+		highlight_states = {
+			OR = {
+				state = 160
+				state = 823
+				state = 824
+				state = 90
+				state = 92
+				state = 159
+				state = 157
+				state = 117
+				state = 115
+				state = 156
+				state = 827
+				state = 828
+				state = 66
+				state = 67
+				state = 17
+				state = 114
+				state = 6
+				state = 8
+				state = 34
+				state = 762
+				state = 810
+				state = 811
+				state = 177
+				state = 7
+				state = 35
+				state = 36
+				state = 813
+				state = 169
+				state = 170
+				state = 171
+				state = 832
+				state = 118
+				state = 816
+				state = 173
+				state = 174
+				state = 788
+				state = 789
+				state = 790
+				state = 791
+				state = 792
+				state = 793
+				state = 794
+				state = 165
+				state = 166
+				state = 167
+				state = 168
+				state = 172
+				state = 175
+				state = 176
+				state = 41
+				state = 899
+				state = 902
+			}
+		}
+		cost = 20
+		days_remove = 60
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		custom_cost_text = HUN_decision_cost_coring
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -20
+				add_political_power = -20
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_core_of = HUN
+			}
+		}
+	}
+	HUN_elimination_of_ausgleich = {
+		icon = eng_ally_imperialist_coup
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = HUN_elimination_of_ausgleich_tt
+				160 = {
+					is_core_of = HUN
+				}
+				823 = {
+					is_core_of = HUN
+				}
+				824 = {
+					is_core_of = HUN
+				}
+				90 = {
+					is_core_of = HUN
+				}
+				92 = {
+					is_core_of = HUN
+				}
+				159 = {
+					is_core_of = HUN
+				}
+				157 = {
+					is_core_of = HUN
+				}
+				117 = {
+					is_core_of = HUN
+				}
+				115 = {
+					is_core_of = HUN
+				}
+				156 = {
+					is_core_of = HUN
+				}
+				827 = {
+					is_core_of = HUN
+				}
+				828 = {
+					is_core_of = HUN
+				}
+				66 = {
+					is_core_of = HUN
+				}
+				67 = {
+					is_core_of = HUN
+				}
+				17 = {
+					is_core_of = HUN
+				}
+				114 = {
+					is_core_of = HUN
+				}
+				6 = {
+					is_core_of = HUN
+				}
+				8 = {
+					is_core_of = HUN
+				}
+				34 = {
+					is_core_of = HUN
+				}
+				762 = {
+					is_core_of = HUN
+				}
+				810 = {
+					is_core_of = HUN
+				}
+				811 = {
+					is_core_of = HUN
+				}
+				177 = {
+					is_core_of = HUN
+				}
+				7 = {
+					is_core_of = HUN
+				}
+				35 = {
+					is_core_of = HUN
+				}
+				36 = {
+					is_core_of = HUN
+				}
+				813 = {
+					is_core_of = HUN
+				}
+				169 = {
+					is_core_of = HUN
+				}
+				170 = {
+					is_core_of = HUN
+				}
+				171 = {
+					is_core_of = HUN
+				}
+				832 = {
+					is_core_of = HUN
+				}
+				118 = {
+					is_core_of = HUN
+				}
+				816 = {
+					is_core_of = HUN
+				}
+				173 = {
+					is_core_of = HUN
+				}
+				174 = {
+					is_core_of = HUN
+				}
+				788 = {
+					is_core_of = HUN
+				}
+				789 = {
+					is_core_of = HUN
+				}
+				790 = {
+					is_core_of = HUN
+				}
+				791 = {
+					is_core_of = HUN
+				}
+				792 = {
+					is_core_of = HUN
+				}
+				793 = {
+					is_core_of = HUN
+				}
+				794 = {
+					is_core_of = HUN
+				}
+				165 = {
+					is_core_of = HUN
+				}
+				166 = {
+					is_core_of = HUN
+				}
+				167 = {
+					is_core_of = HUN
+				}
+				168 = {
+					is_core_of = HUN
+				}
+				172 = {
+					is_core_of = HUN
+				}
+				175 = {
+					is_core_of = HUN
+				}
+				176 = {
+					is_core_of = HUN
+				}
+				41 = {
+					is_core_of = HUN
+				}
+				899 = {
+					is_core_of = HUN
+				}
+				902 = {
+					is_core_of = HUN
+				}
+			}
+		}
+		complete_effect = {
+			add_political_power = 120
+			set_cosmetic_tag = HUN_neutrality_Hap
+			set_global_flag = Elimination_of_Ausgleich
+			create_country_leader = {
+				name = "Otto von Habsburg"
+				desc = "POLITICS_OTTO_VON_HABSBURG_DESC"
+				picture = GFX_Portrait_hungary_otto_von_hapsburg
+				expire = "1965.1.1"
+				ideology = antiausgleichsm
+				traits = {
+				}
+			}
+		}
+	}
+}
+
+KMM_HUN_reconstruction_of_the_habsburg_empire = {
+	HUN_ask_BEL_for_delivery = {
+		icon = eng_abdication_crisis
+		cost = 100
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = HUN_ask_BEL_for_delivery_CZE
+				has_global_flag = HUN_ultimatum_to_CZE
+			}
+			custom_trigger_tooltip = {
+				tooltip = HUN_ask_BEL_for_delivery_ROM
+				has_global_flag = HUN_ultimatum_to_ROM
+			}
+			custom_trigger_tooltip = {
+				tooltip = HUN_ask_BEL_for_delivery_YUG
+				has_global_flag = HUN_ultimatum_to_YUG
+			}
+		}
+		complete_effect = {
+			country_event = {
+				id = kmm.36
+				hours = 6
+			}
+		}
+	}
+	HUN_ultimatum_to_CZE = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		days_re_enable = 70
+		fixed_random_seed = no
+		complete_effect = {
+			set_temp_variable = {
+				temp_hun_ult_1 = HUN_value
+			}
+			set_temp_variable = {
+				temp_hun_ult_2 = HUN_value2
+			}
+			add_to_temp_variable = {
+				temp_hun_ult_1 = temp_hun_ult_2
+			}
+			multiply_temp_variable = {
+				temp_hun_ult_1 = 4
+			}
+			set_temp_variable = {
+				temp_hun_ult_3 = 100
+			}
+			subtract_from_temp_variable = {
+				temp_hun_ult_3 = temp_hun_ult_1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = temp_hun_ult_1
+						value = 100
+						compare = greater_than
+					}
+				}
+				set_temp_variable = {
+					temp_hun_ult_1 = 100
+				}
+				set_temp_variable = {
+					temp_hun_ult_3 = 0
+				}
+			}
+			random_list = {
+				var:temp_hun_ult_1 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_1
+					hidden_effect = {
+						country_event = {
+							id = kmm.34
+							hours = 12
+						}
+					}
+					set_global_flag = HUN_ultimatum_to_CZE
+				}
+				var:temp_hun_ult_3 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_2
+					hidden_effect = {
+						country_event = {
+							id = kmm.35
+							hours = 12
+						}
+					}
+				}
+			}
+			country_event = {
+				id = kmm.33
+				hours = 0
+			}
+		}
+		visible = {
+			NOT = {
+				has_global_flag = HUN_ultimatum_to_CZE
+			}
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					check_variable = {
+						var = HUN_value
+						value = 10
+						compare = greater_than
+					}
+					check_variable = {
+						var = HUN_value2
+						value = 10
+						compare = greater_than
+					}
+				}
+				NOT = {
+					has_global_flag = HUN_ultimatum_to_CZE
+				}
+			}
+		}
+	}
+	HUN_ultimatum_to_ROM = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		days_re_enable = 70
+		fixed_random_seed = no
+		complete_effect = {
+			set_temp_variable = {
+				temp_hun_ult_1 = HUN_value
+			}
+			set_temp_variable = {
+				temp_hun_ult_2 = HUN_value2
+			}
+			add_to_temp_variable = {
+				temp_hun_ult_1 = temp_hun_ult_2
+			}
+			multiply_temp_variable = {
+				temp_hun_ult_1 = 4
+			}
+			set_temp_variable = {
+				temp_hun_ult_3 = 100
+			}
+			subtract_from_temp_variable = {
+				temp_hun_ult_3 = temp_hun_ult_1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = temp_hun_ult_1
+						value = 100
+						compare = greater_than
+					}
+				}
+				set_temp_variable = {
+					temp_hun_ult_1 = 100
+				}
+				set_temp_variable = {
+					temp_hun_ult_3 = 0
+				}
+			}
+			random_list = {
+				var:temp_hun_ult_1 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_1
+					hidden_effect = {
+						country_event = {
+							id = kmm.34
+							hours = 12
+						}
+					}
+					set_global_flag = HUN_ultimatum_to_ROM
+				}
+				var:temp_hun_ult_3 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_2
+					hidden_effect = {
+						country_event = {
+							id = kmm.35
+							hours = 12
+						}
+					}
+				}
+			}
+			country_event = {
+				id = kmm.33
+				hours = 0
+			}
+		}
+		visible = {
+			NOT = {
+				has_global_flag = HUN_ultimatum_to_ROM
+			}
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					check_variable = {
+						var = HUN_value
+						value = 10
+						compare = greater_than
+					}
+					check_variable = {
+						var = HUN_value2
+						value = 10
+						compare = greater_than
+					}
+				}
+			}
+		}
+	}
+	HUN_ultimatum_to_YUG = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		days_re_enable = 70
+		fixed_random_seed = no
+		complete_effect = {
+			set_temp_variable = {
+				temp_hun_ult_1 = HUN_value
+			}
+			set_temp_variable = {
+				temp_hun_ult_2 = HUN_value2
+			}
+			add_to_temp_variable = {
+				temp_hun_ult_1 = temp_hun_ult_2
+			}
+			multiply_temp_variable = {
+				temp_hun_ult_1 = 4
+			}
+			set_temp_variable = {
+				temp_hun_ult_3 = 100
+			}
+			subtract_from_temp_variable = {
+				temp_hun_ult_3 = temp_hun_ult_1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = temp_hun_ult_1
+						value = 100
+						compare = greater_than
+					}
+				}
+				set_temp_variable = {
+					temp_hun_ult_1 = 100
+				}
+				set_temp_variable = {
+					temp_hun_ult_3 = 0
+				}
+			}
+			random_list = {
+				var:temp_hun_ult_1 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_1
+					hidden_effect = {
+						country_event = {
+							id = kmm.34
+							hours = 12
+						}
+					}
+					set_global_flag = HUN_ultimatum_to_YUG
+				}
+				var:temp_hun_ult_3 = {
+					custom_effect_tooltip = HUN_ultimatum_to_XXX_tt_2
+					hidden_effect = {
+						country_event = {
+							id = kmm.35
+							hours = 12
+						}
+					}
+				}
+			}
+			country_event = {
+				id = kmm.33
+				hours = 0
+			}
+			set_global_flag = HUN_ultimatum_to_YUG
+		}
+		visible = {
+			NOT = {
+				has_global_flag = HUN_ultimatum_to_YUG
+			}
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					check_variable = {
+						var = HUN_value
+						value = 10
+						compare = greater_than
+					}
+					check_variable = {
+						var = HUN_value2
+						value = 10
+						compare = greater_than
+					}
+				}
+			}
+		}
+	}
+	HUN_burgenland_annexation_agreement = {
+		icon = generic_civil_support
+		fire_only_once = yes
+		cost = 50
+		available = {
+			AUS = {
+				has_opinion = {
+					target = HUN
+					value > 49
+				}
+			}
+		}
+		complete_effect = {
+			transfer_state = 818
+			add_state_core = 818
+			AUS = {
+				remove_state_core = 818
+			}
+			give_guarantee = AUS
+			AUS = {
+				give_guarantee = HUN
+			}
+			custom_effect_tooltip = HUN_burgenland_annexation_agreement_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 2
+				}
+				add_to_variable = {
+					HUN_value2 = 3
+				}
+			}
+		}
+	}
+	HUN_CZE_BW = {
+		icon = oppression
+		fire_only_once = yes
+		cost = 50
+		available = {
+			has_border_war = no
+			has_war = no
+			is_subject = no
+			CZE = {
+				is_subject = no
+			}
+			hidden_trigger = {
+				command_power > 49
+				has_political_power > 49
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		custom_cost_text = HUN_XXX_BW
+		complete_effect = {
+			custom_effect_tooltip = HUN_CZE_BW_tt_a
+			custom_effect_tooltip = HUN_CZE_BW_tt_b
+			hidden_effect = {
+				random_list = {
+					33 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 664
+								num_provinces = 3
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 43
+								num_provinces = 3
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					55 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 815
+								num_provinces = 3
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 154
+								num_provinces = 5
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					11 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 73
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 154
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	HUN_ROM_BW = {
+		icon = oppression
+		fire_only_once = yes
+		cost = 50
+		available = {
+			has_border_war = no
+			has_war = no
+			is_subject = no
+			ROM = {
+				is_subject = no
+			}
+			hidden_trigger = {
+				command_power > 49
+				has_political_power > 49
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		custom_cost_text = HUN_XXX_BW
+		complete_effect = {
+			custom_effect_tooltip = HUN_ROM_BW_tt_a
+			custom_effect_tooltip = HUN_ROM_BW_tt_b
+			hidden_effect = {
+				random_list = {
+					55 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 76
+								num_provinces = 3
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 154
+								num_provinces = 4
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					30 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 83
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 154
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 82
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 833
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	HUN_YUG_BW = {
+		icon = oppression
+		fire_only_once = yes
+		cost = 50
+		available = {
+			has_border_war = no
+			has_war = no
+			is_subject = no
+			YUG = {
+				is_subject = no
+			}
+			hidden_trigger = {
+				command_power > 49
+				has_political_power > 49
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		custom_cost_text = HUN_XXX_BW
+		complete_effect = {
+			custom_effect_tooltip = HUN_YUG_BW_tt_a
+			custom_effect_tooltip = HUN_YUG_BW_tt_b
+			hidden_effect = {
+				random_list = {
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 896
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 155
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					25 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 109
+								num_provinces = 3
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 155
+								num_provinces = 4
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 109
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 833
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 45
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 833
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 833
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 822
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+					15 = {
+						start_border_war = {
+							change_state_after_war = no
+							attacker = {
+								state = 764
+								num_provinces = 1
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+							defender = {
+								state = 833
+								num_provinces = 2
+								on_win = kmm.30
+								on_lose = kmm.31
+								on_cancel = kmm.32
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	HUN_CZE_insulting_against = {
+		icon = generic_speech
+		available = {
+			CZE = {
+				is_subject = no
+				exists = yes
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = HUN_XXX_insulting_against_tt
+			add_to_variable = {
+				HUN_value = 1
+			}
+		}
+	}
+	HUN_ROM_insulting_against = {
+		icon = generic_speech
+		available = {
+			ROM = {
+				is_subject = no
+				exists = yes
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = HUN_XXX_insulting_against_tt
+			add_to_variable = {
+				HUN_value = 1
+			}
+		}
+	}
+	HUN_YUG_insulting_against = {
+		icon = generic_speech
+		available = {
+			YUG = {
+				is_subject = no
+				exists = yes
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = HUN_XXX_insulting_against_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 1
+				}
+			}
+		}
+	}
+	HUN_national_power_manifestation_propaganda = {
+		icon = eng_propaganda_campaigns
+		available = {
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 180
+		remove_effect = {
+			custom_effect_tooltip = HUN_NPMP_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 3
+				}
+				add_to_variable = {
+					HUN_value2 = 3
+				}
+			}
+		}
+	}
+	HUN_CZE_RIS = {
+		icon = eng_ally_imperialist_coup
+		available = {
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			CZE = {
+				add_timed_idea = {
+					idea = HUN_neutrality_drift
+					days = 70
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = HUN_XXX_RIS_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 1
+				}
+				add_to_variable = {
+					HUN_value2 = 1
+				}
+			}
+		}
+	}
+	HUN_ROM_RIS = {
+		icon = eng_ally_imperialist_coup
+		available = {
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			ROM = {
+				add_timed_idea = {
+					idea = HUN_neutrality_drift
+					days = 70
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = HUN_XXX_RIS_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 1
+				}
+				add_to_variable = {
+					HUN_value2 = 1
+				}
+			}
+		}
+	}
+	HUN_YUG_RIS = {
+		icon = eng_ally_imperialist_coup
+		available = {
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			YUG = {
+				add_timed_idea = {
+					idea = HUN_neutrality_drift
+					days = 70
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = HUN_XXX_RIS_tt
+			hidden_effect = {
+				add_to_variable = {
+					HUN_value = 1
+				}
+				add_to_variable = {
+					HUN_value2 = 1
+				}
+			}
+		}
+	}
+	HUN_ask_BUL_for_help = {
+		icon = eng_trade_unions_support
+		available = {
+			BUL = {
+				has_opinion = {
+					target = HUN
+					value > 49
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = HUN_ask_BUL_for_help_tt
+			hidden_effect = {
+				set_global_flag = HUN_ask_BUL_for_help_flag
+				add_to_variable = {
+					HUN_value = 2
+				}
+			}
+		}
+	}
+	HUN_ask_BUL_for_volunteers = {
+		icon = eng_blackshirt_march
+		visible = {
+			custom_trigger_tooltip = {
+				tooltip = HUN_ask_BUL_for_volunteers_tt
+				has_global_flag = HUN_ask_BUL_for_help_flag
+				NOT = {
+					has_global_flag = HUN_ask_BUL_for_equipment
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			add_manpower = 20000
+			set_global_flag = HUN_ask_BUL_for_volunteers
+		}
+	}
+	HUN_ask_BUL_for_equipment = {
+		icon = generic_industry
+		visible = {
+			custom_trigger_tooltip = {
+				tooltip = HUN_ask_BUL_for_volunteers_tt
+				has_global_flag = HUN_ask_BUL_for_help_flag
+				NOT = {
+					has_global_flag = HUN_ask_BUL_for_volunteers
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8500
+				producer = BUL
+			}
+			set_global_flag = HUN_ask_BUL_for_equipment
+		}
+	}
+	HUN_Adebug = {
+		visible = {
+			is_debug = no
+		}
+		available = {
+			has_cosmetic_tag = GER_civil_war
+			has_cosmetic_tag = GER_provisional_gvt
+			has_cosmetic_tag = GER_german_empire
+			has_cosmetic_tag = GER_german_monarchy
+		}
+		complete_effect = {
+			add_political_power = 100
+		}
+	}
+}
+
+KMM_HUN_dealing_with_ethnic_problems = {
+	HUN_dealing_with_ethnic_problems_limit = {
+		icon = generic_political_discourse
+		activation = {
+			has_country_flag = HUN_dealing_with_ethnic_problems_started
+		}
+		fire_only_once = yes
+		days_mission_timeout = 120
+		is_good = no
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = HUN_dealing_with_ethnic_problems_ava_tt
+				has_country_flag = HUN_dealing_with_ethnic_problems_finished
+			}
+		}
+		timeout_effect = {
+			clr_country_flag = HUN_dealing_with_ethnic_problems_started
+			custom_effect_tooltip = HUN_dealing_with_ethnic_problems_timeout_tt
+			country_event = {
+				id = kmm.29
+			}
+		}
+		complete_effect = {
+			clr_country_flag = HUN_dealing_with_ethnic_problems_started
+			custom_effect_tooltip = HUN_dealing_with_ethnic_problems_complete_tt
+			country_event = {
+				id = kmm.29
+			}
+		}
+	}
+	##first
+	HUN_Sihai = {
+		icon = generic_nationalism
+		cost = 50
+		visible = {
+			has_country_flag = HUN_dealing_with_ethnic_problems_started
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_1
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_Sihai
+			set_country_flag = HUN_dealing_with_ethnic_problems_1
+		}
+	}
+	HUN_Renpo = {
+		icon = generic_military
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_dealing_with_ethnic_problems_started
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_1
+			}
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_Renpo
+			set_country_flag = HUN_dealing_with_ethnic_problems_1
+		}
+	}
+	HUN_Bunkatu = {
+		icon = eng_ally_imperialist_coup
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_dealing_with_ethnic_problems_started
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_1
+			}
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_Bunkatu
+			set_country_flag = HUN_dealing_with_ethnic_problems_1
+		}
+	}
+	HUN_Ziyu = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_dealing_with_ethnic_problems_started
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_1
+			}
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_Ziyu
+			set_country_flag = HUN_dealing_with_ethnic_problems_1
+		}
+	}
+	##second_sihai
+	HUN_SHosyo = {
+		icon = eng_trade_unions_support
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_2
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SHosyo
+			set_country_flag = HUN_dealing_with_ethnic_problems_2
+		}
+	}
+	HUN_SDoitu = {
+		icon = generic_speech
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_2
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SDoitu
+			set_country_flag = HUN_dealing_with_ethnic_problems_2
+		}
+	}
+	HUN_SAugusu = {
+		icon = generic_political_discourse
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_2
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SAugusu
+			set_country_flag = HUN_dealing_with_ethnic_problems_2
+		}
+	}
+	HUN_SZituryoku = {
+		icon = gre_investment_decisions
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_2
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SZituryoku
+			set_country_flag = HUN_dealing_with_ethnic_problems_2
+		}
+	}
+	##second_renpo
+	HUN_RKron = {
+		icon = eng_abdication_crisis
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Renpo
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_2
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_RKron
+			set_country_flag = HUN_dealing_with_ethnic_problems_2
+		}
+	}
+	##third_sihai
+	HUN_SRituryo = {
+		icon = generic_arrest
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_2
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_3
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SRituryo
+			set_country_flag = HUN_dealing_with_ethnic_problems_3
+		}
+	}
+	HUN_SYokuatu = {
+		icon = generic_police_action
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_2
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_3
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SYokuatu
+			set_country_flag = HUN_dealing_with_ethnic_problems_3
+		}
+	}
+	HUN_SHoken = {
+		icon = eng_support_imperialist_coup
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_2
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_3
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SHoken
+			set_country_flag = HUN_dealing_with_ethnic_problems_3
+		}
+	}
+	HUN_SZiyu = {
+		icon = generic_political_rally
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_2
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_3
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SZiyu
+			set_country_flag = HUN_dealing_with_ethnic_problems_3
+		}
+	}
+	##fourth_kyotu
+	#HUN_SHap = {
+	#	icon = eng_support_imperialist_coup
+	#	cost = 50
+	#	fire_only_once = yes
+	#	visible = {
+	#		has_country_flag = HUN_DEP_Sihai
+	#		has_country_flag = HUN_dealing_with_ethnic_problems_3
+	#		NOT = { has_country_flag = HUN_DEP_SDonau }
+	#		NOT = { has_country_flag = HUN_dealing_with_ethnic_problems_finished }
+	#	}
+	#	complete_effect = {
+	#		set_country_flag = HUN_DEP_SHap
+	#		set_country_flag = HUN_dealing_with_ethnic_problems_4
+	#	}
+	#}
+	HUN_SSiso = {
+		icon = generic_brainwash
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_3
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_finished
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SSiso
+			set_country_flag = HUN_dealing_with_ethnic_problems_4
+		}
+	}
+	HUN_SGun = {
+		icon = generic_political_discourse
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = HUN_DEP_Sihai
+			has_country_flag = HUN_dealing_with_ethnic_problems_3
+			NOT = {
+				has_country_flag = HUN_dealing_with_ethnic_problems_finished
+			}
+		}
+		complete_effect = {
+			set_country_flag = HUN_DEP_SGun
+			set_country_flag = HUN_dealing_with_ethnic_problems_4
+			country_event = {
+				id = kmm.37
+				hours = 6
+			}
+		}
+	}
+	#HUN_SDonau = {
+	#	icon = generic_form_nation
+	#	cost = 50
+	#	fire_only_once = yes
+	#	visible = {
+	#		has_country_flag = HUN_DEP_Sihai
+	#		has_country_flag = HUN_dealing_with_ethnic_problems_3
+	#		NOT = { has_country_flag = HUN_DEP_SHap }
+	#		NOT = { has_country_flag = HUN_dealing_with_ethnic_problems_finished }
+	#	}
+	#	complete_effect = {
+	#		set_country_flag = HUN_DEP_SDonau
+	#		set_country_flag = HUN_dealing_with_ethnic_problems_4
+	#	}
+	#}
+	##finished
+	#HUN_DEP_finish = {
+	#	cost = 150
+	#	fire_only_once = yes
+	#	visible = {
+	#		has_country_flag = HUN_dealing_with_ethnic_problems_started
+	#		NOT = { has_country_flag = HUN_dealing_with_ethnic_problems_finished }
+	#	}
+	#	available = {
+	#		custom_trigger_tooltip = {
+	#			tooltip = HUN_DEP_finish_a_tt
+	#			has_country_flag = HUN_dealing_with_ethnic_problems_3
+	#		}
+	#	}
+	#	complete_effect = {
+	#		custom_effect_tooltip = HUN_DEP_finish_e_tt
+	#		hidden_effect = {
+	#			set_country_flag = HUN_dealing_with_ethnic_problems_finished
+	#		}
+	#	}
+	#}
+}

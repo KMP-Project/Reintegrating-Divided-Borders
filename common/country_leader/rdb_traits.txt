@@ -1,0 +1,24 @@
+leader_traits = {
+	duce = {
+		random = no
+		political_power_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	founder_of_fascism = {
+		random = no
+		fascism_drift = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	founder_of_the_empire = {
+		random = no
+		justify_war_goal_time = -0.25
+		stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,104 @@
+##################################
+POL_reichskommissariat = {
+	color = {
+		115
+		115
+		115
+	}
+	color_ui = {
+		255
+		164
+		127
+	}
+}
+
+CZE_reichskommissariat = {
+	color = {
+		115
+		115
+		115
+	}
+	color_ui = {
+		222
+		248
+		198
+	}
+}
+
+TUR_ottoman_empire = {
+	color = {
+		116
+		219
+		121
+	}
+	color_ui = {
+		222
+		248
+		198
+	}
+}
+
+TUR_ottoman_empire_after = {
+	color = {
+		116
+		219
+		121
+	}
+	color_ui = {
+		222
+		248
+		198
+	}
+}
+
+HUN_neutrality_Hap = {
+	color = {
+		194
+		198
+		215
+	}
+	color_ui = {
+		255
+		255
+		255
+	}
+}
+
+HUN_HRE = {
+	color = {
+		194
+		198
+		215
+	}
+	color_ui = {
+		255
+		255
+		255
+	}
+}
+
+HREALPHA = {
+	color = {
+		154
+		158
+		175
+	}
+	color_ui = {
+		255
+		255
+		255
+	}
+}
+
+IBE = {
+	color = {
+		234
+		193
+		16
+	}
+	color_ui = {
+		255
+		255
+		255
+	}
+}

@@ -1,0 +1,212 @@
+@FACTION_TEXT_X = 55
+@ATTITUDE_TEXT_X = 160
+@STABILITY_TEXT_X = 275
+@STABILITY_ICON_X = 275
+@STABILITY_TT_X = 275
+@MANPOWER_TEXT_X = 380
+@MANPOWER_ICON_X = 385
+@MANPOWER_TT_X = 385
+@FACTION_ICONS_X = 10
+@FACTION_NAMES_X = 55
+@HEADERS_Y = 15
+guiTypes = {
+
+	containerWindowType = {
+		name = "ita_militaly_budget_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 180 }
+
+		#ICONS
+		iconType = {
+			name ="army_icon"
+			spriteType = "GFX_ITA_army"
+			position = { x = @FACTION_ICONS_X y = 45 }
+		}
+
+		instantTextBoxType = {
+			name ="army_name_text"
+			position = { x = @FACTION_NAMES_X y = 55 }
+			font = "hoi_18mbs"
+			text = "ITA_army_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		iconType = {
+			name ="navy_icon"
+			spriteType = "GFX_ITA_navy"
+			position = { x = @FACTION_ICONS_X y = 90 }
+		}
+
+		instantTextBoxType = {
+			name ="navy_name_text"
+			position = { x = @FACTION_NAMES_X y = 100 }
+			font = "hoi_18mbs"
+			text = "ITA_navy_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		iconType = {
+			name ="airforce_icon"
+			spriteType = "GFX_ITA_airforce"
+			position = { x = @FACTION_ICONS_X y = 135 }
+		}
+
+		instantTextBoxType = {
+			name ="airforce_name_text"
+			position = { x = @FACTION_NAMES_X y = 145 }
+			font = "hoi_18mbs"
+			text = "ITA_airforce_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		
+
+		#ATTITUDE
+		instantTextBoxType = {
+			name ="attitude_header"
+			position = { x = @ATTITUDE_TEXT_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "ITA_ui_budget_header"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_army_budget_states"
+			position = { x = @ATTITUDE_TEXT_X y = 55 }
+			font = "hoi_18mbs"
+			text = "ITA_army_budget_states_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_navy_budget_states"
+			position = { x = @ATTITUDE_TEXT_X y = 100 }
+			font = "hoi_18mbs"
+			text = "ITA_navy_budget_states_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_airforce_budget_states"
+			position = { x = @ATTITUDE_TEXT_X y = 145 }
+			font = "hoi_18mbs"
+			text = "ITA_airforce_budget_states_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="budget_tooltip_fake"
+			position = { x = @ATTITUDE_TEXT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 205
+			pdx_tooltip = ITA_BUDGET_TOOLTIP
+		}
+
+		#estimate
+
+		instantTextBoxType = {
+			name ="estimate_header"
+			position = { x = @STABILITY_ICON_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "ITA_ui_estimate_header"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_navy_estimate_status"
+			position = { x = @STABILITY_TEXT_X y = 55 }
+			font = "hoi_18mbs"
+			text = "ITA_army_estimate_status_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_army_estimate_status"
+			position = { x = @STABILITY_TEXT_X y = 100 }
+			font = "hoi_18mbs"
+			text = "ITA_navy_estimate_status_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_airforce_estimate_status"
+			position = { x = @STABILITY_TEXT_X y = 145 }
+			font = "hoi_18mbs"
+			text = "ITA_airforce_estimate_status_amount"
+			format = center
+			maxwidth = 110
+		}
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="estimate_tooltip_fake"
+			position = { x = @STABILITY_TT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 205
+			pdx_tooltip = ITA_ESTIMATE_TOOLTIP
+		}
+
+		#states
+		instantTextBoxType = {
+			name ="states_header"
+			position = { x = @MANPOWER_ICON_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "ITA_ui_states_header"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="ITA_army_status"
+			position = { x = @MANPOWER_TEXT_X y = 55 }
+			font = "hoi_18mbs"
+			text = "ITA_army_status_amount"
+			format = center
+			maxwidth = 120
+		}
+
+		instantTextBoxType = {
+			name ="ITA_navy_status"
+			position = { x = @MANPOWER_TEXT_X y = 100 }
+			font = "hoi_18mbs"
+			text = "ITA_navy_status_amount"
+			format = center
+			maxwidth = 120
+		}
+
+		instantTextBoxType = {
+			name ="ITA_airforce_status"
+			position = { x = @MANPOWER_TEXT_X y = 145 }
+			font = "hoi_18mbs"
+			text = "ITA_airforce_status_amount"
+			format = center
+			maxwidth = 120
+		}
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="states_tooltip_fake"
+			position = { x = @MANPOWER_TT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 205
+			pdx_tooltip = ITA_STATES_TOOLTIP
+		}
+	}
+}

@@ -71,7 +71,6 @@ ideas = {
 			modifier = {
 				ai_focus_aggressive_factor = 1
 				war_support_factor = 0.2
-				production_speed_buildings_factor = 0.5
 				industrial_capacity_factory = 0.33
 				acclimatization_hot_climate_gain_factor = 0.5
 				attrition = -0.33

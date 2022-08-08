@@ -1,19 +1,17 @@
 ﻿focus_tree = {
 	id = italian_focus
-
 	country = {
 		factor = 0
-		
 		modifier = {
 			add = 10
 			tag = ITA
 		}
 	}
-	
 	default = no
-
-	continuous_focus_position = { x = 50 y = 1300 }
-
+	continuous_focus_position = {
+		x = 50
+		y = 1300
+	}
 	#############################################
 	#											#
 	#  ### ### ##  # #  ## ### ##  ###  #  #    #
@@ -23,7 +21,6 @@
 	#  ### # # ##  ### ##   #  # # ### # # ###  #
 	#											#
 	#############################################
-
 	focus = {
 		id = ITA_agricultural_war
 		x = 0
@@ -63,7 +60,6 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_agricultural_land_war
 		relative_position_id = ITA_agricultural_war
@@ -72,7 +68,14 @@
 		icon = GFX_focus_ita_agricultural_land_war
 		cost = 5
 		available = {
-			controls_state = 2
+			any_controlled_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 4
+					include_locked = no
+				}
+				is_in_home_area = yes
+			}
 		}
 		completion_reward = {
 			#add_ideas = ITA_improvement_of_land_price_idea
@@ -89,18 +92,26 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_villaggio_mussolini
 		relative_position_id = ITA_agricultural_war
-		prerequisite = { focus = ITA_agricultural_war }
-		prerequisite = { focus = ITA_agricultural_land_war }
+		prerequisite = {
+			focus = ITA_agricultural_war
+		}
+		prerequisite = {
+			focus = ITA_agricultural_land_war
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_ita_villaggio_mussolini
 		cost = 5
 		available = {
 			controls_state = 114
+		}
+		bypass = {
+			NOT = {
+				controls_state = 114
+			}
 		}
 		completion_reward = {
 			114 = {
@@ -143,7 +154,6 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_EUR_district
 		relative_position_id = ITA_agricultural_land_war
@@ -158,15 +168,13 @@
 			add_political_power = 50
 			2 = {
 				set_state_category = megalopolis
-				add_building_construction = {
+				set_building_level = {
 					type = infrastructure
-					level = 10
-					instant_build = yes
+					level = 5
 				}
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_gold_for_your_homeland
 		relative_position_id = ITA_EUR_district
@@ -182,12 +190,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_state_owned_enterprise
 		relative_position_id = ITA_EUR_district
-		prerequisite = { focus = ITA_gold_for_your_homeland }
-		prerequisite = { focus = ITA_EUR_district }
+		prerequisite = {
+			focus = ITA_gold_for_your_homeland
+		}
+		prerequisite = {
+			focus = ITA_EUR_district
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_self_management
@@ -196,11 +207,13 @@
 			add_ideas = ITA_state_owned_enterprise_idea
 		}
 	}
-
 	focus = {
 		id = ITA_recovery_of_unemployment_rate
 		relative_position_id = ITA_villaggio_mussolini
-		prerequisite = { focus = ITA_villaggio_mussolini focus = ITA_state_owned_enterprise }
+		prerequisite = {
+			focus = ITA_villaggio_mussolini
+			focus = ITA_state_owned_enterprise
+		}
 		x = 2
 		y = 1
 		icon = GFX_focus_generic_concessions
@@ -209,7 +222,9 @@
 			has_idea = ITA_great_depression_1_idea
 		}
 		bypass = {
-			NOT = { has_idea = ITA_great_depression_1_idea }
+			NOT = {
+				has_idea = ITA_great_depression_1_idea
+			}
 		}
 		completion_reward = {
 			#swap_ideas = {
@@ -219,13 +234,18 @@
 			custom_effect_tooltip = ITA_recovery_of_unemployment_rate_tt
 		}
 	}
-
 	focus = {
 		id = ITA_protectionist_trade
 		relative_position_id = ITA_villaggio_mussolini
-		prerequisite = { focus = ITA_recovery_of_unemployment_rate }
-		prerequisite = { focus = ITA_villaggio_mussolini }
-		mutually_exclusive = { focus = ITA_free_trade }
+		prerequisite = {
+			focus = ITA_recovery_of_unemployment_rate
+		}
+		prerequisite = {
+			focus = ITA_villaggio_mussolini
+		}
+		mutually_exclusive = {
+			focus = ITA_free_trade
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_defence
@@ -264,13 +284,18 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_free_trade
 		relative_position_id = ITA_state_owned_enterprise
-		prerequisite = { focus = ITA_recovery_of_unemployment_rate }
-		prerequisite = { focus = ITA_state_owned_enterprise }
-		mutually_exclusive = { focus = ITA_protectionist_trade }
+		prerequisite = {
+			focus = ITA_recovery_of_unemployment_rate
+		}
+		prerequisite = {
+			focus = ITA_state_owned_enterprise
+		}
+		mutually_exclusive = {
+			focus = ITA_protectionist_trade
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_positive_trade_relations
@@ -309,11 +334,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_autarky
 		relative_position_id = ITA_protectionist_trade
-		prerequisite = { focus = ITA_protectionist_trade }
+		prerequisite = {
+			focus = ITA_protectionist_trade
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_consumer_goods
@@ -322,11 +348,12 @@
 			add_ideas = ITA_autarky_idea
 		}
 	}
-
 	focus = {
 		id = ITA_economic_liberalism
 		relative_position_id = ITA_free_trade
-		prerequisite = { focus = ITA_free_trade }
+		prerequisite = {
+			focus = ITA_free_trade
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_the_giant_wakes
@@ -335,11 +362,13 @@
 			add_ideas = ITA_economic_liberalism_idea
 		}
 	}
-
 	focus = {
 		id = ITA_autostrada
 		relative_position_id = ITA_recovery_of_unemployment_rate
-		prerequisite = { focus = ITA_free_trade focus = ITA_protectionist_trade }
+		prerequisite = {
+			focus = ITA_free_trade
+			focus = ITA_protectionist_trade
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_construct_infrastructure
@@ -378,11 +407,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_extra_research_slot
 		relative_position_id = ITA_autostrada
-		prerequisite = { focus = ITA_autarky focus = ITA_economic_liberalism }
+		prerequisite = {
+			focus = ITA_autarky
+			focus = ITA_economic_liberalism
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_research
@@ -391,11 +422,12 @@
 			add_research_slot = 1
 		}
 	}
-
 	focus = {
 		id = ITA_battle_of_lira
 		relative_position_id = ITA_autarky
-		prerequisite = { focus = ITA_autarky }
+		prerequisite = {
+			focus = ITA_autarky
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_battle_of_lira
@@ -404,11 +436,12 @@
 			add_ideas = ITA_battle_of_lira_idea
 		}
 	}
-
 	focus = {
 		id = ITA_economic_miracle
 		relative_position_id = ITA_economic_liberalism
-		prerequisite = { focus = ITA_economic_liberalism }
+		prerequisite = {
+			focus = ITA_economic_liberalism
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_industry_3
@@ -470,11 +503,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_absorption_of_private_demand_by_IRI
 		relative_position_id = ITA_extra_research_slot
-		prerequisite = { focus = ITA_economic_miracle focus = ITA_battle_of_lira }
+		prerequisite = {
+			focus = ITA_economic_miracle
+			focus = ITA_battle_of_lira
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_national_unity
@@ -556,11 +591,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_strengthening_trade_union_crackdown
 		relative_position_id = ITA_economic_miracle
-		prerequisite = { focus = ITA_economic_miracle }
+		prerequisite = {
+			focus = ITA_economic_miracle
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_spr_crush_the_revolution
@@ -568,23 +604,27 @@
 		completion_reward = {
 			add_ideas = ITA_strengthening_trade_union_crackdown_idea
 			add_popularity = {
-			    ideology = communism
-			    popularity = -0.2
+				ideology = communism
+				popularity = -0.2
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_northern_italy
 		relative_position_id = ITA_battle_of_lira
-		prerequisite = { focus = ITA_battle_of_lira }
+		prerequisite = {
+			focus = ITA_battle_of_lira
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_on_northern_italy
 		cost = 5
 		available = {
-			any_controlled_state = {
-				region = 21
+			custom_trigger_tooltip = {
+				tooltip = focus_on_northern_italy_tt
+				any_controlled_state = {
+					region = 21
+				}
 			}
 		}
 		completion_reward = {
@@ -647,11 +687,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_correcting_the_north_south_divide
 		relative_position_id = ITA_strengthening_trade_union_crackdown
-		prerequisite = { focus = ITA_strengthening_trade_union_crackdown }
+		prerequisite = {
+			focus = ITA_strengthening_trade_union_crackdown
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_correcting_the_north_south_divide
@@ -659,21 +700,21 @@
 		completion_reward = {
 			#add_ideas = ITA_correcting_the_north_south_divide_idea
 			add_stability = 0.05
-			every_owned_state = {
-				limit = {
-					is_core_of = ITA
-					is_controlled_by = ITA
-					is_in_home_area = yes
-					OR = {
-						region = 214
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
+			#every_owned_state = {
+			#	limit = {
+			#		is_core_of = ITA
+			#		is_controlled_by = ITA
+			#		is_in_home_area = yes
+			#		OR = {
+			#			region = 214
+			#		}
+			#	}
+			#	add_building_construction = {
+			#		type = infrastructure
+			#		level = 2
+			#		instant_build = yes
+			#	}
+			#}
 			every_owned_state = {
 				limit = {
 					is_core_of = ITA
@@ -691,18 +732,26 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_wetland_reclamation
 		relative_position_id = ITA_focus_on_northern_italy
-		prerequisite = { focus = ITA_focus_on_northern_italy }
+		prerequisite = {
+			focus = ITA_focus_on_northern_italy
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_wetland_reclamation
 		cost = 5
 		completion_reward = {
-			2 = {
-				add_extra_state_shared_building_slots = 2
+			if = {
+				limit = {
+					2 = {
+						is_owned_by = ITA
+					}
+				}
+				2 = {
+					add_extra_state_shared_building_slots = 2
+				}
 			}
 			add_stability = 0.1
 			if = {
@@ -737,11 +786,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_elimination_of_division
 		relative_position_id = ITA_extra_research_slot
-		prerequisite = { focus = ITA_wetland_reclamation focus = ITA_correcting_the_north_south_divide }
+		prerequisite = {
+			focus = ITA_wetland_reclamation
+			focus = ITA_correcting_the_north_south_divide
+		}
 		x = 0
 		y = 3
 		icon = GFX_focus_ita_elimination_of_division
@@ -753,17 +804,15 @@
 			}
 		}
 	}
-
-    #############################################################
-    ##														   ##
-    ##  ##### ##### #     ##### ##### ##### ##### ##### #	   ##
-    ##  #   # #   # #       #     #     #   #     #   # #	   ##
-    ##  ##### #   # #       #     #     #   #     ##### #	   ##
-    ##  #     #   # #       #     #     #   #     #   # #      ##
-    ##  #     ##### ##### #####   #   ##### ##### #   # #####  ##
-    ##														   ##
-    #############################################################
-
+	#############################################################
+	##														   ##
+	##  ##### ##### #     ##### ##### ##### ##### ##### #	   ##
+	##  #   # #   # #       #     #     #   #     #   # #	   ##
+	##  ##### #   # #       #     #     #   #     ##### #	   ##
+	##  #     #   # #       #     #     #   #     #   # #      ##
+	##  #     ##### ##### #####   #   ##### ##### #   # #####  ##
+	##														   ##
+	#############################################################
 	focus = {
 		id = ITA_victory_in_africa
 		x = 41
@@ -779,7 +828,9 @@
 					is_puppet_of = ITA
 				}
 			}
-			NOT = { has_war_with = ETH }
+			NOT = {
+				has_war_with = ETH
+			}
 		}
 		bypass = {
 			NOT = {
@@ -793,11 +844,12 @@
 			add_political_power = 120
 		}
 	}
-
 	focus = {
 		id = ITA_declaration_of_the_italian_empire
 		relative_position_id = ITA_victory_in_africa
-		prerequisite = { focus = ITA_victory_in_africa }
+		prerequisite = {
+			focus = ITA_victory_in_africa
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_italy_first
@@ -806,11 +858,12 @@
 			set_cosmetic_tag = ITA_EMPIRE
 		}
 	}
-
 	focus = {
 		id = ITA_approach_to_germany
 		relative_position_id = ITA_declaration_of_the_italian_empire
-		prerequisite = { focus = ITA_declaration_of_the_italian_empire }
+		prerequisite = {
+			focus = ITA_declaration_of_the_italian_empire
+		}
 		x = -13
 		y = 1
 		icon = GFX_focus_chi_mission_to_germany
@@ -821,7 +874,9 @@
 				is_subject = no
 				has_government = fascism
 			}
-			NOT = { has_completed_focus = ITA_reconstruction_of_the_stresa_front }
+			NOT = {
+				has_completed_focus = ITA_reconstruction_of_the_stresa_front
+			}
 		}
 		completion_reward = {
 			add_opinion_modifier = {
@@ -835,25 +890,29 @@
 			custom_effect_tooltip = ITA_DOG_1_tt
 		}
 	}
-
 	focus = {
 		id = ITA_reconstruction_of_the_stresa_front
 		relative_position_id = ITA_declaration_of_the_italian_empire
-		prerequisite = { focus = ITA_declaration_of_the_italian_empire }
+		prerequisite = {
+			focus = ITA_declaration_of_the_italian_empire
+		}
 		x = 13
 		y = 1
 		icon = GFX_focus_focus_fra_ratify_stresa
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = ITA_approach_to_germany }
+			NOT = {
+				has_completed_focus = ITA_approach_to_germany
+			}
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_uncollected_italy
 		relative_position_id = ITA_approach_to_germany
-		prerequisite = { focus = ITA_approach_to_germany }
+		prerequisite = {
+			focus = ITA_approach_to_germany
+		}
 		x = -6
 		y = 1
 		icon = GFX_focus_generic_adriatic_sea_focus
@@ -863,11 +922,12 @@
 			army_experience = 50
 		}
 	}
-
 	focus = {
 		id = ITA_fortress_of_zara
 		relative_position_id = ITA_uncollected_italy
-		prerequisite = { focus = ITA_uncollected_italy }
+		prerequisite = {
+			focus = ITA_uncollected_italy
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_construct_military
@@ -876,7 +936,9 @@
 			controls_state = 163
 		}
 		bypass = {
-			NOT = { controls_state = 163 }
+			NOT = {
+				controls_state = 163
+			}
 		}
 		completion_reward = {
 			163 = {
@@ -900,11 +962,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_alpine_fortress
 		relative_position_id = ITA_uncollected_italy
-		prerequisite = { focus = ITA_uncollected_italy }
+		prerequisite = {
+			focus = ITA_uncollected_italy
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_construct_military
@@ -933,9 +996,9 @@
 						level = 3
 						instant_build = yes
 						province = {
-					        all_provinces = yes
-					        limit_to_border = yes
-					    }
+							all_provinces = yes
+							limit_to_border = yes
+						}
 					}
 				}
 				825 = {
@@ -944,20 +1007,21 @@
 						level = 3
 						instant_build = yes
 						province = {
-					        all_provinces = yes
-					        limit_to_border = yes
-					    }
+							all_provinces = yes
+							limit_to_border = yes
+						}
 					}
 				}
 			}
 			custom_effect_tooltip = ITA_alpine_fortress_tt
 		}
 	}
-
 	focus = {
 		id = ITA_simulated_landing_operation
 		relative_position_id = ITA_uncollected_italy
-		prerequisite = { focus = ITA_uncollected_italy }
+		prerequisite = {
+			focus = ITA_uncollected_italy
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_amphibious_assault
@@ -965,23 +1029,24 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = ita_amphibious_focus
-				bonus = 1.0
+				bonus = 1
 				uses = 1
 				category = marine_tech
 			}
 			add_tech_bonus = {
 				name = ita_amphibious_focus
-				bonus = 1.0
+				bonus = 1
 				uses = 2
 				category = tp_tech
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_claims_to_yugo
 		relative_position_id = ITA_fortress_of_zara
-		prerequisite = { focus = ITA_fortress_of_zara }
+		prerequisite = {
+			focus = ITA_fortress_of_zara
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_hol_the_foundations_of_defense
@@ -992,11 +1057,12 @@
 			add_state_claim = 908
 		}
 	}
-
 	focus = {
 		id = ITA_claims_to_french
 		relative_position_id = ITA_alpine_fortress
-		prerequisite = { focus = ITA_alpine_fortress }
+		prerequisite = {
+			focus = ITA_alpine_fortress
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_hol_the_foundations_of_defense
@@ -1007,11 +1073,12 @@
 			add_state_claim = 839
 		}
 	}
-
 	focus = {
 		id = ITA_claims_to_greece
 		relative_position_id = ITA_simulated_landing_operation
-		prerequisite = { focus = ITA_simulated_landing_operation }
+		prerequisite = {
+			focus = ITA_simulated_landing_operation
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_hol_the_foundations_of_defense
@@ -1024,21 +1091,28 @@
 			add_state_claim = 187
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_albania
 		relative_position_id = ITA_claims_to_yugo
-		prerequisite = { focus = ITA_claims_to_yugo }
+		prerequisite = {
+			focus = ITA_claims_to_yugo
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_invasion_of_albania
 		cost = 5
 		available = {
-			ITA = { is_subject = no }
-			ALB = { exists = yes }
+			ITA = {
+				is_subject = no
+			}
+			ALB = {
+				exists = yes
+			}
 		}
 		bypass = {
-			ALB = { exists = no }
+			ALB = {
+				exists = no
+			}
 		}
 		completion_reward = {
 			declare_war_on = {
@@ -1054,16 +1128,19 @@
 						state = 805
 					}
 				}
-				ITA = { load_oob = "ITA_invasion_ALB" }
+				ITA = {
+					load_oob = "ITA_invasion_ALB"
+				}
 			}
 			custom_effect_tooltip = ITA_invasion_of_albania_tt
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_greece
 		relative_position_id = ITA_claims_to_greece
-		prerequisite = { focus = ITA_claims_to_greece }
+		prerequisite = {
+			focus = ITA_claims_to_greece
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_attack_greece
@@ -1071,8 +1148,12 @@
 		will_lead_to_war_with = GRE
 		bypass = {
 			OR = {
-				GRE = { exists = no }
-				GRE = { is_subject = yes }
+				GRE = {
+					exists = no
+				}
+				GRE = {
+					is_subject = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -1082,11 +1163,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_arabia
 		relative_position_id = ITA_invasion_of_greece
-		prerequisite = { focus = ITA_invasion_of_greece }
+		prerequisite = {
+			focus = ITA_invasion_of_greece
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_attack_kurdistan
@@ -1099,16 +1181,28 @@
 		}
 		bypass = {
 			OR = {
-				SAU = { exists = no }
-				SAU = { is_subject = yes }
+				SAU = {
+					exists = no
+				}
+				SAU = {
+					is_subject = yes
+				}
 			}
 			OR = {
-				YEM = { exists = no }
-				YEM = { is_subject = yes }
+				YEM = {
+					exists = no
+				}
+				YEM = {
+					is_subject = yes
+				}
 			}
 			OR = {
-				OMA = { exists = no }
-				OMA = { is_subject = yes }
+				OMA = {
+					exists = no
+				}
+				OMA = {
+					is_subject = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -1126,11 +1220,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_french
 		relative_position_id = ITA_claims_to_french
-		prerequisite = { focus = ITA_claims_to_french }
+		prerequisite = {
+			focus = ITA_claims_to_french
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_attack_france
@@ -1138,23 +1233,32 @@
 		will_lead_to_war_with = FRA
 		bypass = {
 			OR = {
-				FRA = { exists = no }
-				FRA = { is_subject = yes }
+				FRA = {
+					exists = no
+				}
+				FRA = {
+					is_subject = yes
+				}
 			}
 		}
 		completion_reward = {
 			create_wargoal = {
 				type = take_state_focus
 				target = FRA
-				generator = { 1 735 839 }
+				generator = {
+					1
+					735
+					839
+				}
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_english
 		relative_position_id = ITA_invasion_of_french
-		prerequisite = { focus = ITA_invasion_of_french }
+		prerequisite = {
+			focus = ITA_invasion_of_french
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_attack_britain
@@ -1162,23 +1266,31 @@
 		will_lead_to_war_with = ENG
 		bypass = {
 			OR = {
-				ENG = { exists = no }
-				ENG = { is_subject = yes }
+				ENG = {
+					exists = no
+				}
+				ENG = {
+					is_subject = yes
+				}
 			}
 		}
 		completion_reward = {
 			create_wargoal = {
 				type = take_state_focus
 				target = ENG
-				generator = { 116 183 }
+				generator = {
+					116
+					183
+				}
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_invasion_of_yugo
 		relative_position_id = ITA_invasion_of_albania
-		prerequisite = { focus = ITA_invasion_of_albania }
+		prerequisite = {
+			focus = ITA_invasion_of_albania
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_invasion_of_yugo
@@ -1186,8 +1298,12 @@
 		will_lead_to_war_with = YUG
 		bypass = {
 			OR = {
-				YUG = { exists = no }
-				YUG = { is_subject = yes }
+				YUG = {
+					exists = no
+				}
+				YUG = {
+					is_subject = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -1197,97 +1313,72 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_achievement_of_italian_imperialism
 		relative_position_id = ITA_invasion_of_yugo
-		prerequisite = { focus = ITA_invasion_of_yugo }
-		prerequisite = { focus = ITA_invasion_of_english }
-		prerequisite = { focus = ITA_invasion_of_arabia }
+		prerequisite = {
+			focus = ITA_invasion_of_yugo
+		}
+		prerequisite = {
+			focus = ITA_invasion_of_english
+		}
+		prerequisite = {
+			focus = ITA_invasion_of_arabia
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_achievement_of_italian_imperialism
 		cost = 5
 		available = {
-			controls_state = 1  
-			controls_state = 735
-			controls_state = 839
-			controls_state = 44 
-			controls_state = 805
-			controls_state = 102
-			controls_state = 905
-			controls_state = 896
+			custom_trigger_tooltip = {
+				tooltip = achievement_of_italian_imperialism_tt
+				NOT = {
+					any_state = {
+						NOT = {
+							is_owned_by = ITA
+						}
+						is_core_of = ITA
+					}
+				}
+			}
 			controls_state = 103
-			controls_state = 109
-			controls_state = 908
-			controls_state = 104
-			controls_state = 804
-			controls_state = 45 
-			controls_state = 822
-			controls_state = 764
-			controls_state = 897
-			controls_state = 105
-			controls_state = 107
-			controls_state = 108
-			controls_state = 802
-			controls_state = 106
-			controls_state = 731
-			controls_state = 47 
-			controls_state = 185
-			controls_state = 187
-			controls_state = 186
-			controls_state = 182
 			controls_state = 163
-			controls_state = 164
-			controls_state = 183
+			controls_state = 735
 			controls_state = 116
-
+			controls_state = 1
+			controls_state = 458
 		}
-
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = vittoria_mutilata
 				add_idea = impero_italiano_idea
 			}
-			1 = { add_core_of = ITA }
-			735 = { add_core_of = ITA }
-			839 = { add_core_of = ITA }
-			44 = { add_core_of = ITA }
-			805 = { add_core_of = ITA }
-			102 = { add_core_of = ITA }
-			905 = { add_core_of = ITA }
-			896 = { add_core_of = ITA }
-			103 = { add_core_of = ITA }
-			109 = { add_core_of = ITA }
-			908 = { add_core_of = ITA }
-			104 = { add_core_of = ITA }
-			804 = { add_core_of = ITA }
-			45 = { add_core_of = ITA }
-			822 = { add_core_of = ITA }
-			764 = { add_core_of = ITA }
-			897 = { add_core_of = ITA }
-			105 = { add_core_of = ITA }
-			107 = { add_core_of = ITA }
-			108 = { add_core_of = ITA }
-			802 = { add_core_of = ITA }
-			106 = { add_core_of = ITA }
-			731 = { add_core_of = ITA }
-			47 = { add_core_of = ITA }
-			185 = { add_core_of = ITA }
-			187 = { add_core_of = ITA }
-			186 = { add_core_of = ITA }
-			182 = { add_core_of = ITA }
-			163 = { add_core_of = ITA }
-			164 = { add_core_of = ITA }
-			183 = { add_core_of = ITA }
-			116 = { add_core_of = ITA }
+			103 = {
+				add_core_of = ROOT
+			}
+			163 = {
+				add_core_of = ROOT
+			}
+			735 = {
+				add_core_of = ROOT
+			}
+			116 = {
+				add_core_of = ROOT
+			}
+			1 = {
+				add_core_of = ROOT
+			}
+			458 = {
+				add_core_of = ROOT
+			}
 		}
 	}
-
 	focus = {
 		id = ITA_our_sea
 		relative_position_id = ITA_approach_to_germany
-		prerequisite = { focus = ITA_approach_to_germany }
+		prerequisite = {
+			focus = ITA_approach_to_germany
+		}
 		x = 6
 		y = 1
 		icon = GFX_focus_generic_focus_on_mediterraneum
@@ -1297,11 +1388,12 @@
 			navy_experience = 50
 		}
 	}
-
 	focus = {
 		id = ITA_the_forefront_of_our_sea
 		relative_position_id = ITA_our_sea
-		prerequisite = { focus = ITA_our_sea }
+		prerequisite = {
+			focus = ITA_our_sea
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_construct_military
@@ -1310,7 +1402,9 @@
 			controls_state = 114
 		}
 		bypass = {
-			NOT = { controls_state = 114 }
+			NOT = {
+				controls_state = 114
+			}
 		}
 		completion_reward = {
 			114 = {
@@ -1345,11 +1439,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_opposite_the_adriatic_sea
 		relative_position_id = ITA_our_sea
-		prerequisite = { focus = ITA_our_sea }
+		prerequisite = {
+			focus = ITA_our_sea
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_construct_military
@@ -1358,7 +1453,9 @@
 			controls_state = 163
 		}
 		bypass = {
-			NOT = { controls_state = 163 }
+			NOT = {
+				controls_state = 163
+			}
 		}
 		completion_reward = {
 			163 = {
@@ -1393,11 +1490,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_aegean_bridgehead
 		relative_position_id = ITA_our_sea
-		prerequisite = { focus = ITA_our_sea }
+		prerequisite = {
+			focus = ITA_our_sea
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_construct_military
@@ -1406,7 +1504,9 @@
 			controls_state = 164
 		}
 		bypass = {
-			NOT = { controls_state = 164 }
+			NOT = {
+				controls_state = 164
+			}
 		}
 		completion_reward = {
 			164 = {
@@ -1441,11 +1541,14 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_prisoner_in_the_mediterranean
 		relative_position_id = ITA_the_forefront_of_our_sea
-		prerequisite = { focus = ITA_aegean_bridgehead focus = ITA_opposite_the_adriatic_sea focus = ITA_the_forefront_of_our_sea }
+		prerequisite = {
+			focus = ITA_aegean_bridgehead
+			focus = ITA_opposite_the_adriatic_sea
+			focus = ITA_the_forefront_of_our_sea
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_prisoner_in_the_mediterranean
@@ -1460,11 +1563,12 @@
 			add_state_claim = 797
 		}
 	}
-
 	focus = {
 		id = ITA_unlocking_gibraltar
 		relative_position_id = ITA_prisoner_in_the_mediterranean
-		prerequisite = { focus = ITA_prisoner_in_the_mediterranean }
+		prerequisite = {
+			focus = ITA_prisoner_in_the_mediterranean
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
@@ -1513,11 +1617,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_unlocking_suez
 		relative_position_id = ITA_prisoner_in_the_mediterranean
-		prerequisite = { focus = ITA_prisoner_in_the_mediterranean }
+		prerequisite = {
+			focus = ITA_prisoner_in_the_mediterranean
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
@@ -1605,11 +1710,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_trade_route_protection
 		relative_position_id = ITA_prisoner_in_the_mediterranean
-		prerequisite = { focus = ITA_unlocking_suez focus = ITA_unlocking_gibraltar }
+		prerequisite = {
+			focus = ITA_unlocking_suez
+			focus = ITA_unlocking_gibraltar
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_positive_trade_relations
@@ -1618,11 +1725,13 @@
 			add_ideas = ITA_trade_route_protection_idea
 		}
 	}
-
 	focus = {
 		id = ITA_protection_of_trade_routes_in_the_red_sea
 		relative_position_id = ITA_prisoner_in_the_mediterranean
-		prerequisite = { focus = ITA_unlocking_suez focus = ITA_unlocking_gibraltar }
+		prerequisite = {
+			focus = ITA_unlocking_suez
+			focus = ITA_unlocking_gibraltar
+		}
 		x = 2
 		y = 2
 		icon = GFX_goal_generic_navy_cruiser
@@ -1631,11 +1740,12 @@
 			add_ideas = ITA_protection_of_trade_routes_in_the_red_sea_idea
 		}
 	}
-
 	focus = {
 		id = ITA_road_to_britannia
 		relative_position_id = ITA_prisoner_in_the_mediterranean
-		prerequisite = { focus = ITA_unlocking_gibraltar }
+		prerequisite = {
+			focus = ITA_unlocking_gibraltar
+		}
 		x = -2
 		y = 2
 		icon = GFX_focus_AST_never_gallipoli
@@ -1658,32 +1768,36 @@
 			add_ideas = ITA_road_to_britannia_idea
 		}
 	}
-
 	focus = {
 		id = ITA_prison_break
 		relative_position_id = ITA_trade_route_protection
-		prerequisite = { focus = ITA_road_to_britannia }
-		prerequisite = { focus = ITA_trade_route_protection }
-		prerequisite = { focus = ITA_protection_of_trade_routes_in_the_red_sea }
+		prerequisite = {
+			focus = ITA_road_to_britannia
+		}
+		prerequisite = {
+			focus = ITA_trade_route_protection
+		}
+		prerequisite = {
+			focus = ITA_protection_of_trade_routes_in_the_red_sea
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_prison_break
 		cost = 5
 		completion_reward = {
 			remove_ideas = flotta_mediterranea
-
 			swap_ideas = {
 				remove_idea = ITA_road_to_britannia_idea
 				add_idea = ITA_flotta_dalto_mare_idea
 			}
-
 		}
 	}
-
 	focus = {
 		id = ITA_axis
 		relative_position_id = ITA_approach_to_germany
-		prerequisite = { focus = ITA_approach_to_germany }
+		prerequisite = {
+			focus = ITA_approach_to_germany
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_support_fascism
@@ -1709,11 +1823,12 @@
 			custom_effect_tooltip = ITA_DOG_1_tt
 		}
 	}
-
 	focus = {
 		id = ITA_interaction_with_luftvaffe
 		relative_position_id = ITA_approach_to_germany
-		prerequisite = { focus = ITA_approach_to_germany }
+		prerequisite = {
+			focus = ITA_approach_to_germany
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_air_fighter2
@@ -1735,11 +1850,12 @@
 			custom_effect_tooltip = ITA_DOG_1_tt
 		}
 	}
-
 	focus = {
 		id = ITA_cooperation_with_the_german_army
 		relative_position_id = ITA_interaction_with_luftvaffe
-		prerequisite = { focus = ITA_interaction_with_luftvaffe }
+		prerequisite = {
+			focus = ITA_interaction_with_luftvaffe
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_military_academy
@@ -1765,11 +1881,12 @@
 			custom_effect_tooltip = ITA_DOG_2_tt
 		}
 	}
-
 	focus = {
 		id = ITA_economic_cooperation_with_germany
 		relative_position_id = ITA_axis
-		prerequisite = { focus = ITA_axis }
+		prerequisite = {
+			focus = ITA_axis
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_intelligence_exchange
@@ -1782,8 +1899,16 @@
 			}
 		}
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
-			GER = { add_offsite_building = { type = industrial_complex level = 4 } }
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 12
@@ -1791,11 +1916,12 @@
 			custom_effect_tooltip = ITA_DOG_3_tt
 		}
 	}
-
 	focus = {
 		id = ITA_synthetic_petroleum_technology_with_germany
 		relative_position_id = ITA_economic_cooperation_with_germany
-		prerequisite = { focus = ITA_economic_cooperation_with_germany }
+		prerequisite = {
+			focus = ITA_economic_cooperation_with_germany
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_oil_refinery
@@ -1845,11 +1971,12 @@
 			custom_effect_tooltip = ITA_DOG_3_tt
 		}
 	}
-
 	focus = {
 		id = ITA_german_technology
 		relative_position_id = ITA_cooperation_with_the_german_army
-		prerequisite = { focus = ITA_cooperation_with_the_german_army }
+		prerequisite = {
+			focus = ITA_cooperation_with_the_german_army
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_scientific_exchange
@@ -1875,12 +2002,15 @@
 			custom_effect_tooltip = ITA_DOG_2_tt
 		}
 	}
-
 	focus = {
 		id = ITA_pledge_of_friendship
 		relative_position_id = ITA_approach_to_germany
-		prerequisite = { focus = ITA_axis }
-		prerequisite = { focus = ITA_interaction_with_luftvaffe }
+		prerequisite = {
+			focus = ITA_axis
+		}
+		prerequisite = {
+			focus = ITA_interaction_with_luftvaffe
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_improve_relations
@@ -1893,7 +2023,12 @@
 			}
 		}
 		completion_reward = {
-			GER = { country_event = { id = kmm.58 hours = 6 } }
+			GER = {
+				country_event = {
+					id = kmm.58
+					hours = 6
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 8
@@ -1901,11 +2036,12 @@
 			custom_effect_tooltip = ITA_DOG_2_tt
 		}
 	}
-
 	focus = {
 		id = ITA_stahlpakt
 		relative_position_id = ITA_pledge_of_friendship
-		prerequisite = { focus = ITA_pledge_of_friendship }
+		prerequisite = {
+			focus = ITA_pledge_of_friendship
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_major_alliance
@@ -1918,7 +2054,12 @@
 			}
 		}
 		completion_reward = {
-			GER = { country_event = { id = kmm.61 hours = 6 } }
+			GER = {
+				country_event = {
+					id = kmm.61
+					hours = 6
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 8
@@ -1926,12 +2067,16 @@
 			custom_effect_tooltip = ITA_DOG_2_tt
 		}
 	}
-
 	focus = {
 		id = ITA_berlin_rome_axis
 		relative_position_id = ITA_stahlpakt
-		prerequisite = { focus = ITA_stahlpakt }
-		prerequisite = { focus = ITA_german_technology focus = ITA_synthetic_petroleum_technology_with_germany }
+		prerequisite = {
+			focus = ITA_stahlpakt
+		}
+		prerequisite = {
+			focus = ITA_german_technology
+			focus = ITA_synthetic_petroleum_technology_with_germany
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_stahlpakt
@@ -1951,7 +2096,12 @@
 			is_in_faction_with = GER
 		}
 		completion_reward = {
-			GER = { country_event = { id = kmm.55 hours = 6 } }
+			GER = {
+				country_event = {
+					id = kmm.55
+					hours = 6
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 12
@@ -1959,11 +2109,12 @@
 			custom_effect_tooltip = ITA_DOG_3_tt
 		}
 	}
-
 	focus = {
 		id = ITA_cooperation_on_the_african_campaign
 		relative_position_id = ITA_berlin_rome_axis
-		prerequisite = { focus = ITA_berlin_rome_axis }
+		prerequisite = {
+			focus = ITA_berlin_rome_axis
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_little_entente
@@ -1982,8 +2133,15 @@
 			}
 		}
 		completion_reward = {
-			GER = { load_oob = "ITA_GER_africa_1" }
-			GER = { country_event = { id = kmm.64 hours = 6 } }
+			GER = {
+				load_oob = "ITA_GER_africa_1"
+			}
+			GER = {
+				country_event = {
+					id = kmm.64
+					hours = 6
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 8
@@ -1991,11 +2149,12 @@
 			custom_effect_tooltip = ITA_DOG_2_tt
 		}
 	}
-
 	focus = {
 		id = ITA_cooperation_on_the_african_campaign_2
 		relative_position_id = ITA_cooperation_on_the_african_campaign
-		prerequisite = { focus = ITA_cooperation_on_the_african_campaign }
+		prerequisite = {
+			focus = ITA_cooperation_on_the_african_campaign
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_little_entente
@@ -2014,8 +2173,15 @@
 			}
 		}
 		completion_reward = {
-			GER = { load_oob = "ITA_GER_africa_2" }
-			GER = { country_event = { id = kmm.64 hours = 6 } }
+			GER = {
+				load_oob = "ITA_GER_africa_2"
+			}
+			GER = {
+				country_event = {
+					id = kmm.64
+					hours = 6
+				}
+			}
 			add_to_variable = {
 				var = ITA_dependence_on_germany
 				value = 12
@@ -2023,11 +2189,12 @@
 			custom_effect_tooltip = ITA_DOG_3_tt
 		}
 	}
-
 	focus = {
 		id = ITA_friendship_with_japan
 		relative_position_id = ITA_berlin_rome_axis
-		prerequisite = { focus = ITA_berlin_rome_axis }
+		prerequisite = {
+			focus = ITA_berlin_rome_axis
+		}
 		x = -2
 		y = 1
 		icon = GFX_focus_chi_collaboration_with_the_japanese
@@ -2045,11 +2212,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_friendship_with_bulgaria
 		relative_position_id = ITA_berlin_rome_axis
-		prerequisite = { focus = ITA_berlin_rome_axis }
+		prerequisite = {
+			focus = ITA_berlin_rome_axis
+		}
 		x = 2
 		y = 1
 		icon = GFX_focus_generic_befriend_bulgaria
@@ -2067,11 +2235,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_cooperation_with_the_combined_fleet
 		relative_position_id = ITA_friendship_with_japan
-		prerequisite = { focus = ITA_friendship_with_japan }
+		prerequisite = {
+			focus = ITA_friendship_with_japan
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_jap_pacific_guardian
@@ -2079,17 +2248,18 @@
 		completion_reward = {
 			navy_experience = 75
 			add_tech_bonus = {
-				bonus = 1.0
+				bonus = 1
 				uses = 3
 				category = cat_fleet_in_being
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_influence_in_bulgaria
 		relative_position_id = ITA_friendship_with_bulgaria
-		prerequisite = { focus = ITA_friendship_with_bulgaria }
+		prerequisite = {
+			focus = ITA_friendship_with_bulgaria
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_BUL_consolidate_the_third_bulgarian_state
@@ -2115,11 +2285,12 @@
 			puppet = BUL
 		}
 	}
-
 	focus = {
 		id = ITA_founder_of_the_empire
 		relative_position_id = ITA_declaration_of_the_italian_empire
-		prerequisite = { focus = ITA_declaration_of_the_italian_empire }
+		prerequisite = {
+			focus = ITA_declaration_of_the_italian_empire
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ger_assassinate_mussolini
@@ -2133,7 +2304,6 @@
 			add_country_leader_trait = founder_of_the_empire
 		}
 	}
-
 	focus = {
 		id = ITA_roman_empire_ambition
 		relative_position_id = ITA_founder_of_the_empire
@@ -2152,7 +2322,6 @@
 			}
 		}
 	}
-
 	#focus = {
 	#	id = ITA_give_up_on_germany
 	#	relative_position_id = ITA_cooperation_on_the_african_campaign_2
@@ -2164,159 +2333,180 @@
 	#		always = no
 	#	}
 	#}
-
 	focus = {
 		id = ITA_roman_reform
 		relative_position_id = ITA_roman_empire_ambition
-		prerequisite = { focus = ITA_roman_empire_ambition }
+		prerequisite = {
+			focus = ITA_roman_empire_ambition
+		}
 		x = -1
 		y = 1
 		icon = GFX_focus_spa_the_spanish_miracle
 		cost = 10
 	}
-
 	focus = {
 		id = ITA_roman_government
 		relative_position_id = ITA_roman_empire_ambition
-		prerequisite = { focus = ITA_roman_empire_ambition }
+		prerequisite = {
+			focus = ITA_roman_empire_ambition
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_self_management
 		cost = 10
 	}
-
 	focus = {
 		id = ITA_gaul_recovery
 		relative_position_id = ITA_roman_government
-		prerequisite = { focus = ITA_roman_government focus = ITA_roman_reform }
+		prerequisite = {
+			focus = ITA_roman_government
+			focus = ITA_roman_reform
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_dacia_and_thrace_recovery
 		relative_position_id = ITA_roman_reform
-		prerequisite = { focus = ITA_roman_government focus = ITA_roman_reform }
+		prerequisite = {
+			focus = ITA_roman_government
+			focus = ITA_roman_reform
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_asia_cilicia_recovery
 		relative_position_id = ITA_roman_reform
-		prerequisite = { focus = ITA_roman_government focus = ITA_roman_reform }
+		prerequisite = {
+			focus = ITA_roman_government
+			focus = ITA_roman_reform
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_armenian_assyria_recovery
 		relative_position_id = ITA_asia_cilicia_recovery
-		prerequisite = { focus = ITA_asia_cilicia_recovery }
+		prerequisite = {
+			focus = ITA_asia_cilicia_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_hispania_recovery
 		relative_position_id = ITA_gaul_recovery
-		prerequisite = { focus = ITA_gaul_recovery }
+		prerequisite = {
+			focus = ITA_gaul_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_pannonia_recovery
 		relative_position_id = ITA_dacia_and_thrace_recovery
-		prerequisite = { focus = ITA_dacia_and_thrace_recovery }
+		prerequisite = {
+			focus = ITA_dacia_and_thrace_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_levant_recovery
 		relative_position_id = ITA_armenian_assyria_recovery
-		prerequisite = { focus = ITA_armenian_assyria_recovery }
+		prerequisite = {
+			focus = ITA_armenian_assyria_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_britannia_recovery
 		relative_position_id = ITA_hispania_recovery
-		prerequisite = { focus = ITA_hispania_recovery }
+		prerequisite = {
+			focus = ITA_hispania_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_moesia_recovery
 		relative_position_id = ITA_pannonia_recovery
-		prerequisite = { focus = ITA_pannonia_recovery }
+		prerequisite = {
+			focus = ITA_pannonia_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_germania_recovery
 		relative_position_id = ITA_britannia_recovery
-		prerequisite = { focus = ITA_britannia_recovery }
+		prerequisite = {
+			focus = ITA_britannia_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_aegyuputusu_recovery
 		relative_position_id = ITA_levant_recovery
-		prerequisite = { focus = ITA_levant_recovery }
+		prerequisite = {
+			focus = ITA_levant_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_macedonia_recovery
 		relative_position_id = ITA_moesia_recovery
-		prerequisite = { focus = ITA_moesia_recovery }
+		prerequisite = {
+			focus = ITA_moesia_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_resurrection_of_the_roman_empire
 		relative_position_id = ITA_aegyuputusu_recovery
-		prerequisite = { focus = ITA_aegyuputusu_recovery }
-		prerequisite = { focus = ITA_macedonia_recovery }
-		prerequisite = { focus = ITA_germania_recovery }
+		prerequisite = {
+			focus = ITA_aegyuputusu_recovery
+		}
+		prerequisite = {
+			focus = ITA_macedonia_recovery
+		}
+		prerequisite = {
+			focus = ITA_germania_recovery
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_roman_empire_ambition
 		cost = 10
 	}
-
 	#####################################################################
 	#																	#
 	#   ## ### # # ### #   # #  #  ##       ## ##   #  ### ###  ## # #  #
@@ -2326,11 +2516,12 @@
 	#   ## ###  #  ### ### # # # # # #     ##  #   # # # # ### ##  # #  #
 	#																	#
 	#####################################################################
-
 	focus = {
 		id = ITA_participation_in_the_spanish_civil_war
 		relative_position_id = ITA_declaration_of_the_italian_empire
-		mutually_exclusive = { focus = ITA_watch_the_civil_war }
+		mutually_exclusive = {
+			focus = ITA_watch_the_civil_war
+		}
 		x = -2
 		y = 2
 		icon = GFX_focus_intervention_spain_nationalists
@@ -2356,8 +2547,12 @@
 			if = {
 				limit = {
 					OR = {
-						SPR = { is_ai = yes }
-						SPR = { has_idea = SPA_death_before_surrender }
+						SPR = {
+							is_ai = yes
+						}
+						SPR = {
+							has_idea = SPA_death_before_surrender
+						}
 					}
 				}
 				SPR = {
@@ -2379,11 +2574,12 @@
 			custom_effect_tooltip = ITA_participation_in_the_spanish_civil_war_tt
 		}
 	}
-
 	focus = {
 		id = ITA_watch_the_civil_war
 		relative_position_id = ITA_declaration_of_the_italian_empire
-		mutually_exclusive = { focus = ITA_participation_in_the_spanish_civil_war }
+		mutually_exclusive = {
+			focus = ITA_participation_in_the_spanish_civil_war
+		}
 		x = 2
 		y = 2
 		icon = GFX_focus_intervention_spain_republic
@@ -2396,7 +2592,11 @@
 		completion_reward = {
 			if = {
 				limit = {
-					NOT = { SPR = { has_idea = SPA_death_before_surrender } }
+					NOT = {
+						SPR = {
+							has_idea = SPA_death_before_surrender
+						}
+					}
 				}
 				SPR = {
 					add_opinion_modifier = {
@@ -2414,14 +2614,14 @@
 			else = {
 				add_political_power = 50
 			}
-
 		}
 	}
-
 	focus = {
 		id = ITA_CTV
 		relative_position_id = ITA_participation_in_the_spanish_civil_war
-		prerequisite = { focus = ITA_participation_in_the_spanish_civil_war }
+		prerequisite = {
+			focus = ITA_participation_in_the_spanish_civil_war
+		}
 		x = -1
 		y = 1
 		icon = GFX_focus_generic_manpower
@@ -2439,11 +2639,12 @@
 			add_ideas = ITA_CTV_idea
 		}
 	}
-
 	focus = {
 		id = ITA_equipment_for_spain
 		relative_position_id = ITA_participation_in_the_spanish_civil_war
-		prerequisite = { focus = ITA_participation_in_the_spanish_civil_war }
+		prerequisite = {
+			focus = ITA_participation_in_the_spanish_civil_war
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_combined_arms
@@ -2457,12 +2658,16 @@
 			custom_effect_tooltip = ITA_equipment_for_spain_tt
 		}
 	}
-
 	focus = {
 		id = ITA_mediterranean_compatriots
 		relative_position_id = ITA_CTV
-		prerequisite = { focus = ITA_CTV focus = ITA_equipment_for_spain }
-		mutually_exclusive = { focus = ITA_requests_of_the_balearic_islands }
+		prerequisite = {
+			focus = ITA_CTV
+			focus = ITA_equipment_for_spain
+		}
+		mutually_exclusive = {
+			focus = ITA_requests_of_the_balearic_islands
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_tripartite_pact
@@ -2485,12 +2690,16 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_requests_of_the_balearic_islands
 		relative_position_id = ITA_CTV
-		prerequisite = { focus = ITA_CTV focus = ITA_equipment_for_spain }
-		mutually_exclusive = { focus = ITA_mediterranean_compatriots }
+		prerequisite = {
+			focus = ITA_CTV
+			focus = ITA_equipment_for_spain
+		}
+		mutually_exclusive = {
+			focus = ITA_mediterranean_compatriots
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_political_pressure
@@ -2517,11 +2726,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_participation_in_the_spanish_camp
 		relative_position_id = ITA_mediterranean_compatriots
-		prerequisite = { focus = ITA_mediterranean_compatriots }
+		prerequisite = {
+			focus = ITA_mediterranean_compatriots
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_major_alliance
@@ -2534,20 +2744,25 @@
 					has_completed_focus = SPA_the_phalanx_ascendant
 				}
 			}
-			NOT = { has_war_with = SPR }
+			NOT = {
+				has_war_with = SPR
+			}
 		}
-		
 		completion_reward = {
 			SPR = {
-				country_event = { id = kmm.53 hours = 6 }
+				country_event = {
+					id = kmm.53
+					hours = 6
+				}
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_hispania_recovery_2
 		relative_position_id = ITA_requests_of_the_balearic_islands
-		prerequisite = { focus = ITA_requests_of_the_balearic_islands }
+		prerequisite = {
+			focus = ITA_requests_of_the_balearic_islands
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_focus_fra_intervention_spain
@@ -2571,11 +2786,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_participation_in_the_spanish_non_interference_committee
 		relative_position_id = ITA_watch_the_civil_war
-		prerequisite = { focus = ITA_watch_the_civil_war }
+		prerequisite = {
+			focus = ITA_watch_the_civil_war
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_chi_reach_out_to_france
@@ -2592,11 +2808,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_effective_with_the_soviet_union
 		relative_position_id = ITA_participation_in_the_spanish_non_interference_committee
-		prerequisite = { focus = ITA_participation_in_the_spanish_non_interference_committee }
+		prerequisite = {
+			focus = ITA_participation_in_the_spanish_non_interference_committee
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_chi_mission_to_the_soviet_union
@@ -2634,30 +2851,36 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_acceptance_of_civil_war_immigrants
 		relative_position_id = ITA_watch_the_civil_war
-		prerequisite = { focus = ITA_watch_the_civil_war }
+		prerequisite = {
+			focus = ITA_watch_the_civil_war
+		}
 		x = -1
 		y = 1
 		icon = GFX_focus_generic_concessions
 		cost = 5
 		available = {
-			SPR = { has_civil_war = yes }
+			SPR = {
+				has_civil_war = yes
+			}
 		}
 		bypass = {
-			SPR = { has_civil_war = no }
+			SPR = {
+				has_civil_war = no
+			}
 		}
 		completion_reward = {
 			add_ideas = ITA_acceptance_of_civil_war_immigrants_idea
 		}
 	}
-
 	focus = {
 		id = ITA_reconstruction_support_for_spain
 		relative_position_id = ITA_acceptance_of_civil_war_immigrants
-		prerequisite = { focus = ITA_acceptance_of_civil_war_immigrants }
+		prerequisite = {
+			focus = ITA_acceptance_of_civil_war_immigrants
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_mex_privatisation
@@ -2681,7 +2904,7 @@
 							is_subject = no
 							original_tag = SPR
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -2704,7 +2927,7 @@
 							OR = {
 								state = 165
 								state = 167
-								state = 168 
+								state = 168
 								state = 173
 							}
 						}
@@ -2725,7 +2948,7 @@
 							OR = {
 								state = 165
 								state = 167
-								state = 168 
+								state = 168
 								state = 173
 							}
 						}
@@ -2746,7 +2969,7 @@
 							OR = {
 								state = 165
 								state = 167
-								state = 168 
+								state = 168
 								state = 173
 							}
 						}
@@ -2767,7 +2990,7 @@
 							OR = {
 								state = 165
 								state = 167
-								state = 168 
+								state = 168
 								state = 173
 							}
 						}
@@ -2787,11 +3010,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_securing_ceuta_traffic
 		relative_position_id = ITA_effective_with_the_soviet_union
-		prerequisite = { focus = ITA_effective_with_the_soviet_union }
+		prerequisite = {
+			focus = ITA_effective_with_the_soviet_union
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_forceful_treaty
@@ -2816,18 +3040,21 @@
 						create_wargoal = {
 							type = take_state_focus
 							target = PREV
-							generator = { 832 }
+							generator = {
+								832
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_spanish_joint_economy
 		relative_position_id = ITA_reconstruction_support_for_spain
-		prerequisite = { focus = ITA_reconstruction_support_for_spain }
+		prerequisite = {
+			focus = ITA_reconstruction_support_for_spain
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_intelligence_exchange
@@ -2839,11 +3066,16 @@
 			}
 		}
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 2 }
-			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
-
 	#########################################
 	#                                       #        
 	#  ##### ##### #     ##### #   # #   #  #
@@ -2853,7 +3085,6 @@
 	#  ##### ##### ##### ##### #   #   #    #
 	#                                       #      
 	#########################################
-
 	focus = {
 		id = ITA_logistics_in_the_ethiopian_war
 		x = 14
@@ -2891,7 +3122,6 @@
 					}
 				}
 			}
-
 			if = {
 				limit = {
 					controls_state = 559
@@ -2910,16 +3140,18 @@
 					}
 				}
 			}
-
 			add_ideas = ITA_battle_in_ethiopia_idea
 		}
 	}
-
 	focus = {
 		id = ITA_colonial_management
 		icon = GFX_focus_generic_self_management
-		prerequisite = { focus = ITA_logistics_in_the_ethiopian_war }
-		prerequisite = { focus = ITA_victory_in_africa }
+		prerequisite = {
+			focus = ITA_logistics_in_the_ethiopian_war
+		}
+		prerequisite = {
+			focus = ITA_victory_in_africa
+		}
 		relative_position_id = ITA_logistics_in_the_ethiopian_war
 		x = 0
 		y = 1
@@ -2932,11 +3164,12 @@
 			custom_effect_tooltip = ITA_colonial_management_tt
 		}
 	}
-
 	focus = {
 		id = ITA_east_african_development
 		relative_position_id = ITA_colonial_management
-		prerequisite = { focus = ITA_colonial_management }
+		prerequisite = {
+			focus = ITA_colonial_management
+		}
 		x = -4
 		y = 1
 		icon = GFX_focus_generic_africa_infrastructure
@@ -2958,7 +3191,9 @@
 		completion_reward = {
 			if = {
 				limit = {
-					ETH = { is_subject_of = ITA }
+					ETH = {
+						is_subject_of = ITA
+					}
 				}
 				ETH = {
 					add_political_power = 50
@@ -2987,22 +3222,23 @@
 				state = 271
 			}
 			add_resource = {
-			    type = oil
-			    amount = 3
-			    state = 550
+				type = oil
+				amount = 3
+				state = 550
 			}
 			add_resource = {
-			    type = oil
-			    amount = 4
-			    state = 559
+				type = oil
+				amount = 4
+				state = 559
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_north_african_development
 		relative_position_id = ITA_colonial_management
-		prerequisite = { focus = ITA_colonial_management }
+		prerequisite = {
+			focus = ITA_colonial_management
+		}
 		x = -2
 		y = 1
 		icon = GFX_focus_generic_africa_infrastructure
@@ -3026,7 +3262,9 @@
 		completion_reward = {
 			if = {
 				limit = {
-					LBA = { is_subject_of = ITA }
+					LBA = {
+						is_subject_of = ITA
+					}
 				}
 				LBA = {
 					add_political_power = 50
@@ -3092,32 +3330,33 @@
 				}
 			}
 			add_resource = {
-			    type = oil
-			    amount = 6
-			    state = 448
+				type = oil
+				amount = 6
+				state = 448
 			}
 			add_resource = {
-			    type = oil
-			    amount = 4
-			    state = 449
+				type = oil
+				amount = 4
+				state = 449
 			}
 			add_resource = {
-			    type = oil
-			    amount = 3
-			    state = 450
+				type = oil
+				amount = 3
+				state = 450
 			}
 			add_resource = {
-			    type = oil
-			    amount = 3
-			    state = 451
+				type = oil
+				amount = 3
+				state = 451
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_development_in_the_occupied_territories
 		relative_position_id = ITA_colonial_management
-		prerequisite = { focus = ITA_colonial_management }
+		prerequisite = {
+			focus = ITA_colonial_management
+		}
 		x = 4
 		y = 1
 		icon = GFX_goal_generic_position_armies
@@ -3125,7 +3364,9 @@
 		available = {
 			any_controlled_state = {
 				is_on_continent = europe
-				NOT = { is_core_of = ITA }
+				NOT = {
+					is_core_of = ITA
+				}
 				is_in_home_area = yes
 			}
 		}
@@ -3133,11 +3374,12 @@
 			add_ideas = ITA_occupied_territory_development_idea
 		}
 	}
-
 	focus = {
 		id = ITA_development_of_mediterranean_territory
 		relative_position_id = ITA_colonial_management
-		prerequisite = { focus = ITA_colonial_management }
+		prerequisite = {
+			focus = ITA_colonial_management
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
@@ -3159,7 +3401,7 @@
 					level = 2
 					province = 11773
 					instant_build = yes
-				}				
+				}
 				add_extra_state_shared_building_slots = 2
 			}
 			163 = {
@@ -3192,11 +3434,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_east_african_industry
 		relative_position_id = ITA_east_african_development
-		prerequisite = { focus = ITA_east_african_development }
+		prerequisite = {
+			focus = ITA_east_african_development
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_africa_factory
@@ -3247,11 +3490,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_north_african_industry
 		relative_position_id = ITA_north_african_development
-		prerequisite = { focus = ITA_north_african_development }
+		prerequisite = {
+			focus = ITA_north_african_development
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_africa_factory
@@ -3308,11 +3552,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_mediterranean_territorial_industry
 		relative_position_id = ITA_development_of_mediterranean_territory
-		prerequisite = { focus = ITA_development_of_mediterranean_territory }
+		prerequisite = {
+			focus = ITA_development_of_mediterranean_territory
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_construct_civ_factory
@@ -3349,11 +3594,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_industry_in_the_occupied_territories
 		relative_position_id = ITA_development_in_the_occupied_territories
-		prerequisite = { focus = ITA_development_in_the_occupied_territories }
+		prerequisite = {
+			focus = ITA_development_in_the_occupied_territories
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_construct_civ_factory
@@ -3361,7 +3607,9 @@
 		available = {
 			any_controlled_state = {
 				is_on_continent = europe
-				NOT = { is_core_of = ITA }
+				NOT = {
+					is_core_of = ITA
+				}
 				is_in_home_area = yes
 			}
 		}
@@ -3372,11 +3620,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_colonial_resources
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = ITA_colonial_management }
+		prerequisite = {
+			focus = ITA_colonial_management
+		}
 		relative_position_id = ITA_colonial_management
 		x = 2
 		y = 1
@@ -3388,20 +3637,21 @@
 					limit = {
 						is_subject_of = ITA
 					}
-					add_ideas = { ITA_colonial_resources_idea ITA_resource_economy } 
+					add_ideas = {
+						ITA_colonial_resources_idea
+						ITA_resource_economy
+					}
 				}
 			}
-			
-
-			
 			custom_effect_tooltip = ITA_colonial_resources_tt
 		}
 	}
-
 	focus = {
 		id = ITA_colonial_industry
 		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = ITA_colonial_resources }
+		prerequisite = {
+			focus = ITA_colonial_resources
+		}
 		relative_position_id = ITA_colonial_resources
 		x = 0
 		y = 1
@@ -3499,13 +3749,18 @@
 			custom_effect_tooltip = ITA_colonial_industry_tt
 		}
 	}
-
 	focus = {
 		id = ITA_industrial_land_remodeling
 		relative_position_id = ITA_mediterranean_territorial_industry
-		prerequisite = { focus = ITA_east_african_industry }
-		prerequisite = { focus = ITA_north_african_industry }
-		prerequisite = { focus = ITA_mediterranean_territorial_industry }
+		prerequisite = {
+			focus = ITA_east_african_industry
+		}
+		prerequisite = {
+			focus = ITA_north_african_industry
+		}
+		prerequisite = {
+			focus = ITA_mediterranean_territorial_industry
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_construct_civilian
@@ -3514,13 +3769,18 @@
 			add_ideas = ITA_industrial_land_remodeling_plan_idea
 		}
 	}
-
 	focus = {
 		id = ITA_european_economic_integration
 		relative_position_id = ITA_mediterranean_territorial_industry
-		prerequisite = { focus = ITA_colonial_industry }
-		prerequisite = { focus = ITA_industry_in_the_occupied_territories }
-		prerequisite = { focus = ITA_mediterranean_territorial_industry }
+		prerequisite = {
+			focus = ITA_colonial_industry
+		}
+		prerequisite = {
+			focus = ITA_industry_in_the_occupied_territories
+		}
+		prerequisite = {
+			focus = ITA_mediterranean_territorial_industry
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_positive_trade_relations
@@ -3529,7 +3789,6 @@
 			add_ideas = ITA_european_economic_integration_idea
 		}
 	}
-
 	#############################
 	#                           #
 	#    #   ####  #   # #   #  #
@@ -3539,7 +3798,6 @@
 	#  #   # #   # #   #   #    #
 	#                           #
 	#############################
-
 	focus = {
 		id = ITA_army_reform
 		x = 70
@@ -3553,35 +3811,37 @@
 			army_experience = 75
 		}
 	}
-
 	focus = {
 		id = ITA_improving_military_sufficiency
 		relative_position_id = ITA_army_reform
-		prerequisite = { focus = ITA_army_reform }
+		prerequisite = {
+			focus = ITA_army_reform
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_combined_arms
 		cost = 5
 		completion_reward = {
 			add_equipment_to_stockpile = {
-			    type = infantry_equipment
-			    amount = 5000
-			    producer = ITA
+				type = infantry_equipment
+				amount = 5000
+				producer = ITA
 			}
 		}
 		completion_reward = {
 			add_equipment_to_stockpile = {
-			    type = support_equipment
-			    amount = 500
-			    producer = ITA
+				type = support_equipment
+				amount = 500
+				producer = ITA
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_conscription_system_reform
 		relative_position_id = ITA_improving_military_sufficiency
-		prerequisite = { focus = ITA_improving_military_sufficiency }
+		prerequisite = {
+			focus = ITA_improving_military_sufficiency
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_manpower
@@ -3590,12 +3850,15 @@
 			add_manpower = 100000
 		}
 	}
-
 	focus = {
 		id = ITA_expansion_of_support_artillery
 		relative_position_id = ITA_conscription_system_reform
-		prerequisite = { focus = ITA_conscription_system_reform }
-		mutually_exclusive = { focus = ITA_promotion_of_armor }
+		prerequisite = {
+			focus = ITA_conscription_system_reform
+		}
+		mutually_exclusive = {
+			focus = ITA_promotion_of_armor
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_army_artillery2
@@ -3608,12 +3871,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_promotion_of_armor
 		relative_position_id = ITA_conscription_system_reform
-		prerequisite = { focus = ITA_conscription_system_reform }
-		mutually_exclusive = { focus = ITA_expansion_of_support_artillery }
+		prerequisite = {
+			focus = ITA_conscription_system_reform
+		}
+		mutually_exclusive = {
+			focus = ITA_expansion_of_support_artillery
+		}
 		x = 2
 		y = 1
 		icon = GFX_focus_ita_promotion_of_armor
@@ -3626,12 +3892,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_total_abolition_of_cavalry
 		relative_position_id = ITA_promotion_of_armor
-		prerequisite = { focus = ITA_promotion_of_armor }
-		mutually_exclusive = { focus = ITA_german_blitzkrieg }
+		prerequisite = {
+			focus = ITA_promotion_of_armor
+		}
+		mutually_exclusive = {
+			focus = ITA_german_blitzkrieg
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_no_cavalry
@@ -3644,12 +3913,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_german_blitzkrieg
 		relative_position_id = ITA_promotion_of_armor
-		prerequisite = { focus = ITA_promotion_of_armor }
-		mutually_exclusive = { focus = ITA_total_abolition_of_cavalry }
+		prerequisite = {
+			focus = ITA_promotion_of_armor
+		}
+		mutually_exclusive = {
+			focus = ITA_total_abolition_of_cavalry
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_army_tanks
@@ -3667,12 +3939,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_land_air_vertical_integration
 		relative_position_id = ITA_promotion_of_armor
-		prerequisite = { focus = ITA_promotion_of_armor }
-		prerequisite = { focus = ITA_focus_on_CAS }
+		prerequisite = {
+			focus = ITA_promotion_of_armor
+		}
+		prerequisite = {
+			focus = ITA_focus_on_CAS
+		}
 		x = 4
 		y = 1
 		icon = GFX_focus_generic_license_production
@@ -3685,11 +3960,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_M13_40
 		relative_position_id = ITA_german_blitzkrieg
-		prerequisite = { focus = ITA_german_blitzkrieg }
+		prerequisite = {
+			focus = ITA_german_blitzkrieg
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_M13_40
@@ -3698,21 +3974,23 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_reduced_tank_costs
 		relative_position_id = ITA_M13_40
-		prerequisite = { focus = ITA_M13_40 }
+		prerequisite = {
+			focus = ITA_M13_40
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_army_tanks2
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_reduced_armored_car_costs
 		relative_position_id = ITA_total_abolition_of_cavalry
-		prerequisite = { focus = ITA_total_abolition_of_cavalry }
+		prerequisite = {
+			focus = ITA_total_abolition_of_cavalry
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_production2
@@ -3721,32 +3999,38 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_improvement_of_supply
 		relative_position_id = ITA_reduced_armored_car_costs
-		prerequisite = { focus = ITA_reduced_armored_car_costs }
+		prerequisite = {
+			focus = ITA_reduced_armored_car_costs
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_achievement_of_armor
 		relative_position_id = ITA_improvement_of_supply
-		prerequisite = { focus = ITA_improvement_of_supply focus = ITA_reduced_tank_costs }
+		prerequisite = {
+			focus = ITA_improvement_of_supply
+			focus = ITA_reduced_tank_costs
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_build_tank
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_anti_tank_firearms
 		relative_position_id = ITA_expansion_of_support_artillery
-		prerequisite = { focus = ITA_expansion_of_support_artillery }
-		mutually_exclusive = { focus = ITA_mass_production_system_for_artillery }
+		prerequisite = {
+			focus = ITA_expansion_of_support_artillery
+		}
+		mutually_exclusive = {
+			focus = ITA_mass_production_system_for_artillery
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_anti_tank_firearms
@@ -3759,11 +4043,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_field_gun
 		relative_position_id = ITA_anti_tank_firearms
-		prerequisite = { focus = ITA_anti_tank_firearms }
+		prerequisite = {
+			focus = ITA_anti_tank_firearms
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_army_artillery
@@ -3772,32 +4057,37 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_propulsion_gun
 		relative_position_id = ITA_field_gun
-		prerequisite = { focus = ITA_field_gun }
+		prerequisite = {
+			focus = ITA_field_gun
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_propulsion_gun
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_anti_aircraft_gun
 		relative_position_id = ITA_propulsion_gun
-		prerequisite = { focus = ITA_propulsion_gun }
+		prerequisite = {
+			focus = ITA_propulsion_gun
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_air_defense
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_mass_production_system_for_artillery
 		relative_position_id = ITA_expansion_of_support_artillery
-		prerequisite = { focus = ITA_expansion_of_support_artillery }
-		mutually_exclusive = { focus = ITA_anti_tank_firearms }
+		prerequisite = {
+			focus = ITA_expansion_of_support_artillery
+		}
+		mutually_exclusive = {
+			focus = ITA_anti_tank_firearms
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_production
@@ -3810,11 +4100,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_emphasis_on_infantry_firearms
 		relative_position_id = ITA_mass_production_system_for_artillery
-		prerequisite = { focus = ITA_mass_production_system_for_artillery }
+		prerequisite = {
+			focus = ITA_mass_production_system_for_artillery
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_small_arms
@@ -3823,31 +4114,34 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_infantry_penetration
 		relative_position_id = ITA_emphasis_on_infantry_firearms
-		prerequisite = { focus = ITA_emphasis_on_infantry_firearms }
+		prerequisite = {
+			focus = ITA_emphasis_on_infantry_firearms
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_generic_provoke_border_clashes
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_achievement_of_high_skill
 		relative_position_id = ITA_infantry_penetration
-		prerequisite = { focus = ITA_infantry_penetration }
+		prerequisite = {
+			focus = ITA_infantry_penetration
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_chi_army_reform
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_unique_method
 		relative_position_id = ITA_expansion_of_support_artillery
-		prerequisite = { focus = ITA_expansion_of_support_artillery }
+		prerequisite = {
+			focus = ITA_expansion_of_support_artillery
+		}
 		x = -4
 		y = 1
 		icon = GFX_focus_ita_army_reform
@@ -3860,11 +4154,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_mainland_defense
 		relative_position_id = ITA_conscription_system_reform
-		prerequisite = { focus = ITA_expansion_of_support_artillery focus = ITA_promotion_of_armor }
+		prerequisite = {
+			focus = ITA_expansion_of_support_artillery
+			focus = ITA_promotion_of_armor
+		}
 		x = 0
 		y = 2
 		icon = GFX_focus_generic_coastal_fort
@@ -3873,11 +4169,12 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_expansion_of_coastal_fortress
 		relative_position_id = ITA_mainland_defense
-		prerequisite = { focus = ITA_mainland_defense }
+		prerequisite = {
+			focus = ITA_mainland_defense
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_fortify_city
@@ -3886,27 +4183,28 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_mountain_division
 		relative_position_id = ITA_expansion_of_coastal_fortress
-		prerequisite = { focus = ITA_expansion_of_coastal_fortress }
+		prerequisite = {
+			focus = ITA_expansion_of_coastal_fortress
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_GRE_a_land_of_mountains
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_battle_in_the_desert
 		relative_position_id = ITA_mountain_division
-		prerequisite = { focus = ITA_mountain_division }
+		prerequisite = {
+			focus = ITA_mountain_division
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_battle_in_the_desert
 		cost = 5
 	}
-
 	#####################################
 	#									#
 	#   #  ### ##  ###  #  ##   ## ###  #
@@ -3916,7 +4214,6 @@
 	#  # # ### # # #    #  # #  ## ###  #
 	#									#
 	#####################################
-
 	focus = {
 		id = ITA_air_force_research
 		x = 78
@@ -3930,11 +4227,12 @@
 			air_experience = 75
 		}
 	}
-
 	focus = {
 		id = ITA_air_force_budget_increase
 		relative_position_id = ITA_air_force_research
-		prerequisite = { focus = ITA_air_force_research }
+		prerequisite = {
+			focus = ITA_air_force_research
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_mex_privatisation
@@ -3949,11 +4247,12 @@
 			custom_effect_tooltip = ITA_air_force_budget_increase_tt
 		}
 	}
-
 	focus = {
 		id = ITA_aerial_fleet_concept
 		relative_position_id = ITA_air_force_budget_increase
-		prerequisite = { focus = ITA_air_force_budget_increase }
+		prerequisite = {
+			focus = ITA_air_force_budget_increase
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_air_doctrine
@@ -3966,11 +4265,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_fighters
 		relative_position_id = ITA_aerial_fleet_concept
-		prerequisite = { focus = ITA_aerial_fleet_concept }
+		prerequisite = {
+			focus = ITA_aerial_fleet_concept
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_air_fighter
@@ -3983,11 +4283,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_CAS
 		relative_position_id = ITA_aerial_fleet_concept
-		prerequisite = { focus = ITA_aerial_fleet_concept }
+		prerequisite = {
+			focus = ITA_aerial_fleet_concept
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_CAS
@@ -4000,11 +4301,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_bomber
 		relative_position_id = ITA_aerial_fleet_concept
-		prerequisite = { focus = ITA_aerial_fleet_concept }
+		prerequisite = {
+			focus = ITA_aerial_fleet_concept
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_air_bomber
@@ -4017,11 +4319,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_battle_in_peacetime
 		relative_position_id = ITA_focus_on_fighters
-		prerequisite = { focus = ITA_focus_on_fighters }
+		prerequisite = {
+			focus = ITA_focus_on_fighters
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_battle_in_peacetime
@@ -4034,11 +4337,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_high_performance_bomber
 		relative_position_id = ITA_focus_on_bomber
-		prerequisite = { focus = ITA_focus_on_bomber }
+		prerequisite = {
+			focus = ITA_focus_on_bomber
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_usa_escort_fighters
@@ -4051,11 +4355,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_anti_ship_attack_aircraft
 		relative_position_id = ITA_focus_on_bomber
-		prerequisite = { focus = ITA_focus_on_bomber }
+		prerequisite = {
+			focus = ITA_focus_on_bomber
+		}
 		x = 2
 		y = 1
 		icon = GFX_goal_generic_air_naval_bomber
@@ -4068,12 +4373,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_carrier_based_aircraft
 		relative_position_id = ITA_focus_on_anti_ship_attack_aircraft
-		prerequisite = { focus = ITA_focus_on_anti_ship_attack_aircraft }
-		prerequisite = { focus = ITA_aircraft_carrier_research }
+		prerequisite = {
+			focus = ITA_focus_on_anti_ship_attack_aircraft
+		}
+		prerequisite = {
+			focus = ITA_aircraft_carrier_research
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_air_naval_bomber
@@ -4086,11 +4394,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_Z1018_leone
 		relative_position_id = ITA_high_performance_bomber
-		prerequisite = { focus = ITA_high_performance_bomber }
+		prerequisite = {
+			focus = ITA_high_performance_bomber
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_Z1018_leone
@@ -4099,11 +4408,12 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_C202_folgore
 		relative_position_id = ITA_battle_in_peacetime
-		prerequisite = { focus = ITA_battle_in_peacetime }
+		prerequisite = {
+			focus = ITA_battle_in_peacetime
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_C202_folgore
@@ -4116,11 +4426,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_concentration_of_aircraft_manufacturing
 		relative_position_id = ITA_battle_in_peacetime
-		prerequisite = { focus = ITA_battle_in_peacetime }
+		prerequisite = {
+			focus = ITA_battle_in_peacetime
+		}
 		x = -2
 		y = 1
 		icon = GFX_goal_generic_air_production
@@ -4129,21 +4440,23 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_replacement_of_old_fashioned_machines
 		relative_position_id = ITA_concentration_of_aircraft_manufacturing
-		prerequisite = { focus = ITA_concentration_of_aircraft_manufacturing }
+		prerequisite = {
+			focus = ITA_concentration_of_aircraft_manufacturing
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_continuous_air_production
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_G55_centauro
 		relative_position_id = ITA_C202_folgore
-		prerequisite = { focus = ITA_C202_folgore }
+		prerequisite = {
+			focus = ITA_C202_folgore
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_G55_centauro
@@ -4156,23 +4469,29 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_rocket_research
 		relative_position_id = ITA_G55_centauro
-		prerequisite = { focus = ITA_G55_centauro }
-		prerequisite = { focus = ITA_replacement_of_old_fashioned_machines }
+		prerequisite = {
+			focus = ITA_G55_centauro
+		}
+		prerequisite = {
+			focus = ITA_replacement_of_old_fashioned_machines
+		}
 		x = -1
 		y = 1
 		icon = GFX_focus_rocketry
 		cost = 5
 	}
-
 	focus = {
 		id = ITA_cryptography_and_detection
 		relative_position_id = ITA_G55_centauro
-		prerequisite = { focus = ITA_G55_centauro }
-		prerequisite = { focus = ITA_Z1018_leone }
+		prerequisite = {
+			focus = ITA_G55_centauro
+		}
+		prerequisite = {
+			focus = ITA_Z1018_leone
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_cryptologic_bomb
@@ -4181,7 +4500,6 @@
 			always = no
 		}
 	}
-
 	#####################
 	#					#
 	#  ###  #  # # # #  #
@@ -4191,7 +4509,6 @@
 	#  # # # #  #   #   #
 	#					#
 	#####################
-
 	focus = {
 		id = ITA_navy_augmentation
 		x = 86
@@ -4205,11 +4522,12 @@
 			navy_experience = 75
 		}
 	}
-
 	focus = {
 		id = ITA_maintenance_of_old_fashioned_ships
 		relative_position_id = ITA_navy_augmentation
-		prerequisite = { focus = ITA_navy_augmentation }
+		prerequisite = {
+			focus = ITA_navy_augmentation
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_continuous_naval_production
@@ -4218,11 +4536,12 @@
 			navy_experience = 125
 		}
 	}
-
 	focus = {
 		id = ITA_naval_arms_race
 		relative_position_id = ITA_maintenance_of_old_fashioned_ships
-		prerequisite = { focus = ITA_maintenance_of_old_fashioned_ships }
+		prerequisite = {
+			focus = ITA_maintenance_of_old_fashioned_ships
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_navy_cruiser
@@ -4235,12 +4554,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_new_construction_of_medium_sized_ship
 		relative_position_id = ITA_naval_arms_race
-		prerequisite = { focus = ITA_naval_arms_race }
-		mutually_exclusive = { focus = ITA_modernization_renovation }
+		prerequisite = {
+			focus = ITA_naval_arms_race
+		}
+		mutually_exclusive = {
+			focus = ITA_modernization_renovation
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -4253,12 +4575,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_modernization_renovation
 		relative_position_id = ITA_naval_arms_race
-		prerequisite = { focus = ITA_naval_arms_race }
-		mutually_exclusive = { focus = ITA_new_construction_of_medium_sized_ship }
+		prerequisite = {
+			focus = ITA_naval_arms_race
+		}
+		mutually_exclusive = {
+			focus = ITA_new_construction_of_medium_sized_ship
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_production
@@ -4271,11 +4596,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_aircraft_carrier_research
 		relative_position_id = ITA_new_construction_of_medium_sized_ship
-		prerequisite = { focus = ITA_new_construction_of_medium_sized_ship }
+		prerequisite = {
+			focus = ITA_new_construction_of_medium_sized_ship
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_navy_carrier
@@ -4288,11 +4614,13 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_battleships
 		relative_position_id = ITA_new_construction_of_medium_sized_ship
-		prerequisite = { focus = ITA_new_construction_of_medium_sized_ship focus = ITA_modernization_renovation }
+		prerequisite = {
+			focus = ITA_new_construction_of_medium_sized_ship
+			focus = ITA_modernization_renovation
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_navy_battleship
@@ -4305,11 +4633,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_high_speed_fleet_concept
 		relative_position_id = ITA_focus_on_battleships
-		prerequisite = { focus = ITA_focus_on_battleships }
+		prerequisite = {
+			focus = ITA_focus_on_battleships
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_generic_navy_doctrines_tactics
@@ -4318,11 +4647,12 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_cruisers
 		relative_position_id = ITA_new_construction_of_medium_sized_ship
-		prerequisite = { focus = ITA_new_construction_of_medium_sized_ship }
+		prerequisite = {
+			focus = ITA_new_construction_of_medium_sized_ship
+		}
 		x = 0
 		y = 2
 		icon = GFX_focus_generic_cruiser2
@@ -4331,11 +4661,13 @@
 			always = no
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_destroyer
 		relative_position_id = ITA_aircraft_carrier_research
-		prerequisite = { focus = ITA_aircraft_carrier_research focus = ITA_focus_on_cruisers }
+		prerequisite = {
+			focus = ITA_aircraft_carrier_research
+			focus = ITA_focus_on_cruisers
+		}
 		x = 0
 		y = 2
 		icon = GFX_focus_generic_destroyer
@@ -4348,11 +4680,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_auxiliary_operation_of_destroyer
 		relative_position_id = ITA_modernization_renovation
-		prerequisite = { focus = ITA_modernization_renovation }
+		prerequisite = {
+			focus = ITA_modernization_renovation
+		}
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_destroyer
@@ -4365,11 +4698,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_mediterranean_fleet
 		relative_position_id = ITA_modernization_renovation
-		prerequisite = { focus = ITA_modernization_renovation }
+		prerequisite = {
+			focus = ITA_modernization_renovation
+		}
 		x = 0
 		y = 2
 		icon = GFX_focus_generic_focus_on_mediterraneum
@@ -4377,13 +4711,13 @@
 		available = {
 			always = no
 		}
-
 	}
-
 	focus = {
 		id = ITA_focus_on_submarines
 		relative_position_id = ITA_auxiliary_operation_of_destroyer
-		prerequisite = { focus = ITA_auxiliary_operation_of_destroyer }
+		prerequisite = {
+			focus = ITA_auxiliary_operation_of_destroyer
+		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_navy_submarine
@@ -4396,11 +4730,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_focus_on_torpedoes
 		relative_position_id = ITA_auxiliary_operation_of_destroyer
-		prerequisite = { focus = ITA_auxiliary_operation_of_destroyer }
+		prerequisite = {
+			focus = ITA_auxiliary_operation_of_destroyer
+		}
 		x = 0
 		y = 2
 		icon = GFX_goal_poland_goal
@@ -4413,11 +4748,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_convoy_escort
 		relative_position_id = ITA_focus_on_torpedoes
-		prerequisite = { focus = ITA_focus_on_torpedoes }
+		prerequisite = {
+			focus = ITA_focus_on_torpedoes
+		}
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_navy_cruiser
@@ -4430,12 +4766,15 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_strengthening_control_of_the_navy_and_air_force
 		relative_position_id = ITA_focus_on_destroyer
-		prerequisite = { focus = ITA_focus_on_destroyer }
-		prerequisite = { focus = ITA_focus_on_carrier_based_aircraft }
+		prerequisite = {
+			focus = ITA_focus_on_destroyer
+		}
+		prerequisite = {
+			focus = ITA_focus_on_carrier_based_aircraft
+		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_air_naval_bomber
@@ -4448,11 +4787,12 @@
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_italian_way
 		relative_position_id = ITA_high_speed_fleet_concept
-		prerequisite = { focus = ITA_high_speed_fleet_concept }
+		prerequisite = {
+			focus = ITA_high_speed_fleet_concept
+		}
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_navy_augmentation

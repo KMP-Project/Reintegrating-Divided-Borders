@@ -877,6 +877,11 @@
 			NOT = {
 				has_completed_focus = ITA_reconstruction_of_the_stresa_front
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 		}
 		completion_reward = {
 			add_opinion_modifier = {

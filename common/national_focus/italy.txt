@@ -797,6 +797,19 @@
 		y = 3
 		icon = GFX_focus_ita_elimination_of_division
 		cost = 5
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = achievement_of_italian_imperialism_tt
+				NOT = {
+					any_state = {
+						NOT = {
+							is_owned_by = ITA
+						}
+						is_core_of = ITA
+					}
+				}
+			}
+		}
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ITA_divided_nation_idea
@@ -869,18 +882,24 @@
 		icon = GFX_focus_chi_mission_to_germany
 		cost = 5
 		available = {
+			always = no
 			GER = {
 				exists = yes
 				is_subject = no
 				has_government = fascism
 			}
 			NOT = {
-				has_completed_focus = ITA_reconstruction_of_the_stresa_front
+				GER = {
+					has_civil_war = yes
+				}
 			}
 			NOT = {
 				GER = {
 					has_civil_war = yes
 				}
+			}
+			NOT = {
+				has_completed_focus = ITA_reconstruction_of_the_stresa_front
 			}
 		}
 		completion_reward = {
@@ -1813,6 +1832,11 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 		}
 		completion_reward = {
 			GER = {
@@ -1844,6 +1868,11 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 		}
 		completion_reward = {
 			air_experience = 50
@@ -1870,6 +1899,11 @@
 				exists = yes
 				is_subject = no
 				has_government = fascism
+			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -1901,6 +1935,11 @@
 				exists = yes
 				is_subject = no
 				has_government = fascism
+			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -1936,6 +1975,11 @@
 				exists = yes
 				is_subject = no
 				has_government = fascism
+			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
 			}
 			has_tech = synth_oil_experiments
 		}
@@ -1992,6 +2036,11 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 		}
 		completion_reward = {
 			army_experience = 50
@@ -2026,6 +2075,11 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 		}
 		completion_reward = {
 			GER = {
@@ -2056,6 +2110,11 @@
 				exists = yes
 				is_subject = no
 				has_government = fascism
+			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
 			}
 		}
 		completion_reward = {
@@ -2091,6 +2150,11 @@
 				exists = yes
 				is_subject = no
 				has_government = fascism
+			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
 			}
 			OR = {
 				is_in_faction = no
@@ -2130,11 +2194,36 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 			has_war_together_with = GER
 			is_in_faction_with = GER
 			OR = {
-				has_war_with = FRA
-				has_war_with = ENG
+				#has_war_with = FRA
+				#has_war_with = ENG
+				any_other_country = {
+					has_war_with = ROOT
+					capital_scope = {
+						is_on_continent = africa
+					}
+				}
+			}
+			OR = {
+				LBA = {
+					is_puppet_of = ITA
+				}
+				ROOT = {
+					controls_state = 448
+					controls_state = 449
+					controls_state = 450
+					controls_state = 451
+					controls_state = 661
+					controls_state = 662
+					controls_state = 663
+				}
 			}
 		}
 		completion_reward = {
@@ -2170,11 +2259,36 @@
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				GER = {
+					has_civil_war = yes
+				}
+			}
 			has_war_together_with = GER
 			is_in_faction_with = GER
 			OR = {
-				has_war_with = FRA
-				has_war_with = ENG
+				#has_war_with = FRA
+				#has_war_with = ENG
+				any_other_country = {
+					has_war_with = ROOT
+					capital_scope = {
+						is_on_continent = africa
+					}
+				}
+			}
+			OR = {
+				LBA = {
+					is_puppet_of = ITA
+				}
+				ROOT = {
+					controls_state = 448
+					controls_state = 449
+					controls_state = 450
+					controls_state = 451
+					controls_state = 661
+					controls_state = 662
+					controls_state = 663
+				}
 			}
 		}
 		completion_reward = {
@@ -2301,9 +2415,7 @@
 		icon = GFX_focus_ger_assassinate_mussolini
 		cost = 5
 		available = {
-			has_country_leader = {
-				name = "Benito Mussolini"
-			}
+			has_character = ITA_benito_mussolini
 		}
 		completion_reward = {
 			add_country_leader_trait = founder_of_the_empire

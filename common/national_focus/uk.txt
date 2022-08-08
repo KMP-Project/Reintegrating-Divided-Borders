@@ -5156,7 +5156,7 @@ focus_tree = {
 			is_subject = no
 		}
 		bypass = {
-			num_subjects < 1
+			#num_subjects < 1
 		}
 		continue_if_invalid = yes
 		icon = GFX_focus_eng_decolonization

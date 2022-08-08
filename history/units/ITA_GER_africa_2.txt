@@ -1,0 +1,140 @@
+﻿division_template = {
+	name = "German-African Army Armored Division"				# Infantry Division	
+	division_names_group = GER_Arm_01
+	# Note: Divisions were nowhere near full strength until mobilized
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 0 y = 2 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+        motorized = { x = 3 y = 0 }
+        motorized = { x = 3 y = 1 }
+	}
+	support = {
+        mot_recon = { x = 0 y = 0 }
+        engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	######## LAND OOB ########
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 7
+		}
+		location = 1149
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 8
+		}
+		location = 1149
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 9
+		}
+		location = 11954
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 10
+		}
+		location = 11954
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 11
+		}
+		location = 1130
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 12
+		}
+		location = 1130
+		division_template = "German African Army Division"
+		force_equipment_variants = { infantry_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9992
+		division_template = "German-African Army Armored Division"
+		force_equipment_variants = { light_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 4136
+		division_template = "German-African Army Armored Division"
+		force_equipment_variants = { light_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 7206
+		division_template = "German-African Army Armored Division"
+		force_equipment_variants = { light_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 13078
+		division_template = "German-African Army Armored Division"
+		force_equipment_variants = { light_tank_equipment_2 = { owner = "GER" } }
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+
+	##### No Naval OOB -- 2 SSs in 1937 #####
+}
+
+### Starting Production ###

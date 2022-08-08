@@ -1,0 +1,91 @@
+﻿division_template = {
+	name = "Divisione invasione albanese invasione"				# Infantry Division	
+	division_names_group = ITA_invasion_ALB
+	# Note: Divisions were nowhere near full strength until mobilized
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+
+units = {
+	######## LAND OOB ########
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9780
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 9914
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 3884
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 11767
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11767
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 6
+		}
+		location = 11767
+		division_template = "Divisione invasione albanese invasione"
+		force_equipment_variants = { infantry_equipment_1 = { owner = "ITA" } }
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+
+	##### No Naval OOB -- 2 SSs in 1937 #####
+}
+
+### Starting Production ###

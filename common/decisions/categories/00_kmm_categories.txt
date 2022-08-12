@@ -48,7 +48,7 @@ KMM_risorgimento_decisions = {
 KMM_HUN_decisions = {
 	icon = generic_independence
 	allowed = {
-		is_debug = yes
+		original_tag = HUN
 	}
 }
 

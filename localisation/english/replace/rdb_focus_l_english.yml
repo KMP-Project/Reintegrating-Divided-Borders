@@ -127,6 +127,13 @@
  ITA_aegyuputusu_recovery_tt:0 "ローマ支配下のアエギュプトゥス（アフリカ）を中核州化する。"
  ITA_resurrection_of_the_roman_empire_tt:0 "ディシジョンから§Yローマ帝国§!を復興できるようになる。"
 
+ HUN_demand_a_referendum:0 "オーストリア全域の併呑"
+ HUN_proclaim_the_restoration_of_austria_hungary_tt:0 "1914年時点の§Yオーストリア＝ハンガリー帝国§!の領土を全て中核州化する。"
+ GAL_HUN:0 "ガリツィア・ロドメリア"
+ HUN_bonus_national_focus:0 "ボーナスNF I"
+ HUN_bonus_national_focus_2:0 "ボーナスNF II"
+ HUN_bonus_national_focus_3:0 "ボーナスNF III"
+
 
  #ideas
 
@@ -137,6 +144,12 @@
  Italy_country:0 "イタリア諸国"
  African_warriors:0 "アフリカの戦士"
  Arabischer_geist:0 "アラビア精神"
+ kentikugaku:0 "天啓:建築学"
+ kunrengaku:0 "天啓:訓練学"
+ tyoheigaku:0 "天啓:心理学"
+ seisangaku:0 "天啓:生産学"
+ zairyoukougaku:0 "天啓:材料学"
+ gunzigaku:0 "天啓:軍事学"
 
  Nordic_resource_use_idea:0 "北欧的資源活用"
  Nordic_cold_weather_use_idea:0 "寒冷地利用"

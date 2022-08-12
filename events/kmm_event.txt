@@ -2861,6 +2861,176 @@ country_event = {
 }
 
 country_event = {
+	id = kmm.81	#hidden
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		GER = {
+			has_civil_war = yes
+		}
+		date < 1937.1.1
+	}
+	option = {
+		every_country = {
+			limit = {
+				original_tag = GER
+				has_completed_focus = GER_oppose_hitler
+			}
+			country_event = {
+				id = kmm.82
+				hours = 6
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = GER
+				has_government = fascism
+			}
+			country_event = {
+				id = kmm.83
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.82
+	title = "西部諸邦が臨時政府側で参戦！"
+	desc = "ヴェストファーレン王国、ヴュルテンベルク王国、シュレースヴィヒ＝ホルシュタイン公国は即日臨時政府側で内戦に参戦した。"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "勝利に向かって進め！"
+		puppet = HAN
+		puppet = WUR
+		puppet = SHL
+	}
+}
+
+country_event = {
+	id = kmm.83
+	title = "東部諸邦が体制側で参戦！"
+	desc = "バイエルン王国、ザクセン王国、メクレンブルク公国は即日体制側で内戦に参戦した。"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "勝利に向かって進め！"
+		puppet = BAY
+		puppet = SAX
+		puppet = MEK
+	}
+}
+
+country_event = {
+	id = kmm.84	#hidden
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		GER = {
+			has_civil_war = yes
+		}
+		date > 1936.4.1
+	}
+	option = {
+		every_country = {
+			limit = {
+				original_tag = GER
+				has_completed_focus = GER_oppose_hitler
+			}
+			country_event = {
+				id = kmm.85
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.85
+	title = "プロイセン王国が臨時政府側で参戦！"
+	desc = "プロイセン王国は四月、臨時政府側で内戦に参戦した。"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "勝利に向かって進め！"
+		puppet = PRE
+	}
+}
+
+country_event = {
+	id = kmm.86	#hidden
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		GER = {
+			has_civil_war = yes
+		}
+		date > 1936.5.1
+	}
+	option = {
+		every_country = {
+			limit = {
+				original_tag = GER
+				has_completed_focus = GER_oppose_hitler
+			}
+			country_event = {
+				id = kmm.87
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.87
+	title = "カシューブが臨時政府側で参戦！"
+	desc = "カシューブは五月、臨時政府側で内戦に参戦した。"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "勝利に向かって進め！"
+		puppet = KSH
+	}
+}
+
+country_event = {
+	id = kmm.88	#hidden
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		GER = {
+			has_civil_war = yes
+		}
+		date > 1936.6.1
+	}
+	option = {
+		every_country = {
+			limit = {
+				original_tag = GER
+				has_completed_focus = GER_oppose_hitler
+			}
+			country_event = {
+				id = kmm.89
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.89
+	title = "シュレージェンが臨時政府側で参戦！"
+	desc = "シュレージェンは六月、臨時政府側で内戦に参戦した。"
+	picture = GFX_report_event_germany_victory
+	is_triggered_only = yes
+	option = {
+		name = "勝利に向かって進め！"
+		puppet = SIL
+	}
+}
+
+country_event = {
 	id = kmm.666
 	title = "error!"
 	desc = "Your Hoi4 has caused an error! Report the situation, errors, etc. to the mod creator immediately!"

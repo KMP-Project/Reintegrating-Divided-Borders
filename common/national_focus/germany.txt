@@ -7199,6 +7199,17 @@ focus_tree = {
 				idea = GER_clamp_down_on_fascism
 				days = 720
 			}
+			every_other_country = {
+				limit = {
+					is_puppet_of = GER
+				}
+				GER = {
+					annex_country = {
+						target = PREV
+						transfer_troops = no
+					}
+				}
+			}
 		}
 	}
 	focus = {

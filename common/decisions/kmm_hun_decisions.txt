@@ -6,7 +6,75 @@ KMM_HUN_decisions = {
 			has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
 		}
 		complete_effect = {
-			set_capital = 4
+			HUN = {
+				set_capital = {
+					state = 4
+				}
+			}
+		}
+	}
+	HUN_annex_galicia = {
+		icon = generic_nationalism
+		fire_only_once = yes
+		cost = 50
+		visible = {
+			tag = HUN
+			has_completed_focus = HUN_claim_galicia
+		}
+		available = {
+			any_other_country = {
+				has_cosmetic_tag = GAL_HUN
+				exists = yes
+			}
+		}
+		days_remove = 70
+		remove_effect = {
+			every_other_country = {
+				limit = {
+					OVERLORD = {
+						has_cosmetic_tag = GAL_HUN
+					}
+				}
+				HUN = {
+					puppet = PREV
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_cosmetic_tag = GAL_HUN
+						90 = {
+							is_fully_controlled_by = PREV
+						}
+					}
+				}
+				HUN = {
+					transfer_state = 90
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_cosmetic_tag = GAL_HUN
+						92 = {
+							is_fully_controlled_by = PREV
+						}
+					}
+				}
+				HUN = {
+					transfer_state = 92
+				}
+			}
+			every_other_country = {
+				limit = {
+					has_cosmetic_tag = GAL_HUN
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+					}
+				}
+			}
 		}
 	}
 }

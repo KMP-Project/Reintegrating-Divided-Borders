@@ -167,7 +167,7 @@
 		completion_reward = {
 			add_political_power = 50
 			2 = {
-				set_state_category = megalopolis
+				set_state_category = metropolis
 				set_building_level = {
 					type = infrastructure
 					level = 5
@@ -912,23 +912,6 @@
 				value = 4
 			}
 			custom_effect_tooltip = ITA_DOG_1_tt
-		}
-	}
-	focus = {
-		id = ITA_reconstruction_of_the_stresa_front
-		relative_position_id = ITA_declaration_of_the_italian_empire
-		prerequisite = {
-			focus = ITA_declaration_of_the_italian_empire
-		}
-		x = 13
-		y = 1
-		icon = GFX_focus_focus_fra_ratify_stresa
-		cost = 5
-		available = {
-			NOT = {
-				has_completed_focus = ITA_approach_to_germany
-			}
-			always = no
 		}
 	}
 	focus = {
@@ -2429,14 +2412,16 @@
 		icon = GFX_focus_ita_roman_empire_ambition
 		cost = 10
 		available = {
-			always = no
 			OR = {
-				OR = {
-					has_completed_focus = ITA_achievement_of_italian_imperialism
-					has_completed_focus = ITA_prison_break
-				}
-				has_completed_focus = ITA_reconstruction_of_the_stresa_front
+				has_completed_focus = ITA_achievement_of_italian_imperialism
+				has_completed_focus = ITA_prison_break
+				has_completed_focus = ITA_continued_war_propaganda
+				has_completed_focus = ITA_housi_suru_hito
+				has_completed_focus = ITA_duce_socialism
 			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = ITA_roman_empire_ambition_tt
 		}
 	}
 	#focus = {
@@ -2450,6 +2435,1025 @@
 	#		always = no
 	#	}
 	#}
+	############################################
+	##										  ##
+	##  ##### ##### ##### ##### #####  #####  ##
+	##  #       #   #   # #     #      #   #  ##
+	##  #####   #   ##### ####  #####  #####  ##
+	##      #   #   #  #  #         #  #   #  ##
+	##  #####   #   #   # ##### #####  #   #  ##
+	##										  ##
+	############################################
+	focus = {
+		id = ITA_reconstruction_of_the_stresa_front
+		relative_position_id = ITA_declaration_of_the_italian_empire
+		prerequisite = {
+			focus = ITA_declaration_of_the_italian_empire
+		}
+		x = 13
+		y = 1
+		icon = GFX_focus_focus_fra_ratify_stresa
+		cost = 5
+		available = {
+			NOT = {
+				has_completed_focus = ITA_approach_to_germany
+			}
+			ENG = {
+				exists = yes
+				is_subject = no
+			}
+			FRA = {
+				exists = yes
+				is_subject = no
+			}
+			#always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = ITA_major_policy_change
+		relative_position_id = ITA_reconstruction_of_the_stresa_front
+		prerequisite = {
+			focus = ITA_reconstruction_of_the_stresa_front
+		}
+		x = -4
+		y = 1
+		icon = GFX_focus_EST_era_of_silence
+		cost = 5
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ITA_negotiations_with_uk_and_fra
+		relative_position_id = ITA_reconstruction_of_the_stresa_front
+		prerequisite = {
+			focus = ITA_reconstruction_of_the_stresa_front
+		}
+		x = 4
+		y = 1
+		icon = GFX_focus_befriend_italy
+		cost = 5
+		available = {
+			ENG = {
+				exists = yes
+				is_subject = no
+			}
+			FRA = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		bypass = {
+			ENG = {
+				OR = {
+					exists = no
+					is_subject = yes
+				}
+			}
+			FRA = {
+				OR = {
+					exists = no
+					is_subject = yes
+				}
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = -0.05
+		}
+	}
+	focus = {
+		id = ITA_confirmation_of_german_army_threat
+		icon = GFX_focus_withdrawal_of_aggressionism
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_negotiations_with_uk_and_fra
+		prerequisite = {
+			focus = ITA_negotiations_with_uk_and_fra
+		}
+		available = {
+			any_other_country = {
+				exists = yes
+				is_puppet = no
+				original_tag = GER
+			}
+		}
+		bypass = {
+			any_other_country = {
+				OR = {
+					exists = no
+					is_puppet = yes
+				}
+				original_tag = GER
+			}
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GER
+				modifier = ita_policy_toward_ger_ger
+			}
+			reverse_add_opinion_modifier = {
+				target = GER
+				modifier = ita_policy_toward_ger_ger
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ita_policy_toward_ger_uk_fra
+			}
+			reverse_add_opinion_modifier = {
+				target = FRA
+				modifier = ita_policy_toward_ger_uk_fra
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = ita_policy_toward_ger_uk_fra
+			}
+			reverse_add_opinion_modifier = {
+				target = ENG
+				modifier = ita_policy_toward_ger_uk_fra
+			}
+			army_experience = 5
+		}
+	}
+	focus = {
+		id = ITA_solving_the_ethiopian_problem
+		icon = GFX_focus_generic_africa_infrastructure
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = ITA_negotiations_with_uk_and_fra
+		prerequisite = {
+			focus = ITA_negotiations_with_uk_and_fra
+		}
+		available = {
+			OR = {
+				controls_state = 550
+				controls_state = 559
+				controls_state = 271
+				any_other_country = {
+					is_puppet_of = ITA
+					OR = {
+						controls_state = 550
+						controls_state = 559
+						controls_state = 271
+					}
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				ITA = {
+					NOT = {
+						OR = {
+							controls_state = 550
+							controls_state = 559
+							controls_state = 271
+						}
+					}
+				}
+				any_other_country = {
+					is_puppet_of = ITA
+					NOT = {
+						OR = {
+							controls_state = 550
+							controls_state = 559
+							controls_state = 271
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			ENG = {
+				add_political_power = 50
+			}
+			FRA = {
+				add_political_power = 50
+			}
+		}
+	}
+	focus = {
+		id = ITA_easing_of_trade_restrictions
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = ITA_negotiations_with_uk_and_fra
+		prerequisite = {
+			focus = ITA_negotiations_with_uk_and_fra
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 75
+			if = {
+				limit = {
+					OR = {
+						has_idea = limited_exports
+						has_idea = closed_economy
+					}
+				}
+				add_ideas = export_focus
+			}
+			remove_ideas = flotta_mediterranea
+		}
+	}
+	focus = {
+		id = ITA_mutual_independence_assurance
+		icon = GFX_goal_generic_alliance
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_confirmation_of_german_army_threat
+		prerequisite = {
+			focus = ITA_confirmation_of_german_army_threat
+		}
+		prerequisite = {
+			focus = ITA_solving_the_ethiopian_problem
+		}
+		prerequisite = {
+			focus = ITA_easing_of_trade_restrictions
+		}
+		completion_reward = {
+			ENG = {
+				country_event = {
+					id = kmm.68
+					hours = 12
+				}
+			}
+			FRA = {
+				country_event = {
+					id = kmm.68
+					hours = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_ideological_liberalization
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_easing_of_trade_restrictions
+		prerequisite = {
+			focus = ITA_easing_of_trade_restrictions
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_ideas = ITA_ideological_liberalization_idea
+		}
+	}
+	focus = {
+		id = ITA_join_allies
+		icon = GFX_focus_chi_british_cooperation
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_mutual_independence_assurance
+		mutually_exclusive = {
+			focus = ITA_unique_security_policy
+			focus = ITA_approach_to_soviet
+		}
+		prerequisite = {
+			focus = ITA_mutual_independence_assurance
+		}
+		prerequisite = {
+			focus = ITA_ideological_liberalization
+		}
+		available = {
+			ENG = {
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			has_global_flag = ITA_ENG_accept
+		}
+		bypass = {
+			is_in_faction_with = ENG
+			ENG = {
+				is_faction_leader = yes
+			}
+		}
+		completion_reward = {
+			ENG = {
+				country_event = {
+					id = kmm.77
+					hours = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_greatbritain_fund_1
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_join_allies
+		prerequisite = {
+			focus = ITA_join_allies
+		}
+		available = {
+			is_in_faction_with = ENG
+			ic_ratio = {
+				tag = ENG
+				ratio < 1
+			}
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = ITA_greatbritain_fund_2
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_greatbritain_fund_1
+		prerequisite = {
+			focus = ITA_greatbritain_fund_1
+		}
+		available = {
+			is_in_faction_with = ENG
+			ic_ratio = {
+				tag = ENG
+				ratio < 0.9
+			}
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 10
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = ITA_greatbritain_dominion
+		icon = GFX_focus_AST_never_gallipoli
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_greatbritain_fund_2
+		prerequisite = {
+			focus = ITA_greatbritain_fund_2
+		}
+		available = {
+			is_in_faction_with = ENG
+			ic_ratio = {
+				tag = ENG
+				ratio < 0.8
+			}
+		}
+		completion_reward = {
+			ENG = {
+				country_event = {
+					id = kmm.78
+					hours = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_unique_security_policy
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = ITA_mutual_independence_assurance
+		prerequisite = {
+			focus = ITA_mutual_independence_assurance
+		}
+		mutually_exclusive = {
+			focus = ITA_join_allies
+			focus = ITA_approach_to_soviet
+		}
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = ITA_defense_in_the_core_states
+		icon = GFX_goal_generic_military_sphere
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_unique_security_policy
+		prerequisite = {
+			focus = ITA_unique_security_policy
+		}
+		completion_reward = {
+			add_ideas = ITA_defense_in_the_core_states_idea
+		}
+	}
+	focus = {
+		id = ITA_defense_from_powers
+		icon = GFX_goal_generic_military_sphere
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_defense_in_the_core_states
+		prerequisite = {
+			focus = ITA_defense_in_the_core_states
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_defense_in_the_core_states_idea
+				add_idea = ITA_defense_from_powers_idea
+			}
+		}
+	}
+	focus = {
+		id = ITA_peninsula_defense
+		icon = GFX_focus_generic_home_defense
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_defense_from_powers
+		prerequisite = {
+			focus = ITA_defense_from_powers
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_defense_from_powers_idea
+				add_idea = ITA_peninsula_defense_idea
+			}
+		}
+	}
+	focus = {
+		id = ITA_approach_to_soviet
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = ITA_mutual_independence_assurance
+		prerequisite = {
+			focus = ITA_mutual_independence_assurance
+		}
+		prerequisite = {
+			focus = ITA_ideological_liberalization
+		}
+		mutually_exclusive = {
+			focus = ITA_unique_security_policy
+			focus = ITA_join_allies
+		}
+		available = {
+			SOV = {
+				has_government = communism
+				has_civil_war = no
+			}
+		}
+		bypass = {
+			is_in_faction_with = SOV
+			SOV = {
+				is_faction_leader = yes
+			}
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = ITA_approach_to_soviet_idea
+				days = 1095
+			}
+		}
+	}
+	focus = {
+		id = ITA_flexible_fascism
+		relative_position_id = ITA_major_policy_change
+		prerequisite = {
+			focus = ITA_major_policy_change
+		}
+		mutually_exclusive = {
+			focus = ITA_democratic_leadership
+			focus = ITA_return_to_socialism
+		}
+		x = -3
+		y = 1
+		icon = GFX_goal_support_fascism
+		cost = 5
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+			}
+			add_country_leader_trait = flexible_fascist
+		}
+	}
+	focus = {
+		id = ITA_elimination_of_small_countries
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_flexible_fascism
+		prerequisite = {
+			focus = ITA_flexible_fascism
+		}
+		completion_reward = {
+			add_ideas = ITA_elimination_of_small_countries_idea
+		}
+	}
+	focus = {
+		id = ITA_an_astute_diplomatic_corps
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_elimination_of_small_countries
+		prerequisite = {
+			focus = ITA_elimination_of_small_countries
+		}
+		completion_reward = {
+			add_ideas = ITA_an_astute_diplomatic_corps_idea
+		}
+	}
+	focus = {
+		id = ITA_continued_war_propaganda
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_an_astute_diplomatic_corps
+		prerequisite = {
+			focus = ITA_an_astute_diplomatic_corps
+		}
+		completion_reward = {
+			add_ideas = ITA_continued_war_propaganda_idea
+		}
+	}
+	focus = {
+		id = ITA_hegemony
+		icon = GFX_focus_ita_achievement_of_italian_imperialism
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = ITA_continued_war_propaganda
+		prerequisite = {
+			focus = ITA_continued_war_propaganda
+		}
+		available = {
+			all_other_country = {
+				ic_ratio = {
+					tag = ITA
+					ratio < 0.5
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = ITA_hegemony_idea
+		}
+	}
+	focus = {
+		id = ITA_democratic_leadership
+		relative_position_id = ITA_major_policy_change
+		prerequisite = {
+			focus = ITA_major_policy_change
+		}
+		mutually_exclusive = {
+			focus = ITA_flexible_fascism
+			focus = ITA_return_to_socialism
+		}
+		x = 0
+		y = 1
+		icon = GFX_goal_support_democracy
+		cost = 5
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			set_popularities = {
+				democratic = ITA.party_popularity_100@fascism
+				neutrality = ITA.party_popularity_100@neutrality
+				fascism = ITA.party_popularity_100@democratic
+				communism = ITA.party_popularity_100@communism
+			}
+			retire_ideology_leader = fascism
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+				last_election = "1925.12.24"
+				election_frequency = 48
+				long_name = ITA_musdec_long
+				name = ITA_musdec
+			}
+			add_country_leader_role = {
+				character = ITA_benito_mussolini
+				Promote_leader = yes
+				country_leader = {
+					ideology = socialism
+					expire = "1965.1.1.1"
+					traits = {
+						dictator
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_tatakau_minsyusyugi
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 5
+		x = -1
+		y = 1
+		relative_position_id = ITA_democratic_leadership
+		prerequisite = {
+			focus = ITA_democratic_leadership
+		}
+		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+				can_puppet = yes
+				can_declare_war_on_same_ideology = yes
+				can_declare_war_without_wargoal_when_in_war = yes
+			}
+		}
+	}
+	focus = {
+		id = ITA_tounai_minsyusyugi
+		icon = GFX_focus_POL_complete_april_constitution
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = ITA_democratic_leadership
+		prerequisite = {
+			focus = ITA_democratic_leadership
+			focus = ITA_return_to_socialism
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = communism
+				}
+				add_ideas = ITA_sociality_within_the_party
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				add_ideas = ITA_democracy_within_the_party
+			}
+		}
+	}
+	focus = {
+		id = ITA_italy_matter
+		icon = GFX_focus_rom_parties_end
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = ITA_democratic_leadership
+		prerequisite = {
+			focus = ITA_democratic_leadership
+		}
+		prerequisite = {
+			focus = ITA_tounai_minsyusyugi
+			focus = ITA_tatakau_minsyusyugi
+		}
+		completion_reward = {
+			custom_effect_tooltip = ITA_italy_matter_tt
+		}
+	}
+	focus = {
+		id = ITA_sokoku_heno_tyusei
+		icon = GFX_focus_generic_military_mission
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = ITA_italy_matter
+		prerequisite = {
+			focus = ITA_italy_matter
+			focus = ITA_duce_socialism
+		}
+		completion_reward = {
+			add_ideas = ITA_loyalty_to_the_fatherland
+		}
+	}
+	focus = {
+		id = ITA_teikoku_kaikaku
+		icon = GFX_focus_generic_self_management
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_italy_matter
+		prerequisite = {
+			focus = ITA_italy_matter
+		}
+		available = {
+			has_completed_focus = ITA_colonial_management
+		}
+		completion_reward = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						controller = {
+							is_subject_of = ITA
+						}
+						OR = {
+							has_resources_amount = {
+								resource = oil
+								amount > 1
+							}
+							has_resources_amount = {
+								resource = aluminium
+								amount > 1
+							}
+							has_resources_amount = {
+								resource = rubber
+								amount > 1
+							}
+							has_resources_amount = {
+								resource = tungsten
+								amount > 1
+							}
+							has_resources_amount = {
+								resource = steel
+								amount > 1
+							}
+							has_resources_amount = {
+								resource = chromium
+								amount > 1
+							}
+						}
+					}
+					controller = {
+						give_resource_rights = {
+							receiver = ITA
+							state = PREV
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = ITA_teikoku_kaikaku_tt
+		}
+	}
+	focus = {
+		id = ITA_syutyukogyo_VI
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 5
+		x = -1
+		y = 2
+		relative_position_id = ITA_italy_matter
+		prerequisite = {
+			focus = ITA_italy_matter
+		}
+		completion_reward = {
+			add_ideas = ITA_concentrated_industry6
+		}
+	}
+	focus = {
+		id = ITA_housi_suru_hito
+		icon = GFX_focus_CZE_german_puppet
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = ITA_teikoku_kaikaku
+		prerequisite = {
+			focus = ITA_teikoku_kaikaku
+		}
+		prerequisite = {
+			focus = ITA_sokoku_heno_tyusei
+		}
+		completion_reward = {
+			add_ideas = ITA_people_to_serve_idea
+		}
+	}
+	focus = {
+		id = ITA_return_to_socialism
+		icon = GFX_goal_support_communism
+		cost = 5
+		relative_position_id = ITA_major_policy_change
+		prerequisite = {
+			focus = ITA_major_policy_change
+		}
+		mutually_exclusive = {
+			focus = ITA_democratic_leadership
+			focus = ITA_flexible_fascism
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			set_popularities = {
+				democratic = ITA.party_popularity_100@democratic
+				neutrality = ITA.party_popularity_100@neutrality
+				fascism = ITA.party_popularity_100@communism
+				communism = ITA.party_popularity_100@fascism
+			}
+			retire_ideology_leader = fascism
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+				election_frequency = 48
+				long_name = ITA_muscom_long
+				name = ITA_muscom
+			}
+			add_country_leader_role = {
+				character = ITA_benito_mussolini
+				Promote_leader = yes
+				country_leader = {
+					ideology = leninism
+					expire = "1965.1.1.1"
+					traits = {
+						stalin_servant_of_lenin_leader
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_kakuryou_no_kyouka
+		icon = GFX_focus_SOV_the_last_purge
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_return_to_socialism
+		prerequisite = {
+			focus = ITA_return_to_socialism
+		}
+		completion_reward = {
+			add_popularity = {
+				popularity = 0.1
+				ideology = communism
+			}
+			add_political_power = 75
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = ITA_koudona_kanryou_kikou
+		icon = GFX_focus_generic_soviet_politics
+		cost = 5
+		x = -1
+		y = 1
+		relative_position_id = ITA_kakuryou_no_kyouka
+		prerequisite = {
+			focus = ITA_kakuryou_no_kyouka
+		}
+		prerequisite = {
+			focus = ITA_tounai_minsyusyugi
+		}
+		completion_reward = {
+			add_ideas = ITA_advanced_ministerial_structure
+		}
+	}
+	focus = {
+		id = ITA_duce_socialism
+		icon = GFX_focus_generic_join_comintern
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = ITA_kakuryou_no_kyouka
+		prerequisite = {
+			focus = ITA_kakuryou_no_kyouka
+		}
+		completion_reward = {
+			add_ideas = ITA_duce_socialism_idea
+		}
+	}
+	focus = {
+		id = ITA_communism_differentism_purge
+		icon = GFX_focus_spr_class_war
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = ITA_duce_socialism
+		prerequisite = {
+			focus = ITA_duce_socialism
+		}
+		prerequisite = {
+			focus = ITA_approach_to_soviet
+		}
+		available = {
+			any_controlled_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = ITA_communism_differentism_purge_tt
+			SOV = {
+				country_event = {
+					id = kmm.79
+					hours = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_local_social_commune
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_duce_socialism
+		prerequisite = {
+			focus = ITA_duce_socialism
+		}
+		available = {
+			has_idea = ITA_correcting_the_north_south_divide_idea
+		}
+		completion_reward = {
+			remove_ideas = ITA_correcting_the_north_south_divide_idea
+		}
+	}
+	focus = {
+		id = ITA_building_collectionism
+		icon = GFX_goal_generic_soviet_construction
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_local_social_commune
+		prerequisite = {
+			focus = ITA_local_social_commune
+		}
+		completion_reward = {
+			add_ideas = ITA_collectivist_architecture
+		}
+	}
+	focus = {
+		id = ITA_gunzi_ensyu
+		icon = GFX_focus_operation_bagration
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_communism_differentism_purge
+		prerequisite = {
+			focus = ITA_communism_differentism_purge
+		}
+		completion_reward = {
+			ITA = {
+				add_ideas = ITA_joint_military_exercise
+			}
+			SOV = {
+				add_ideas = ITA_joint_military_exercise
+			}
+		}
+	}
+	focus = {
+		id = ITA_iron_tunagari
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = ITA_gunzi_ensyu
+		prerequisite = {
+			focus = ITA_gunzi_ensyu
+		}
+		available = {
+			can_build_railway = {
+				start_state = ITA.capital
+				target_state = SOV.capital
+				build_only_on_allied = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				build_railway = {
+					start_state = ITA.capital
+					target_state = SOV.capital
+					build_only_on_allied = yes
+					level = 3
+				}
+			}
+			custom_effect_tooltip = ITA_iron_tunagari_tt
+		}
+	}
+	#####################################
+	##								   ##
+	##  ##### ##### # # # ##### #   #  ##
+	##  #   # #   # ##### #   # ##  #  ##
+	##  ##### #   # # # # ##### # # #  ##
+	##  #  #  #   # # # # #   # #  ##  ##
+	##  #   # ##### #   # #   # #   #  ##
+	##								   ##
+	#####################################
 	focus = {
 		id = ITA_roman_reform
 		relative_position_id = ITA_roman_empire_ambition
@@ -2460,6 +3464,14 @@
 		y = 1
 		icon = GFX_focus_spa_the_spanish_miracle
 		cost = 10
+		available = {
+			controls_state = 2
+		}
+		completion_reward = {
+			2 = {
+				set_state_category = megalopolis
+			}
+		}
 	}
 	focus = {
 		id = ITA_roman_government
@@ -2471,42 +3483,115 @@
 		y = 1
 		icon = GFX_focus_generic_self_management
 		cost = 10
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = vittoria_mutilata
+				add_idea = ITA_roman_empire_rebuilding_idea
+			}
+		}
 	}
 	focus = {
 		id = ITA_gaul_recovery
 		relative_position_id = ITA_roman_government
 		prerequisite = {
 			focus = ITA_roman_government
+		}
+		prerequisite = {
 			focus = ITA_roman_reform
 		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_gaul_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 19
+							region = 20
+							region = 208
+							state = 6
+							state = 34
+							state = 1
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_dacia_and_thrace_recovery
 		relative_position_id = ITA_roman_reform
 		prerequisite = {
 			focus = ITA_roman_government
+		}
+		prerequisite = {
 			focus = ITA_roman_reform
 		}
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_dacia_and_thrace_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 76
+							state = 81
+							state = 82
+							state = 83
+							state = 84
+							state = 48
+							state = 212
+							state = 801
+							state = 211
+							state = 341
+							state = 797
+							state = 764
+							state = 184
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_asia_cilicia_recovery
 		relative_position_id = ITA_roman_reform
 		prerequisite = {
 			focus = ITA_roman_government
+		}
+		prerequisite = {
 			focus = ITA_roman_reform
 		}
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_asia_cilicia_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						region = 129
+						NOT = {
+							OR = {
+								state = 350
+								state = 352
+								state = 800
+							}
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_armenian_assyria_recovery
@@ -2517,7 +3602,23 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_armenian_assyria_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 230
+							state = 800
+							state = 419
+							state = 421
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_hispania_recovery
@@ -2528,7 +3629,23 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_hispania_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 68
+							region = 210
+							region = 41
+							region = 209
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_pannonia_recovery
@@ -2539,7 +3656,32 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_pannonia_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 102
+							state = 103
+							state = 109
+							state = 104
+							state = 804
+							state = 163
+							state = 45
+							state = 105
+							state = 888
+							state = 155
+							state = 882
+							state = 883
+							state = 848
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_levant_recovery
@@ -2550,7 +3692,26 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_levant_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 28
+							state = 350
+							state = 352
+							state = 183
+						}
+						NOT = {
+							state = 656
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_britannia_recovery
@@ -2561,7 +3722,21 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_britannia_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 1
+							region = 2
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_moesia_recovery
@@ -2572,7 +3747,28 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_moesia_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 77
+							state = 46
+							state = 79
+							state = 766
+							state = 78
+							state = 107
+							state = 108
+							state = 802
+							state = 803
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_germania_recovery
@@ -2583,7 +3779,35 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_germania_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 3
+							state = 151
+							state = 847
+							state = 153
+							state = 851
+							state = 850
+							state = 849
+							state = 852
+							state = 152
+							state = 4
+							state = 50
+							state = 52
+							state = 8
+							state = 42
+							state = 51
+							state = 35
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_aegyuputusu_recovery
@@ -2594,7 +3818,30 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_aegyuputusu_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 128
+							region = 225
+							region = 126
+							state = 290
+							state = 461
+							state = 116
+						}
+						NOT = {
+							state = 513
+							state = 661
+							state = 662
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_macedonia_recovery
@@ -2605,7 +3852,29 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 5
+		cost = 10
+		completion_reward = {
+			custom_effect_tooltip = ITA_aegyuputusu_recovery_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 25
+							region = 202
+							state = 106
+							state = 44
+							state = 805
+						}
+						NOT = {
+							state = 797
+							state = 341
+							state = 184
+						}
+					}
+					add_core_of = ITA
+				}
+			}
+		}
 	}
 	focus = {
 		id = ITA_resurrection_of_the_roman_empire
@@ -2623,6 +3892,13 @@
 		y = 1
 		icon = GFX_focus_ita_roman_empire_ambition
 		cost = 10
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_roman_empire_rebuilding_idea
+				add_idea = ITA_roman_empire_idea
+			}
+			custom_effect_tooltip = ITA_resurrection_of_the_roman_empire_tt
+		}
 	}
 	#####################################################################
 	#																	#
@@ -3302,6 +4578,7 @@
 					controls_state = 550
 					controls_state = 559
 					controls_state = 271
+					is_subject_of = ITA
 				}
 			}
 		}
@@ -3373,6 +4650,7 @@
 					controls_state = 449
 					controls_state = 450
 					controls_state = 451
+					is_subject_of = ITA
 				}
 			}
 		}
@@ -3572,6 +4850,7 @@
 					controls_state = 550
 					controls_state = 559
 					controls_state = 271
+					is_subject_of = ITA
 				}
 			}
 		}
@@ -3630,6 +4909,7 @@
 					controls_state = 449
 					controls_state = 450
 					controls_state = 451
+					is_subject_of = ITA
 				}
 			}
 			has_tech = synth_oil_experiments
@@ -3871,11 +5151,7 @@
 		relative_position_id = ITA_mediterranean_territorial_industry
 		prerequisite = {
 			focus = ITA_east_african_industry
-		}
-		prerequisite = {
 			focus = ITA_north_african_industry
-		}
-		prerequisite = {
 			focus = ITA_mediterranean_territorial_industry
 		}
 		x = -2
@@ -3891,11 +5167,7 @@
 		relative_position_id = ITA_mediterranean_territorial_industry
 		prerequisite = {
 			focus = ITA_colonial_industry
-		}
-		prerequisite = {
 			focus = ITA_industry_in_the_occupied_territories
-		}
-		prerequisite = {
 			focus = ITA_mediterranean_territorial_industry
 		}
 		x = 2
@@ -3941,14 +5213,14 @@
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 5000
+				amount = 10000
 				producer = ITA
 			}
 		}
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = support_equipment
-				amount = 500
+				amount = 1000
 				producer = ITA
 			}
 		}
@@ -3964,7 +5236,7 @@
 		icon = GFX_focus_generic_manpower
 		cost = 5
 		completion_reward = {
-			add_manpower = 100000
+			add_ideas = ITA_conscription_system_reform
 		}
 	}
 	focus = {
@@ -4044,8 +5316,8 @@
 		icon = GFX_goal_generic_army_tanks
 		cost = 5
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 1
 				category = cat_mobile_warfare
 			}
@@ -4070,8 +5342,8 @@
 		icon = GFX_focus_generic_license_production
 		cost = 5
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 3
 				category = cat_battlefield_support
 			}
@@ -4087,8 +5359,12 @@
 		y = 1
 		icon = GFX_focus_ita_M13_40
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = armor
+			}
 		}
 	}
 	focus = {
@@ -4101,6 +5377,9 @@
 		y = 1
 		icon = GFX_focus_generic_army_tanks2
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_reduced_tank_costs
+		}
 	}
 	focus = {
 		id = ITA_reduced_armored_car_costs
@@ -4112,8 +5391,8 @@
 		y = 1
 		icon = GFX_goal_generic_production2
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_ideas = ITA_reduced_armored_car_costs
 		}
 	}
 	focus = {
@@ -4126,6 +5405,9 @@
 		y = 1
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_improvement_of_supply
+		}
 	}
 	focus = {
 		id = ITA_achievement_of_armor
@@ -4138,6 +5420,9 @@
 		y = 1
 		icon = GFX_goal_generic_build_tank
 		cost = 5
+		completion_reward = {
+			army_experience = 100
+		}
 	}
 	focus = {
 		id = ITA_anti_tank_firearms
@@ -4170,8 +5455,8 @@
 		y = 1
 		icon = GFX_goal_generic_army_artillery
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_ideas = ITA_field_gun
 		}
 	}
 	focus = {
@@ -4184,6 +5469,18 @@
 		y = 1
 		icon = GFX_focus_ita_propulsion_gun
 		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				category = rocketry
+				bonus = 1
+				uses = 1
+			}
+			add_tech_bonus = {
+				category = artillery
+				bonus = 1
+				uses = 1
+			}
+		}
 	}
 	focus = {
 		id = ITA_anti_aircraft_gun
@@ -4195,6 +5492,13 @@
 		y = 1
 		icon = GFX_focus_generic_air_defense
 		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				category = cat_anti_air
+				bonus = 1
+				uses = 2
+			}
+		}
 	}
 	focus = {
 		id = ITA_mass_production_system_for_artillery
@@ -4227,8 +5531,12 @@
 		y = 1
 		icon = GFX_goal_generic_small_arms
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_tech_bonus = {
+				category = infantry_weapons
+				uses = 2
+				bonus = 1
+			}
 		}
 	}
 	focus = {
@@ -4241,6 +5549,9 @@
 		y = 1
 		icon = GFX_focus_generic_provoke_border_clashes
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_infantry_penetration
+		}
 	}
 	focus = {
 		id = ITA_achievement_of_high_skill
@@ -4252,6 +5563,9 @@
 		y = 1
 		icon = GFX_focus_chi_army_reform
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_achievement_of_high_skill
+		}
 	}
 	focus = {
 		id = ITA_unique_method
@@ -4264,8 +5578,8 @@
 		icon = GFX_focus_ita_army_reform
 		cost = 5
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 3
 				category = land_doctrine
 			}
@@ -4282,8 +5596,46 @@
 		y = 2
 		icon = GFX_focus_generic_coastal_fort
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			division_template = {
+				name = "Independent Brigade"
+				is_locked = no
+				priority = 0
+				division_names_group = ENG_INF_02
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			2 = {
+				create_unit = {
+					division = "name = \"Independent Brigade\" division_template = \"Independent Brigade\" start_experience_factor = 0.2 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = ITA
+					count = 60
+				}
+			}
 		}
 	}
 	focus = {
@@ -4296,8 +5648,25 @@
 		y = 1
 		icon = GFX_goal_generic_fortify_city
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ITA
+					OR = {
+						region = 23
+						region = 21
+					}
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -4310,6 +5679,9 @@
 		y = 1
 		icon = GFX_focus_GRE_a_land_of_mountains
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_mountain_division
+		}
 	}
 	focus = {
 		id = ITA_battle_in_the_desert
@@ -4321,6 +5693,9 @@
 		y = 1
 		icon = GFX_focus_ita_battle_in_the_desert
 		cost = 5
+		completion_reward = {
+			add_ideas = ITA_battle_in_the_desert
+		}
 	}
 	#####################################
 	#									#
@@ -4355,13 +5730,7 @@
 		icon = GFX_focus_mex_privatisation
 		cost = 5
 		completion_reward = {
-			hidden_effect = {
-				add_to_variable = {
-					var = airforce_estimate
-					value = 30
-				}
-			}
-			custom_effect_tooltip = ITA_air_force_budget_increase_tt
+			add_ideas = ITA_air_force_idea
 		}
 	}
 	focus = {
@@ -4375,8 +5744,8 @@
 		icon = GFX_goal_generic_air_doctrine
 		cost = 5
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
@@ -4521,8 +5890,12 @@
 		y = 1
 		icon = GFX_focus_ita_Z1018_leone
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tactical_bomber
+			}
 		}
 	}
 	focus = {
@@ -4551,10 +5924,13 @@
 		}
 		x = -2
 		y = 1
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_SOV_merge_plants
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_air_force_idea
+				add_idea = ITA_air_force_idea_2
+			}
 		}
 	}
 	focus = {
@@ -4567,6 +5943,12 @@
 		y = 1
 		icon = GFX_goal_continuous_air_production
 		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_air_force_idea_2
+				add_idea = ITA_air_force_idea_3
+			}
+		}
 	}
 	focus = {
 		id = ITA_G55_centauro
@@ -4599,6 +5981,13 @@
 		y = 1
 		icon = GFX_focus_rocketry
 		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				category = rocketry
+				uses = 2
+				bonus = 1
+			}
+		}
 	}
 	focus = {
 		id = ITA_cryptography_and_detection
@@ -4613,8 +6002,8 @@
 		y = 1
 		icon = GFX_focus_generic_cryptologic_bomb
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_ideas = ITA_cryptography_and_detection
 		}
 	}
 	#####################
@@ -4760,8 +6149,8 @@
 		y = 2
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_ideas = ITA_high_speed_fleet_concept
 		}
 	}
 	focus = {
@@ -4774,8 +6163,12 @@
 		y = 2
 		icon = GFX_focus_generic_cruiser2
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			add_tech_bonus = {
+				category = cl_tech
+				uses = 1
+				bonus = 1
+			}
 		}
 	}
 	focus = {
@@ -4825,8 +6218,17 @@
 		y = 2
 		icon = GFX_focus_generic_focus_on_mediterraneum
 		cost = 5
-		available = {
-			always = no
+		completion_reward = {
+			if = {
+				has_idea = flotta_mediterranea
+			}
+			swap_ideas = {
+				remove_idea = flotta_mediterranea
+				add_idea = flotta_mediterranea_2
+			}
+			else = {
+				add_idea = flotta_mediterranea_2
+			}
 		}
 	}
 	focus = {
@@ -4914,5 +6316,12 @@
 		y = 1
 		icon = GFX_focus_ita_navy_augmentation
 		cost = 5
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 3
+				category = naval_doctrine
+			}
+		}
 	}
 }

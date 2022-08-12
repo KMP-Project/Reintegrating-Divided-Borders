@@ -27,6 +27,7 @@ add_ideas = {
 	partial_economic_mobilisation
 	ITA_divided_nation_idea
 	flotta_mediterranea
+	ITA_great_depression_1_idea
 }
 
 550 = {

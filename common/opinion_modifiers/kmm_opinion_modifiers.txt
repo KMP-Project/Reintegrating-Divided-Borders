@@ -7,7 +7,6 @@
 # decay
 # months/years/days = timer
 # trade = yes/no
-
 opinion_modifiers = {
 	#mexico_german_resource_exchange = {
 	#	value = 50
@@ -24,68 +23,59 @@ opinion_modifiers = {
 	#	months = 120
 	#	decay = 0.125
 	#}
-
 	ger_eastern_expansion_policy = {
 		value = -50
 	}
-
 	ger_AHF_friendship_modifier_2 = {
 		value = 50
 		trade = yes
 	}
-
 	ger_AHF_friendship_modifier_1 = {
 		value = 50
 		trade = no
 	}
-
 	ger_AHF_feud_modifier_1 = {
 		value = -50
 		trade = no
 	}
-
 	ger_AHF_feud_modifier_2 = {
 		value = -50
 		trade = yes
 	}
-
 	hun_austro_hungarian_aggreement = {
 		value = 40
 	}
-
 	ita_friendship_with_germany = {
 		value = 40
 	}
-
 	ita_spanish_civil_war = {
 		value = 20
 	}
-
 	ita_spanish_civil_war_2 = {
 		value = -200
 	}
-
 	ita_friendship_with_soviet = {
 		value = 30
 	}
-
 	ita_reconstruction_assistance_1 = {
 		value = 30
 	}
-
 	ita_reconstruction_assistance_2 = {
 		value = 30
 	}
-
 	ita_friendship_with_jap = {
 		value = 40
 	}
-
 	ita_friendship_with_bul = {
 		value = 40
 	}
-
 	sia_diplomacy_with_powers = {
 		value = 30
 	}
-}	
+	ita_policy_toward_ger_ger = {
+		value = -30
+	}
+	ita_policy_toward_ger_uk_fra = {
+		value = 40
+	}
+}

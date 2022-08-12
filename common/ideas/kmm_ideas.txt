@@ -1418,7 +1418,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				weekly_manpower = 20000
+				weekly_manpower = 10000
 			}
 		}
 		ENG_socialist_economics = {

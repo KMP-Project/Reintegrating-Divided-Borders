@@ -2389,6 +2389,478 @@ country_event = {
 }
 
 country_event = {
+	id = kmm.68
+	title = "イタリアがストレーザ戦線の再構築を希望"
+	desc = "イタリア帝国は、我々に対してつい昨年形骸化したストレーザ戦線の再構築を求めてきた。彼らはエチオピア問題の解決などを図っており（我々に対して金銭的に）、彼らと英仏で相互独立保証を結ぶことは我々にとっても利益になるかもしれない。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "承諾しよう"
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = ENG
+				}
+			}
+			ITA = {
+				country_event = {
+					id = kmm.69
+					hours = 18
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = FRA
+				}
+			}
+			ITA = {
+				country_event = {
+					id = kmm.70
+					hours = 12
+				}
+			}
+		}
+	}
+	option = {
+		name = "ありえん"
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = ENG
+				}
+			}
+			ITA = {
+				country_event = {
+					id = kmm.71
+					hours = 18
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = FRA
+				}
+			}
+			ITA = {
+				country_event = {
+					id = kmm.72
+					hours = 12
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.69
+	title = "イギリスが受諾"
+	desc = "イギリスは相互防衛を受諾した。"
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = "素晴らしい"
+		set_global_flag = ITA_ENG_accept
+	}
+}
+
+country_event = {
+	id = kmm.70
+	title = "フランスが受諾"
+	desc = "フランスは相互防衛を受諾した。"
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = "素晴らしい"
+		set_global_flag = ITA_FRA_accept
+	}
+}
+
+country_event = {
+	id = kmm.71
+	title = "イギリスが拒否"
+	desc = "イギリスは相互防衛を拒否した。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "前途多難だな"
+		set_global_flag = ITA_ENG_refusal
+	}
+}
+
+country_event = {
+	id = kmm.72
+	title = "フランスが拒否"
+	desc = "イギリスは相互防衛を拒否した。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "前途多難だな"
+		set_global_flag = ITA_FRA_refusal
+	}
+}
+
+country_event = {
+	id = kmm.73
+	title = "相互防衛条約が大成功"
+	desc = "イギリス、フランス両国は我が国との相互独立保証条約に調印した。これは我々のドイツへの圧力増加につながり独裁者の横暴を抑制することにもつながる。"
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "素晴らしい！"
+		ENG = {
+			diplomatic_relation = {
+				country = ITA
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee
+				active = yes
+			}
+		}
+		ITA = {
+			diplomatic_relation = {
+				country = ENG
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee
+				active = yes
+			}
+		}
+		FRA = {
+			diplomatic_relation = {
+				country = ITA
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = ENG
+				relation = guarantee
+				active = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.74
+	title = "相互防衛条約が部分的成功"
+	desc = "英仏のうち片方だけは我が国との相互独立保証条約に調印したが、もう片方は調印を拒否した。"
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "なんともコメントし難い"
+		if = {
+			limit = {
+				has_global_flag = ITA_FRA_accept
+			}
+			FRA = {
+				diplomatic_relation = {
+					country = ITA
+					relation = guarantee
+					active = yes
+				}
+			}
+			ITA = {
+				diplomatic_relation = {
+					country = FRA
+					relation = guarantee
+					active = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = ITA_ENG_accept
+			}
+			ENG = {
+				diplomatic_relation = {
+					country = ITA
+					relation = guarantee
+					active = yes
+				}
+			}
+			ITA = {
+				diplomatic_relation = {
+					country = ENG
+					relation = guarantee
+					active = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.75
+	title = "相互防衛条約が失敗"
+	desc = "イギリス、フランス両国は我が国との相互独立保証条約に調印しなかった。"
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "転進だ！"
+	}
+}
+
+country_event = {
+	id = kmm.76	#summoner
+	trigger = {
+		OR = {
+			AND = {
+				has_global_flag = ITA_ENG_accept
+				has_global_flag = ITA_FRA_accept
+			}
+			AND = {
+				has_global_flag = ITA_ENG_accept
+				has_global_flag = ITA_FRA_refusal
+			}
+			AND = {
+				has_global_flag = ITA_ENG_refusal
+				has_global_flag = ITA_FRA_accept
+			}
+			AND = {
+				has_global_flag = ITA_ENG_refusal
+				has_global_flag = ITA_FRA_refusal
+			}
+		}
+		NOT = {
+			has_global_flag = ITA_guarantee_finished
+		}
+	}
+	hidden = yes
+	option = {
+		trigger = {
+			has_global_flag = ITA_ENG_accept
+			has_global_flag = ITA_FRA_accept
+		}
+		set_global_flag = ITA_guarantee_finished
+		ITA = {
+			country_event = {
+				id = kmm.73
+				hours = 6
+			}
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					has_global_flag = ITA_ENG_refusal
+					has_global_flag = ITA_FRA_accept
+				}
+				AND = {
+					has_global_flag = ITA_ENG_accept
+					has_global_flag = ITA_FRA_refusal
+				}
+			}
+		}
+		set_global_flag = ITA_guarantee_finished
+		ITA = {
+			country_event = {
+				id = kmm.74
+				hours = 6
+			}
+		}
+	}
+	option = {
+		trigger = {
+			has_global_flag = ITA_ENG_refusal
+			has_global_flag = ITA_FRA_refusal
+		}
+		set_global_flag = ITA_guarantee_finished
+		ITA = {
+			country_event = {
+				id = kmm.75
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.77
+	title = "イタリアが連合国加盟を要請"
+	desc = "イタリア帝国は連合国への加盟を希望している。ストレーザ戦線のより決定的な結束への道と成るだろう。"
+	picture = GFX_report_event_soviet_finnish_pact
+	is_triggered_only = yes
+	option = {
+		name = "許可しよう"
+		add_to_faction = ITA
+	}
+	option = {
+		name = "時期尚早だ"
+	}
+}
+
+country_event = {
+	id = kmm.78
+	title = "イタリアが大英帝国自治領への編入を希望"
+	desc = "イタリア帝国は、イギリス政府に対してイタリア帝国の非属国化を要求してきた！この要求は予期しない結果をもたらすことになるだろう…"
+	picture = GFX_report_event_canada_patriation
+	is_triggered_only = yes
+	option = {
+		name = "自治領に編入しよう"
+		set_autonomy = {
+			target = ITA
+			autonomy_state = autonomy_dominion
+		}
+	}
+	option = {
+		name = "同盟国の関係が一番妥当だろう"
+	}
+}
+
+country_event = {
+	id = kmm.79
+	title = "イタリアが共産性の違いの概念破壊を提案"
+	desc = "ムッソリーニ率いるイタリア帝国は、ソビエト連邦と違う共産主義を取っているが、彼らはそれらの相違に関係なく全世界の社会主義国家は団結するべきとして、我々の寛大な支援を要求している。"
+	picture = GFX_report_event_poland_rejects
+	is_triggered_only = yes
+	option = {
+		name = "我々は団結するべきだ"
+		ITA = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		set_global_flag = ITA_SOV_accept
+		ITA = {
+			country_event = {
+				id = kmm.80
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = "一国社会主義を守り続けるのだ"
+		set_global_flag = ITA_SOV_refusal
+		ITA = {
+			country_event = {
+				id = kmm.80
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmm.80
+	title = "共産性の違いの破壊:結果"
+	desc = "ソビエト連邦外務省からの返答が届いたようだ。"
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = "ソビエト連邦万歳！"
+		trigger = {
+			has_global_flag = ITA_SOV_accept
+		}
+	}
+	option = {
+		name = "失敗だ"
+		trigger = {
+			has_global_flag = ITA_SOV_refusal
+		}
+	}
+}
+
+country_event = {
 	id = kmm.666
 	title = "error!"
 	desc = "Your Hoi4 has caused an error! Report the situation, errors, etc. to the mod creator immediately!"

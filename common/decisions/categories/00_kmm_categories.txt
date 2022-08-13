@@ -118,7 +118,7 @@ KMM_HUN_dealing_with_ethnic_problems = {
 KMM_Debug_Object = {
 	icon = gre_paying_ifc_debt
 	allowed = {
-		is_debug = no
+		is_debug = yes
 	}
 }
 

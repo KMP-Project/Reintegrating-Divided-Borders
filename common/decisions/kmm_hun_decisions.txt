@@ -102,7 +102,7 @@ KMM_Debug_Object = {
 			#ROOT = { load_oob = "ITA_invasion_ALB" }
 			#ROOT = { load_oob = "ITA_invasion_ALB" }
 			#ROOT = { load_oob = "ITA_invasion_ALB" }
-			clr_global_flag = form_iberismo_flag
+			#clr_global_flag = form_iberismo_flag
 		}
 	}
 }

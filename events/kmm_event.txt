@@ -2891,6 +2891,50 @@ country_event = {
 		puppet = BAY
 		puppet = SAX
 		puppet = MEK
+		hidden_effect = {
+			BAY = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = GER
+					hostility_reason = asked_to_join
+				}
+			}
+			SAX = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = GER
+					hostility_reason = asked_to_join
+				}
+			}
+			MEK = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = GER
+					hostility_reason = asked_to_join
+				}
+			}
+			HAN = {
+				add_to_war = {
+					targeted_alliance = GER
+					enemy = PREV
+					hostility_reason = asked_to_join
+				}
+			}
+			SHL = {
+				add_to_war = {
+					targeted_alliance = GER
+					enemy = PREV
+					hostility_reason = asked_to_join
+				}
+			}
+			WUR = {
+				add_to_war = {
+					targeted_alliance = GER
+					enemy = PREV
+					hostility_reason = asked_to_join
+				}
+			}
+		}
 	}
 }
 

@@ -2419,6 +2419,7 @@
 				has_completed_focus = ITA_housi_suru_hito
 				has_completed_focus = ITA_duce_socialism
 			}
+			has_completed_focus = ITA_elimination_of_division
 		}
 		completion_reward = {
 			custom_effect_tooltip = ITA_roman_empire_ambition_tt
@@ -5236,7 +5237,8 @@
 		icon = GFX_focus_generic_manpower
 		cost = 5
 		completion_reward = {
-			add_ideas = ITA_conscription_system_reform
+			#add_ideas = ITA_conscription_system_reform
+			add_manpower = 100000
 		}
 	}
 	focus = {

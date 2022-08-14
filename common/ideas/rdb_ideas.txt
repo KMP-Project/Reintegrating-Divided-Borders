@@ -565,7 +565,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				conscription = 0.05
+				#conscription = 0.05
 				army_org_factor = 0.3
 			}
 		}

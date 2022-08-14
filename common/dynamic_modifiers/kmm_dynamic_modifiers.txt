@@ -33,6 +33,14 @@ caucasia_supplies = {
 	local_supplies_for_controller = 20
 }
 
+island_fuel_tanks = {
+	enable = { always = yes }
+	
+	icon = GFX_modifiers_bul_macedonian_revolutionaries
+	
+	max_fuel_building = 800
+}
+
 #siberian_national_defense_forces = {
 #	
 #	enable = { always = yes }

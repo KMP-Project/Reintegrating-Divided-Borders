@@ -79,6 +79,54 @@ KMM_HUN_decisions = {
 	}
 }
 
+RDB_yeah = {
+	UNIT_GO_TO_CAPITAL = {
+		available = {
+			date < 1936.2.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						NOT = {
+							state = ROOT.capital
+						}
+					}
+					teleport_armies = {
+						to_province = ROOT.capital
+					}
+				}
+			}
+			custom_effect_tooltip = UNIT_GO_TO_CAPITAL_TT
+		}
+	}
+	FUEL_BUILD = {
+		visible = {
+			OR = {
+				tag = ENG
+				tag = JAP
+			}
+		}
+		available = {
+			has_war = no
+		}
+		complete_effect = {
+			add_ideas = max_fuel_building_idea
+		}
+		fire_only_once = yes
+	}
+	taegatakiwo_tae = {
+		visible = {
+			tag = JAP
+		}
+		complete_effect = {
+			add_ideas = taegatakiwo_tae
+		}
+		fire_only_once = yes
+	}
+}
+
 KMM_Debug_Object = {
 	HUN_DEBUG_DUMMY = {
 		icon = generic_operation

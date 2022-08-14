@@ -355,3 +355,9 @@
 
  france_metropolitaine:0 "フランス・メトロポリテーヌの復活"
  france_metropolitaine_tt:0 "§Yフランス§!の全ての中核州を保有している"
+
+ #general
+ RDB_yeah:0 "RDB用ディシジョン"
+ UNIT_GO_TO_CAPITAL:0 "首都州へのユニット移動"
+ UNIT_GO_TO_CAPITAL_TT:0 "全ての陸上に着地している師団を首都州に分散配置します。\n§R注意！§!:§Y海上にいるユニットは転送されません。また、このディシジョンは一回しか使えません。§!"
+ FUEL_BUILD:0 "石油備蓄の拡大"

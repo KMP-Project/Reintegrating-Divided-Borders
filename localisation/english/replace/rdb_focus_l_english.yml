@@ -134,6 +134,7 @@
  HUN_bonus_national_focus_2:0 "ボーナスNF II"
  HUN_bonus_national_focus_3:0 "ボーナスNF III"
 
+ island_fuel_tanks:0 "島国の燃料備蓄"
 
  #ideas
 
@@ -207,3 +208,6 @@
  flotta_mediterranea_2:0 "地中海艦隊"
 
  cat_scout_plane:0 "偵察機"
+
+ taegatakiwo_tae:0 "耐え難きをを耐え"
+ max_fuel_building_idea:0 "燃料貯蔵タンクの拡大"

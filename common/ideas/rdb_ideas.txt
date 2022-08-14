@@ -962,5 +962,17 @@ ideas = {
 				army_strength_factor = 0.5
 			}
 		}
+		max_fuel_building_idea = {
+			picture = generic_refining_concern_1
+			modifier = {
+				max_fuel = 10000
+			}
+		}
+		taegatakiwo_tae = {
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
 	}
 }

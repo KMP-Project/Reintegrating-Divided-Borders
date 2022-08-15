@@ -200,13 +200,6 @@
 					}
 				}
 			}
-			modifier = {
-				factor = 2
-				OR = {
-					tag = EXT
-					tag = LEO
-				}
-			}
 		}
 		cancelable = no
 		available = {
@@ -255,6 +248,13 @@
 				tag = NAV
 				any_other_country = {
 					has_completed_focus = SPR_regional_defense_council_of_aragon
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					tag = EXT
+					tag = LEO
 				}
 			}
 		}
@@ -549,19 +549,6 @@
 					has_completed_focus = SPR_regional_defense_council_of_aragon
 					has_civil_war = yes
 				}
-				add_state_core = 165
-				add_state_core = 794
-				add_state_core = 166
-				add_state_core = 806
-				add_state_core = 172
-				add_state_core = 792
-				add_state_core = 167
-				add_state_core = 168
-				add_state_core = 793
-				add_state_core = 789
-				add_state_core = 173
-				add_state_core = 169
-				add_state_core = 118
 				annex_country = {
 					target = ROOT
 					transfer_troops = yes

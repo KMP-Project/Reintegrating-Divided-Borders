@@ -2408,7 +2408,7 @@
 		x = 0
 		y = 6
 		icon = GFX_focus_ita_roman_empire_ambition
-		cost = 10
+		cost = 14.3
 		available = {
 			OR = {
 				has_completed_focus = ITA_achievement_of_italian_imperialism
@@ -3462,7 +3462,7 @@
 		x = -1
 		y = 1
 		icon = GFX_focus_spa_the_spanish_miracle
-		cost = 10
+		cost = 14.3
 		available = {
 			controls_state = 2
 		}
@@ -3481,7 +3481,7 @@
 		x = 1
 		y = 1
 		icon = GFX_focus_generic_self_management
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = vittoria_mutilata
@@ -3501,7 +3501,7 @@
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_gaul_recovery_tt
 			hidden_effect = {
@@ -3533,7 +3533,7 @@
 		x = -1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_dacia_and_thrace_recovery_tt
 			hidden_effect = {
@@ -3572,7 +3572,7 @@
 		x = 1
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_asia_cilicia_recovery_tt
 			hidden_effect = {
@@ -3601,7 +3601,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_armenian_assyria_recovery_tt
 			hidden_effect = {
@@ -3628,7 +3628,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_hispania_recovery_tt
 			hidden_effect = {
@@ -3655,7 +3655,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_pannonia_recovery_tt
 			hidden_effect = {
@@ -3691,7 +3691,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_levant_recovery_tt
 			hidden_effect = {
@@ -3721,7 +3721,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_britannia_recovery_tt
 			hidden_effect = {
@@ -3746,7 +3746,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_moesia_recovery_tt
 			hidden_effect = {
@@ -3778,7 +3778,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_germania_recovery_tt
 			hidden_effect = {
@@ -3817,7 +3817,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_aegyuputusu_recovery_tt
 			hidden_effect = {
@@ -3851,7 +3851,7 @@
 		x = 0
 		y = 1
 		icon = GFX_goal_generic_position_armies
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			custom_effect_tooltip = ITA_aegyuputusu_recovery_tt
 			hidden_effect = {
@@ -3890,7 +3890,7 @@
 		x = 0
 		y = 1
 		icon = GFX_focus_ita_roman_empire_ambition
-		cost = 10
+		cost = 14.3
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ITA_roman_empire_rebuilding_idea

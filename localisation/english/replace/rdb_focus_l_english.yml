@@ -154,6 +154,18 @@
  Sminor_time_is_coming_c:0 "時は来た"
  Sminor_time_is_coming_n:0 "時は来た"
 
+ African_the_great_african_war:0 "アフリカ大戦!"
+ African_building_slot:0 "首都集権"
+ African_navy:0 "新生海軍"
+ African_buildings:0 "租工場"
+ African_in_this_vast_land_only_one:0 "§Rこの広き大地に、たった一人§!"
+ African_in_this_vast_land_only_one_tt:0 "§Rここは人間の干渉するべき土地じゃないんでしょ？§!"
+
+ JAP_kyusyu_seitetsu:0 "九州製鉄"
+ JAP_attack_FER:0 "極東共和国への進駐"
+ JAP_develop_mountain:0 "居住可能地の拡大"
+ JAP_compless_industry:0 "産業の統合"
+
  #ideas
 
  Brave_men_against_single_domination:0 "単独支配に対する勇者"
@@ -169,6 +181,7 @@
  seisangaku:0 "天啓:生産学"
  zairyoukougaku:0 "天啓:材料学"
  gunzigaku:0 "天啓:軍事学"
+ railway_maintenance:0 "鉄道網補正磁極線"
 
  Nordic_resource_use_idea:0 "北欧的資源活用"
  Nordic_cold_weather_use_idea:0 "寒冷地利用"
@@ -229,3 +242,7 @@
 
  taegatakiwo_tae:0 "耐え難きをを耐え"
  max_fuel_building_idea:0 "燃料貯蔵タンクの拡大"
+
+ African_based_tech:0 "欧米の基礎研究:奪取!"
+
+ kill_manchuria:0 "清国の破壊"

@@ -134,6 +134,7 @@ on_actions = {
 					}
 				}
 				add_ideas = African_warriors
+				load_focus_tree = african_rdb_focus
 			}
 			every_country = {
 				limit = {

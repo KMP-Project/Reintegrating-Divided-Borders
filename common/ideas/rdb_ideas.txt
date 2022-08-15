@@ -980,5 +980,40 @@ ideas = {
 				surrender_limit = -0.3
 			}
 		}
+		African_based_tech = {
+			picture = jap_supremacy_of_technology
+			modifier = {
+				research_speed_factor = 1
+			}
+		}
+		railway_maintenance = {
+			picture = generic_build_infrastructure
+			modifier = {
+				production_speed_rail_way_factor = 1
+			}
+		}
+		kill_manchuria = {
+			picture = man_militarism
+			cancel = {
+				OR = {
+					country_exists = MAN
+					MAN = {
+						is_puppet_of = JAP
+					}
+				}
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.5
+				defense_bonus_against = 0.5
+			}
+		}
+		JAP_compless_industry = {
+			picture = man_five_year_plan_industry
+			modifier = {
+				industrial_capacity_factory = 0.33
+				industrial_capacity_dockyard = 0.33
+			}
+		}
 	}
 }

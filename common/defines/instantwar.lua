@@ -1,1 +1,2 @@
 NDefines.NDiplomacy.MIN_WARGOAL_JUSTIFY_COST = 0
+NDefines.NCountry.BASE_STABILITY_WAR_FACTOR = -0.05

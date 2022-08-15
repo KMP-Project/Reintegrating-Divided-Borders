@@ -670,7 +670,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				conscription_factor = 0.33
+				conscription_factor = 0.1
 			}
 		}
 		ITA_reduced_tank_costs = {
@@ -972,6 +972,12 @@ ideas = {
 			picture = tfv_can_conscription_crisis
 			modifier = {
 				consumer_goods_factor = -0.05
+			}
+		}
+		CRO_dubrovnik_abandonment = {
+			picture = saf_history_of_segregation
+			modifier = {
+				surrender_limit = -0.3
 			}
 		}
 	}

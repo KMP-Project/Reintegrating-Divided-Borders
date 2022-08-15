@@ -126,6 +126,7 @@
  ITA_germania_recovery_tt:0 "ローマが征服したことのあるゲルマニア（スイスや南ドイツ、ラインラントやオランダの一部など）を中核州化する。"
  ITA_aegyuputusu_recovery_tt:0 "ローマ支配下のアエギュプトゥス（アフリカ）を中核州化する。"
  ITA_resurrection_of_the_roman_empire_tt:0 "ディシジョンから§Yローマ帝国§!を復興できるようになる。"
+ ITA_elimination_of_division_tt:0 "§Y北イタリア§!の州と§Y南イタリア§!の州を最低ひとつづつ所有している"
 
  HUN_demand_a_referendum:0 "オーストリア全域の併呑"
  HUN_proclaim_the_restoration_of_austria_hungary_tt:0 "1914年時点の§Yオーストリア＝ハンガリー帝国§!の領土を全て中核州化する。"
@@ -135,6 +136,23 @@
  HUN_bonus_national_focus_3:0 "ボーナスNF III"
 
  island_fuel_tanks:0 "島国の燃料備蓄"
+
+ Sminor_military:0 "軍事関連分野の基盤"
+ Sminor_factory:0 "産業関連分野の基盤"
+ Sminor_politics:0 "政治関連分野の基盤"
+ Sminor_diplomatic_of_civilwar:0 "スペイン内戦介入への圧力"
+ Sminor_diplomatic_of_civilwar_a_tt:0 "§Yこの国家方針はスペイン内戦開始と同時に自動達成される。§!"
+ Sminor_diplomatic_of_civilwar_c_tt:0 "§Yスペイン内戦§!に関する国家方針を取得できるようになる。"
+ Sminor_support_fascist:0 "国粋派を支援"
+ Sminor_support_republic:0 "共和派を支援"
+ Sminor_support_nationalist:0 "ファシストを支援"
+ Sminor_support_communion:0 "帝国を支援"
+ Sminor_support_democratist:0 "第二共和政を支援"
+ Sminor_support_anarchist:0 "無政府主義者を支援"
+ Sminor_time_is_coming_d:0 "時は来た"
+ Sminor_time_is_coming_a:0 "時は来た"
+ Sminor_time_is_coming_c:0 "時は来た"
+ Sminor_time_is_coming_n:0 "時は来た"
 
  #ideas
 

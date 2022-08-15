@@ -3049,6 +3049,25 @@ country_event = {
 }
 
 country_event = {
+	id = kmm.90
+	hidden = yes
+	trigger = {
+		SPR = {
+			has_civil_war = yes
+		}
+	}
+	fire_only_once = yes
+	option = {
+		every_country = {
+			limit = {
+				has_focus_tree = spanish_minor_focus
+			}
+			complete_national_focus = Sminor_diplomatic_of_civilwar
+		}
+	}
+}
+
+country_event = {
 	id = kmm.666
 	title = "error!"
 	desc = "Your Hoi4 has caused an error! Report the situation, errors, etc. to the mod creator immediately!"

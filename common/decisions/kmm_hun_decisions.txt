@@ -140,7 +140,9 @@ KMM_Debug_Object = {
 			#		transfer_troops = yes
 			#	}
 			#}
-			#ROOT = { load_oob = "ITA_invasion_ALB" }
+			ROOT = {
+				load_oob = "ITA_invasion_ALB"
+			}
 			#ROOT = { load_oob = "ITA_invasion_ALB" }
 			#ROOT = { load_oob = "ITA_invasion_ALB" }
 			#ROOT = { load_oob = "ITA_invasion_ALB" }

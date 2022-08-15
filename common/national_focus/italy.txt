@@ -799,14 +799,12 @@
 		cost = 5
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = achievement_of_italian_imperialism_tt
-				NOT = {
-					any_state = {
-						NOT = {
-							is_owned_by = ITA
-						}
-						is_core_of = ITA
-					}
+				tooltip = ITA_elimination_of_division_tt
+				any_controlled_state = {
+					region = 21
+				}
+				any_controlled_state = {
+					region = 23
 				}
 			}
 		}
@@ -5237,8 +5235,8 @@
 		icon = GFX_focus_generic_manpower
 		cost = 5
 		completion_reward = {
-			#add_ideas = ITA_conscription_system_reform
-			add_manpower = 100000
+			add_ideas = ITA_conscription_system_reform
+			#add_manpower = 100000
 		}
 	}
 	focus = {

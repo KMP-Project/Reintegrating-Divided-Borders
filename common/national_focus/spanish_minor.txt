@@ -1,0 +1,598 @@
+﻿focus_tree = {
+	id = spanish_minor_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			OR = {
+				tag = ADC
+				tag = EXT
+				tag = CAT
+				tag = GLC
+				tag = NAV
+				tag = LEO
+				tag = ATA
+			}
+		}
+	}
+	default = no
+	continuous_focus_position = {
+		x = 50
+		y = 750
+	}
+	#	focus = {
+	#		id = Sminor_
+	#		icon = GFX_
+	#		prerequisite = { focus = }
+	#		mutually_exclusive = { focus =  }
+	#		x = -3
+	#		y = 0
+	#		relative_position_id = 
+	#
+	#		cost = 10
+	#
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#
+	#		available = {
+	#
+	#		}
+	#		
+	#		bypass = {
+	#
+	#		}
+	#
+	#		cancel_if_invalid = yes
+	#		continue_if_invalid = no
+	#		available_if_capitulated = no
+	#
+	#		complete_tooltip = {
+	#
+	#		}
+	#
+	#		completion_reward = {
+	#
+	#		}
+	#	}
+	focus = {
+		id = Sminor_military
+		icon = GFX_goal_rhineland
+		x = 0
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = Sminor_diplomatic_of_civilwar
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+		}
+	}
+	focus = {
+		id = Sminor_factory
+		icon = GFX_focus_SOV_organize_wreckers
+		x = 2
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = Sminor_diplomatic_of_civilwar
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+		}
+	}
+	focus = {
+		id = Sminor_politics
+		icon = GFX_goal_generic_demand_territory
+		x = 4
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = Sminor_diplomatic_of_civilwar
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = Sminor_diplomatic_of_civilwar
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = {
+			focus = Sminor_politics
+		}
+		prerequisite = {
+			focus = Sminor_factory
+		}
+		prerequisite = {
+			focus = Sminor_military
+		}
+		x = 0
+		y = 1
+		relative_position_id = Sminor_factory
+		cost = 0
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Sminor_diplomatic_of_civilwar_a_tt
+				has_completed_focus = Sminor_diplomatic_of_civilwar
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = Sminor_diplomatic_of_civilwar_c_tt
+		}
+	}
+	focus = {
+		id = Sminor_support_fascist
+		icon = GFX_focus_intervention_spain_nationalists
+		prerequisite = {
+			focus = Sminor_diplomatic_of_civilwar
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_republic
+		}
+		x = -2
+		y = 1
+		relative_position_id = Sminor_diplomatic_of_civilwar
+		cost = 5
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					tag = CAT
+					tag = ADC
+				}
+			}
+			modifier = {
+				factor = 100
+				tag = NAV
+				NOT = {
+					any_other_country = {
+						has_completed_focus = SPR_regional_defense_council_of_aragon
+					}
+				}
+			}
+		}
+		cancelable = no
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					original_tag = SPR
+					has_government = neutrality
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+			}
+		}
+	}
+	focus = {
+		id = Sminor_support_republic
+		icon = GFX_focus_intervention_spain_republic
+		prerequisite = {
+			focus = Sminor_diplomatic_of_civilwar
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_fascist
+		}
+		x = 2
+		y = 1
+		relative_position_id = Sminor_diplomatic_of_civilwar
+		cost = 5
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				tag = ATA
+			}
+			modifier = {
+				factor = 100
+				tag = NAV
+				any_other_country = {
+					has_completed_focus = SPR_regional_defense_council_of_aragon
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					tag = EXT
+					tag = LEO
+				}
+			}
+		}
+		cancelable = no
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					original_tag = SPR
+					has_government = democratic
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+			}
+		}
+	}
+	focus = {
+		id = Sminor_support_nationalist
+		icon = GFX_focus_spa_unify_the_nationalist_front
+		prerequisite = {
+			focus = Sminor_support_fascist
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_communion
+		}
+		x = -1
+		y = 1
+		relative_position_id = Sminor_support_fascist
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = Sminor_support_communion
+		icon = GFX_focus_spa_supremacy_of_the_communion
+		prerequisite = {
+			focus = Sminor_support_fascist
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_nationalist
+		}
+		x = 1
+		y = 1
+		relative_position_id = Sminor_support_fascist
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				any_other_country = {
+					is_ai = no
+					has_completed_focus = SPA_supremacy_of_the_communion
+				}
+				NOT = {
+					OR = {
+						tag = ADC
+						tag = NAV
+					}
+				}
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = Sminor_support_democratist
+		icon = GFX_focus_spr_maintain_the_republic
+		prerequisite = {
+			focus = Sminor_support_republic
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_anarchist
+		}
+		x = 1
+		y = 1
+		relative_position_id = Sminor_support_republic
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 100
+				any_other_country = {
+					is_ai = no
+					OR = {
+						has_completed_focus = SPR_the_anti_fascist_workers_revolution
+						has_completed_focus = SPR_maintain_the_second_republic
+					}
+				}
+				OR = {
+					tag = CAT
+					tag = ADC
+					tag = NAV
+				}
+			}
+			modifier = {
+				factor = 0
+				tag = CAT
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = Sminor_support_anarchist
+		icon = GFX_focus_spr_regional_defense_council_of_aragon
+		prerequisite = {
+			focus = Sminor_support_republic
+		}
+		mutually_exclusive = {
+			focus = Sminor_support_democratist
+		}
+		x = -1
+		y = 1
+		relative_position_id = Sminor_support_republic
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				any_other_country = {
+					is_ai = no
+					has_completed_focus = SPR_regional_defense_council_of_aragon
+				}
+				OR = {
+					tag = CAT
+					tag = ADC
+					tag = NAV
+				}
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = Sminor_time_is_coming_n
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = {
+			focus = Sminor_support_nationalist
+		}
+		x = 0
+		y = 1
+		relative_position_id = Sminor_support_nationalist
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				has_completed_focus = SPA_a_great_spain
+				has_civil_war = yes
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+					has_civil_war = yes
+				}
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = Sminor_time_is_coming_c
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = {
+			focus = Sminor_support_communion
+		}
+		x = 0
+		y = 1
+		relative_position_id = Sminor_support_communion
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				has_completed_focus = SPA_no_compromise_on_carlist_ideals
+				has_civil_war = yes
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					has_civil_war = yes
+				}
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = Sminor_time_is_coming_a
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = {
+			focus = Sminor_support_anarchist
+		}
+		x = 0
+		y = 1
+		relative_position_id = Sminor_support_anarchist
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				has_completed_focus = SPR_masters_of_our_own_fate
+				has_completed_focus = SPR_regional_defense_council_of_aragon
+				has_civil_war = yes
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					has_completed_focus = SPR_masters_of_our_own_fate
+					has_completed_focus = SPR_regional_defense_council_of_aragon
+					has_civil_war = yes
+				}
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = Sminor_time_is_coming_d
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = {
+			focus = Sminor_support_democratist
+		}
+		x = 0
+		y = 1
+		relative_position_id = Sminor_support_democratist
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				has_completed_focus = SPR_the_popular_front
+				has_civil_war = yes
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+					has_civil_war = yes
+				}
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+}

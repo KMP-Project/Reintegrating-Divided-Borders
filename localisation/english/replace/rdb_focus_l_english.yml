@@ -166,6 +166,8 @@
  JAP_develop_mountain:0 "居住可能地の拡大"
  JAP_compless_industry:0 "産業の統合"
 
+ special_army_rdb:0 "特殊部隊の増強"
+
  #ideas
 
  Brave_men_against_single_domination:0 "単独支配に対する勇者"

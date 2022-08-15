@@ -1015,5 +1015,11 @@ ideas = {
 				industrial_capacity_dockyard = 0.33
 			}
 		}
+		special_army_rdb = {
+			picture = FRA_scw_intervention_nationalists_focus
+			modifier = {
+				special_forces_cap = 0.5
+			}
+		}
 	}
 }

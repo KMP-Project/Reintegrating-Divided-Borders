@@ -140,6 +140,14 @@ RDB_yeah = {
 		}
 		fire_only_once = yes
 	}
+	special_army_rdb = {
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -100
+			add_ideas = special_army_rdb
+		}
+		cost = 200
+	}
 }
 
 KMM_Debug_Object = {

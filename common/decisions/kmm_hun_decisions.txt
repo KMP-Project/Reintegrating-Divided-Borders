@@ -323,58 +323,35 @@ KMM_HUN_debug_category = {
 		target_trigger = {
 			FROM = {
 				OR = {
-					state = 160
-					state = 823
-					state = 824
-					state = 90
-					state = 92
-					state = 159
-					state = 157
-					state = 117
-					state = 115
-					state = 156
-					state = 827
-					state = 828
+					#オーハンの上のほう
 					state = 66
 					state = 67
-					state = 17
-					state = 114
-					state = 6
-					state = 8
-					state = 34
 					state = 762
-					state = 810
-					state = 811
-					state = 177
-					state = 7
-					state = 35
-					state = 36
-					state = 813
-					state = 169
-					state = 170
-					state = 171
-					state = 832
-					state = 118
-					state = 816
-					state = 173
-					state = 174
-					state = 788
-					state = 789
-					state = 790
-					state = 791
-					state = 792
-					state = 793
-					state = 794
-					state = 165
-					state = 166
-					state = 167
-					state = 168
-					state = 172
-					state = 175
-					state = 176
-					state = 41
-					state = 899
-					state = 902
+					state = 90
+					state = 92
+					#南ネーデルラント
+					state = 6
+					state = 34
+					state = 8
+					#北イタリア
+					state = 875
+					state = 844
+					state = 160
+					state = 159
+					#南イタリア
+					state = 157
+					state = 853
+					state = 117
+					state = 878
+					state = 879
+					state = 156
+					state = 115
+					state = 144
+					#スイス
+					state = 151
+					state = 3
+					#北ドイツ
+					state = 58
 				}
 			}
 		}
@@ -401,58 +378,35 @@ KMM_HUN_debug_category = {
 		on_map_mode = map_only
 		highlight_states = {
 			OR = {
-				state = 160
-				state = 823
-				state = 824
-				state = 90
-				state = 92
-				state = 159
-				state = 157
-				state = 117
-				state = 115
-				state = 156
-				state = 827
-				state = 828
+				#オーハンの上のほう
 				state = 66
 				state = 67
-				state = 17
-				state = 114
-				state = 6
-				state = 8
-				state = 34
 				state = 762
-				state = 810
-				state = 811
-				state = 177
-				state = 7
-				state = 35
-				state = 36
-				state = 813
-				state = 169
-				state = 170
-				state = 171
-				state = 832
-				state = 118
-				state = 816
-				state = 173
-				state = 174
-				state = 788
-				state = 789
-				state = 790
-				state = 791
-				state = 792
-				state = 793
-				state = 794
-				state = 165
-				state = 166
-				state = 167
-				state = 168
-				state = 172
-				state = 175
-				state = 176
-				state = 41
-				state = 899
-				state = 902
+				state = 90
+				state = 92
+				#南ネーデルラント
+				state = 6
+				state = 34
+				state = 8
+				#北イタリア
+				state = 875
+				state = 844
+				state = 160
+				state = 159
+				#南イタリア
+				state = 157
+				state = 853
+				state = 117
+				state = 878
+				state = 879
+				state = 156
+				state = 115
+				state = 144
+				#スイス
+				state = 151
+				state = 3
+				#北ドイツ
+				state = 58
 			}
 		}
 		cost = 20
@@ -479,13 +433,14 @@ KMM_HUN_debug_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = HUN_elimination_of_ausgleich_tt
-				160 = {
+				#オーハンの上のほう
+				66 = {
 					is_core_of = HUN
 				}
-				823 = {
+				67 = {
 					is_core_of = HUN
 				}
-				824 = {
+				762 = {
 					is_core_of = HUN
 				}
 				90 = {
@@ -494,145 +449,63 @@ KMM_HUN_debug_category = {
 				92 = {
 					is_core_of = HUN
 				}
-				159 = {
-					is_core_of = HUN
-				}
-				157 = {
-					is_core_of = HUN
-				}
-				117 = {
-					is_core_of = HUN
-				}
-				115 = {
-					is_core_of = HUN
-				}
-				156 = {
-					is_core_of = HUN
-				}
-				827 = {
-					is_core_of = HUN
-				}
-				828 = {
-					is_core_of = HUN
-				}
-				66 = {
-					is_core_of = HUN
-				}
-				67 = {
-					is_core_of = HUN
-				}
-				17 = {
-					is_core_of = HUN
-				}
-				114 = {
-					is_core_of = HUN
-				}
+				#南ネーデルラント
 				6 = {
-					is_core_of = HUN
-				}
-				8 = {
 					is_core_of = HUN
 				}
 				34 = {
 					is_core_of = HUN
 				}
-				762 = {
+				8 = {
 					is_core_of = HUN
 				}
-				810 = {
+				#北イタリア
+				875 = {
 					is_core_of = HUN
 				}
-				811 = {
+				844 = {
 					is_core_of = HUN
 				}
-				177 = {
+				160 = {
 					is_core_of = HUN
 				}
-				7 = {
+				159 = {
 					is_core_of = HUN
 				}
-				35 = {
+				#南イタリア
+				157 = {
 					is_core_of = HUN
 				}
-				36 = {
+				853 = {
 					is_core_of = HUN
 				}
-				813 = {
+				117 = {
 					is_core_of = HUN
 				}
-				169 = {
+				878 = {
 					is_core_of = HUN
 				}
-				170 = {
+				879 = {
 					is_core_of = HUN
 				}
-				171 = {
+				156 = {
 					is_core_of = HUN
 				}
-				832 = {
+				115 = {
 					is_core_of = HUN
 				}
-				118 = {
+				144 = {
 					is_core_of = HUN
 				}
-				816 = {
+				#スイス
+				151 = {
 					is_core_of = HUN
 				}
-				173 = {
+				3 = {
 					is_core_of = HUN
 				}
-				174 = {
-					is_core_of = HUN
-				}
-				788 = {
-					is_core_of = HUN
-				}
-				789 = {
-					is_core_of = HUN
-				}
-				790 = {
-					is_core_of = HUN
-				}
-				791 = {
-					is_core_of = HUN
-				}
-				792 = {
-					is_core_of = HUN
-				}
-				793 = {
-					is_core_of = HUN
-				}
-				794 = {
-					is_core_of = HUN
-				}
-				165 = {
-					is_core_of = HUN
-				}
-				166 = {
-					is_core_of = HUN
-				}
-				167 = {
-					is_core_of = HUN
-				}
-				168 = {
-					is_core_of = HUN
-				}
-				172 = {
-					is_core_of = HUN
-				}
-				175 = {
-					is_core_of = HUN
-				}
-				176 = {
-					is_core_of = HUN
-				}
-				41 = {
-					is_core_of = HUN
-				}
-				899 = {
-					is_core_of = HUN
-				}
-				902 = {
+				#北ドイツ
+				58 = {
 					is_core_of = HUN
 				}
 			}

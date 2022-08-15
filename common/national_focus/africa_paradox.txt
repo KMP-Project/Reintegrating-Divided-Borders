@@ -119,7 +119,7 @@
 				}
 				add_claim_by = ROOT
 			}
-			every_other_country = {
+			every_neighbor_country = {
 				limit = {
 					capital_scope = {
 						is_on_continent = africa

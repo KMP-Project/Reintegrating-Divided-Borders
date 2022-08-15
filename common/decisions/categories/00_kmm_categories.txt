@@ -10,7 +10,6 @@ KMM_risorgimento_decisions = {
 			original_tag = ENG
 			original_tag = SCO
 			original_tag = WLS
-
 			original_tag = SOV
 			original_tag = UKR
 			original_tag = BLR
@@ -22,12 +21,10 @@ KMM_risorgimento_decisions = {
 			original_tag = TMS
 			original_tag = TAJ
 			original_tag = KYR
-
 			original_tag = RAJ
 			original_tag = PAK
 			original_tag = BAN
 			original_tag = BRM
-
 			original_tag = YUG
 			original_tag = SER
 			original_tag = SLV
@@ -36,7 +33,6 @@ KMM_risorgimento_decisions = {
 			original_tag = MAC
 			original_tag = MNT
 			original_tag = HRZ
-
 			original_tag = FRA
 			original_tag = OCC
 			original_tag = BRI
@@ -55,7 +51,37 @@ KMM_HUN_decisions = {
 KMM_HUN_debug_category = {
 	icon = eng_appeal_to_imperial_loyalists
 	on_map_area = {
-		targets = { 160 823 824 90 92 159 157 117 115 156 827 828 66 67 17 114 6 8 34 762 810 811 177 7 35 36 813 169 170 171 832 118 816 173 174 788 789 790 791 792 793 794 165 166 167 168 172 175 176 41 899 902 }
+		targets = {
+			#オーハンの上のほう
+			66
+			67
+			762
+			90
+			92
+			#南ネーデルラント
+			6
+			34
+			8
+			#北イタリア
+			875
+			844
+			160
+			159
+			#南イタリア
+			157
+			853
+			117
+			878
+			879
+			156
+			115
+			144
+			#スイス
+			151
+			3
+			#北ドイツ
+			58
+		}
 		name = KMM_HUN_debug_category_map_name
 		zoom = 150
 	}
@@ -72,7 +98,123 @@ KMM_HUN_debug_category = {
 KMM_TUR_coring_category = {
 	icon = generic_formable_nations
 	on_map_area = {
-		targets = { 43 44 45 46 47 48 73 76 77 78 79 80 81 82 83 84 89 91 102 103 104 105 106 107 108 109 137 154 155 163 164 182 183 184 185 186 187 192 196 197 198 199 200 211 212 218 227 228 229 230 231 233 234 245 268 269 291 292 293 413 417 419 420 421 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 513 550 551 552 553 554 656 661 662 663 664 665 675 676 677 679 680 731 764 766 767 799 801 802 803 804 805 815 822 833 834 896 897 905 908 909 }
+		targets = {
+			43
+			44
+			45
+			46
+			47
+			48
+			73
+			76
+			77
+			78
+			79
+			80
+			81
+			82
+			83
+			84
+			89
+			91
+			102
+			103
+			104
+			105
+			106
+			107
+			108
+			109
+			137
+			154
+			155
+			163
+			164
+			182
+			183
+			184
+			185
+			186
+			187
+			192
+			196
+			197
+			198
+			199
+			200
+			211
+			212
+			218
+			227
+			228
+			229
+			230
+			231
+			233
+			234
+			245
+			268
+			269
+			291
+			292
+			293
+			413
+			417
+			419
+			420
+			421
+			446
+			447
+			448
+			449
+			450
+			451
+			452
+			453
+			454
+			455
+			456
+			457
+			458
+			459
+			460
+			513
+			550
+			551
+			552
+			553
+			554
+			656
+			661
+			662
+			663
+			664
+			665
+			675
+			676
+			677
+			679
+			680
+			731
+			764
+			766
+			767
+			799
+			801
+			802
+			803
+			804
+			805
+			815
+			822
+			833
+			834
+			896
+			897
+			905
+			908
+			909
+		}
 		name = KMM_TUR_coring_category_map_name
 		zoom = 150
 	}
@@ -90,7 +232,44 @@ KMM_HRE_coring_category = {
 	picture = GFX_decision_cat_generic_hre
 	icon = generic_monarchism
 	on_map_area = {
-		targets = { 1 2 3 5 7 17 21 28 29 32 35 36 85 151 158 159 161 162 188 735 763 807 813 816 817 823 825 826 829 835 839 898 899 900 901 902 }
+		targets = {
+			1
+			2
+			3
+			5
+			7
+			17
+			21
+			28
+			29
+			32
+			35
+			36
+			85
+			151
+			158
+			159
+			161
+			162
+			188
+			735
+			763
+			807
+			813
+			816
+			817
+			823
+			825
+			826
+			829
+			835
+			839
+			898
+			899
+			900
+			901
+			902
+		}
 		name = KMM_HRE_coring_category_map_name
 		zoom = 150
 	}
@@ -136,7 +315,9 @@ KMM_HUN_reconstruction_of_the_habsburg_empire = {
 	visible = {
 		original_tag = HUN
 		has_completed_focus = HUN_reconstruction_of_the_habsburg_empire
-		NOT = { has_global_flag = HUN_defeat_neighboring_countries }
+		NOT = {
+			has_global_flag = HUN_defeat_neighboring_countries
+		}
 	}
 	visible_when_empty = yes
 }
@@ -217,7 +398,6 @@ KMM_USA_political_fragmentation = {
 }
 
 ### debug ###
-
 realistic_german_soviet_war = {
 	icon = sov_great_patriotic_war
 	allowed = {

@@ -476,8 +476,6 @@ form_nordic_league_category = {
 					tooltip = form_country_denmark_required_states_tt
 					controls_state = 37
 					controls_state = 99
-					controls_state = 100
-					controls_state = 101
 					controls_state = 337
 				}
 				# Finland

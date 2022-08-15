@@ -438,6 +438,32 @@ ideas = {
 				army_defence_against_major_factor = 0.125
 			}
 		}
+		Nordic_forced_assimilation = {
+			picture = jap_supremacy_of_will
+			modifier = {
+				democratic_drift = 0.66
+			}
+		}
+		Nordic_goods_minus_7_idea = {
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.07
+			}
+		}
+		Nordic_communism_army = {
+			picture = SOV_war_heroes
+			modifier = {
+				army_strength_factor = 0.1
+				army_morale = 10
+				conscription_factor = 0.1
+			}
+		}
+		Nordic_stalin_buildings = {
+			picture = SOV_organize_wreckers
+			modifier = {
+				production_speed_buildings_factor = 0.25
+			}
+		}
 		#italy
 		ITA_ideological_liberalization_idea = {
 			picture = SPR_torchbearers_of_tomorrow

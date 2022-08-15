@@ -62,6 +62,16 @@
  Nordic_reduction_of_authority_in_small_administrative_areas_desc:0 "地方に任せる余裕はない。"
  Nordic_enthusiastic_soldiers:0 "熱狂的な兵士"
  Nordic_enthusiastic_soldiers_desc:0 "愛国主義に基づく狂信的な兵士たち。"
+ Nordic_hokuou_region:0 "北欧統合主義"
+ Nordic_democratica:0 "北欧全体の民主化"
+ Nordic_integ:0 "北欧全体の統合"
+ Nordic_annex:0 "北欧統一国家"
+ Nordic_goods:0 "消費財の効率化"
+ Nordic_purge:0 "チス・トカ"
+ Nordic_man:0 "赤軍"
+ Nordic_baltic_comrade:0 "バルトの同志たち"
+ Nordic_baltic_comrade_tt:0 "§Yバルト三国地域§!を中核州化する。"
+ Nordic_yunyuu_stalin_building:0 "スターリン様式/建築の輸入"
 
  #italy
  achievement_of_italian_imperialism_tt:0 "§Yイタリア§!のすべての中核州が§Yイタリア自身§!によって領有されている"
@@ -212,6 +222,10 @@
  Nordic_centralization_of_power_9_idea:0 "中央集権化"
  Nordic_centralization_of_power_10_idea:0 "中央集権化"
  Nordic_centralization_of_power_11_idea:0 "中央集権化"
+ Nordic_forced_assimilation:0 "強制同化"
+ Nordic_goods_minus_7_idea:0 "社会主義経済の推進"
+ Nordic_communism_army:0 "赤軍の同志諸君"
+ Nordic_stalin_buildings:0 "スターリン様式/建築"
 
  flexible_fascist:0 "柔軟なファシスト"
  ITA_ideological_liberalization_idea:0 "思想的自由化"

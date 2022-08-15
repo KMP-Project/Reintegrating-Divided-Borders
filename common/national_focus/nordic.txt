@@ -1388,6 +1388,202 @@
 		}
 	}
 	focus = {
+		id = Nordic_hokuou_region
+		icon = GFX_focus_generic_scandinavian_alliance
+		cost = 10
+		x = 0
+		y = 2
+		relative_position_id = Nordic_democratic_defense
+		available = {
+			is_ai = no
+			all_other_country = {
+				NOT = {
+					has_completed_focus = Nordic_hokuou_region
+				}
+			}
+			SWE = {
+				OR = {
+					has_completed_focus = Nordic_patriotic_defense
+					has_completed_focus = Nordic_revolutionary_defense
+					has_completed_focus = Nordic_maintaining_the_middle_way
+					has_completed_focus = Nordic_republic
+				}
+			}
+			FIN = {
+				OR = {
+					has_completed_focus = Nordic_patriotic_defense
+					has_completed_focus = Nordic_revolutionary_defense
+					has_completed_focus = Nordic_maintaining_the_middle_way
+					has_completed_focus = Nordic_republic
+				}
+			}
+			DEN = {
+				OR = {
+					has_completed_focus = Nordic_patriotic_defense
+					has_completed_focus = Nordic_revolutionary_defense
+					has_completed_focus = Nordic_maintaining_the_middle_way
+					has_completed_focus = Nordic_republic
+				}
+			}
+			NOR = {
+				OR = {
+					has_completed_focus = Nordic_patriotic_defense
+					has_completed_focus = Nordic_revolutionary_defense
+					has_completed_focus = Nordic_maintaining_the_middle_way
+					has_completed_focus = Nordic_republic
+				}
+			}
+		}
+		prerequisite = {
+			focus = Nordic_republic
+			focus = Nordic_maintaining_the_middle_way
+		}
+		completion_reward = {
+			hidden_effect = {
+				every_other_country = {
+					remove_ideas = Nordic_rise_of_neutrality_idea
+					remove_ideas = Nordic_rise_of_republic_idea
+					remove_ideas = Nordic_rise_of_communism_idea
+					remove_ideas = Nordic_rise_of_fascism_idea
+				}
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = SWE
+						tag = NOR
+						tag = FIN
+						tag = DEN
+					}
+				}
+				add_ideas = Nordic_forced_assimilation
+			}
+		}
+	}
+	focus = {
+		id = Nordic_democratica
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = Nordic_hokuou_region
+		prerequisite = {
+			focus = Nordic_hokuou_region
+		}
+		available = {
+			all_other_country = {
+				OR = {
+					NOT = {
+						OR = {
+							tag = SWE
+							tag = DEN
+							tag = FIN
+							tag = NOR
+						}
+					}
+					AND = {
+						democratic > 0.4
+					}
+				}
+			}
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = NOR
+						tag = SWE
+						tag = DEN
+						tag = FIN
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = Nordic_integ
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = Nordic_democratica
+		prerequisite = {
+			focus = Nordic_democratica
+		}
+		completion_reward = {
+			#every_other_country = {
+			#	limit = {
+			#		OR = {
+			#			tag = NOR
+			#			tag = SWE
+			#			tag = DEN
+			#			tag = FIN
+			#		}
+			#	}
+			#	ROOT = {
+			#		annex_country = {
+			#			target = PREV
+			#			transfer_troops = yes
+			#		}
+			#	}
+			#}
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = NOR
+						tag = SWE
+						tag = DEN
+						tag = FIN
+					}
+				}
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+	focus = {
+		id = Nordic_annex
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = Nordic_integ
+		prerequisite = {
+			focus = Nordic_integ
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = NOR
+						tag = SWE
+						tag = DEN
+						tag = FIN
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+	#com
+	focus = {
 		id = Nordic_revolutionary_defense
 		icon = GFX_goal_support_communism
 		prerequisite = {
@@ -1427,6 +1623,116 @@
 				remove_ideas = en_svensk_tiger
 			}
 			add_political_power = 100
+		}
+	}
+	focus = {
+		id = Nordic_purge
+		icon = GFX_focus_SOV_the_last_purge
+		cost = 10
+		relative_position_id = Nordic_revolutionary_defense
+		prerequisite = {
+			focus = Nordic_revolutionary_defense
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = Nordic_goods
+		icon = GFX_focus_SOV_organize_wreckers
+		cost = 10
+		relative_position_id = Nordic_purge
+		prerequisite = {
+			focus = Nordic_purge
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = Nordic_goods_minus_7_idea
+		}
+	}
+	focus = {
+		id = Nordic_man
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		cost = 10
+		relative_position_id = Nordic_goods
+		prerequisite = {
+			focus = Nordic_goods
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = Nordic_communism_army
+		}
+	}
+	focus = {
+		id = Nordic_baltic_comrade
+		icon = GFX_focus_SOV_baltic_security
+		cost = 10
+		relative_position_id = Nordic_man
+		prerequisite = {
+			focus = Nordic_man
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						region = 37
+					}
+					add_core_of = ROOT
+				}
+				784 = {
+					add_core_of = ROOT
+				}
+			}
+			custom_effect_tooltip = Nordic_baltic_comrade_tt
+		}
+	}
+	focus = {
+		id = Nordic_yunyuu_stalin_building
+		icon = GFX_focus_spa_the_spanish_miracle
+		cost = 10
+		relative_position_id = Nordic_baltic_comrade
+		prerequisite = {
+			focus = Nordic_baltic_comrade
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = Nordic_stalin_buildings
 		}
 	}
 	#fascism
